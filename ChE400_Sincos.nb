@@ -1,0 +1,1240 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     44170,       1231]
+NotebookOptionsPosition[     39010,       1072]
+NotebookOutlinePosition[     39670,       1097]
+CellTagsIndexPosition[     39627,       1094]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+ME201/MTH281/ME400/CHE400
+Convergence of Fourier Sine and Cosine Series\
+\>", "Title",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3896370281357737`*^9, 3.389637031648361*^9}, {
+  3.4519052844136143`*^9, 3.4519052851384363`*^9}, {3.4616922445925083`*^9, 
+  3.4616922489504223`*^9}, {3.473097044979813*^9, 3.47309704801901*^9}, {
+  3.473415603338846*^9, 3.473415609360918*^9}},
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["1. Introduction", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tThis notebook is a modification of an earlier notebook, Convergence of \
+Fourier Series.  In the present notebook, the techniques of the earlier \
+notebook are modified to produce visualizations of both the sine and cosine \
+series of a given function.  To use the code for a particular function, you \
+must define the function in Section 2 below.  Section 2 is the only place \
+where specific information about the function is given.   Section 3 contains \
+the definitions of the terms and partial sums of the series, and Section 4 \
+defines functions which produce graphs of the nth partial sums for any n.  \
+Section 5 defines a computationally efficient routine for producing sequences \
+of all partial sums up to a specified n.  In section 6, we look at the \
+command Manipulate as an alternative way to show the dependence of the \
+partial sums on the number of terms retained.  In section 7 we give a brief \
+summary of how to construct the Manipulate display of the partial sums for a \
+given function.   \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4519056928980637`*^9, 3.451905694040456*^9}, {
+  3.4730987388602257`*^9, 3.473098773522437*^9}, {3.4734157448836412`*^9, 
+  3.473415795611166*^9}},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Definition of Function and Fourier Coefficients", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tIn the definitions below, we first define the function over a basic \
+interval [0, L] and then specify the value of L.  This function is called \
+fbas.  The even and odd extensions are then defined.  They are called fbasev \
+and fbasod.  Finally the periodic extensions of the even and odd extensions \
+are defined.  They are called fev and fod.  To illustrate the procedure, we \
+carry it through for the example ",
+ StyleBox["x ",
+  FontSlant->"Italic"],
+ "+ ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "with ",
+ StyleBox["L",
+  FontSlant->"Italic"],
+ " = 1. "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.451905715104965*^9, 3.451905716592849*^9}, {
+  3.4734229612748947`*^9, 3.473422982768907*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbas", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", "+", 
+   SuperscriptBox["x", "2"]}]}]], "Input"],
+
+Cell["L = 1;", "Input",
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbasev", "[", "x_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ")"}], ",", 
+    RowBox[{"fbas", "[", "x", "]"}], ",", 
+    RowBox[{"fbas", "[", 
+     RowBox[{"-", "x"}], "]"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbasod", "[", "x_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ")"}], ",", 
+    RowBox[{"fbas", "[", "x", "]"}], ",", 
+    RowBox[{"-", 
+     RowBox[{"fbas", "[", 
+      RowBox[{"-", "x"}], "]"}]}]}], "]"}]}]], "Input"],
+
+Cell[TextData[{
+ "Now we periodically extend these, using the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function Mod.  The function Mod[x ,2*L ,-L] (1) adds L to x, (2) \
+calculates the remainder on dividing (1) by 2*L, (3) subtracts L from (2).  \
+This has the effect of shifting the original ",
+ StyleBox["x ",
+  FontSlant->"Italic"],
+ "repeatedly by \[PlusMinus]2L until it falls into the range [-L,L).  This \
+modified ",
+ StyleBox["x ",
+  FontSlant->"Italic"],
+ "is then used as the argument of the original functions fbasev[x] and \
+fbasod[x].  "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fev", "[", "x_", "]"}], ":=", 
+  RowBox[{"fbasev", "[", 
+   RowBox[{"Mod", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"2", "*", "L"}], ",", 
+     RowBox[{"-", "L"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fod", "[", "x_", "]"}], ":=", 
+  RowBox[{"fbasod", "[", 
+   RowBox[{"Mod", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"2", "*", "L"}], ",", 
+     RowBox[{"-", "L"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell[TextData[{
+ "To check our definitions, we plot both fev and fod over three periods.  We \
+make the line for the plotted function slightly thicker than the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " default by using the Thickness function with the Option PlotStyle. We \
+first set an ImageSize Option for the entire notebook for the Plot command.  \
+"
+}], "Text",
+ CellChangeTimes->{{3.4734159655989847`*^9, 3.473416058400001*^9}, 
+   3.473416143986734*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"Plot", ",", 
+    RowBox[{"ImageSize", "->", "250"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4512962979420547`*^9, 3.451296310256288*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"fev", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "L"}], ",", 
+     RowBox[{"3", " ", "L"}]}], "}"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<x\>\"", ",", "\"\<fev[x]\>\""}], "}"}]}], ",", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"Thickness", "[", "0.004", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.3981609316865788`*^9, 3.398160969644269*^9}, {
+  3.4734161689649067`*^9, 3.473416190700201*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"fod", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{
+      RowBox[{"-", "3"}], "L"}], ",", 
+     RowBox[{"3", " ", "L"}]}], "}"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<x\>\"", ",", "\"\<fod[x]\>\""}], "}"}]}], ",", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"Thickness", "[", "0.004", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.3981609316865788`*^9, 3.398160969644269*^9}, {
+  3.4734161966604137`*^9, 3.47341620083638*^9}, {3.473423052475869*^9, 
+  3.4734230598356647`*^9}}],
+
+Cell["\<\
+For purposes of plotting yet to come,  we specify the minimum fmin and the \
+maximum fmax of the functions fbasev and fbasod.   More specifically, fmax \
+should be the largest absolute function value which occurs on the interval \
+[0,L] and fmin should be -fmax. \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{
+  3.473416238764064*^9, {3.473420075884709*^9, 3.4734201196454353`*^9}},
+ AspectRatioFixed->True],
+
+Cell["fmin = -2.0;", "Input",
+ AspectRatioFixed->True],
+
+Cell["fmax = 2.0;", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tWe now calculate here the Fourier coefficients for the function f.  For \
+most of the simple functions we work with (including this one), the \
+coefficient integrals could be evaluated analytically.  However, we write our \
+code in terms of numerical integration, so that it will work for (almost) any \
+integrable function.  It is important NOT to calculate the integral for each \
+coefficient each time the function is called.  If that is done, calculations \
+involving the series, such as plotting, would be unacceptably slow.  We \
+evaluate the coefficients once and for all and store them in the functions \
+a[n], for the cosine series, and b[n] for the sine series.  Although we don't \
+know a priori how many coefficients will be needed in a particular problem, \
+we calculate the first ncoeffmax coefficients, where we set the default value \
+of ncoeffmax below to 101.  If we need more coefficients than that, we might \
+want to think about finding another way to do the problem!   For convenience \
+in later calculations, we define b[0] = 0.   The function calcoeff, defined \
+below, calculates and stores all of the Fourier coefficients up to order \
+ncoeffmax. \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.473268056159073*^9, 3.473268325884804*^9}, 
+   3.473268534376212*^9, {3.473268689593347*^9, 3.473268717537179*^9}, {
+   3.473273462545492*^9, 3.473273644235696*^9}, {3.473359264041749*^9, 
+   3.473359355057809*^9}, {3.473416308232114*^9, 3.473416321846764*^9}, {
+   3.473416373803121*^9, 3.473416408630028*^9}, 3.473892902998659*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ncoeffmax", " ", "=", " ", "101"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4734164473541393`*^9, 3.473416455559505*^9}, 
+   3.4738929113408403`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"calcoeff", ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "[", "0", "]"}], "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1.0", "/", "L"}], ")"}], 
+        RowBox[{"NIntegrate", "[", 
+         RowBox[{
+          RowBox[{"fbas", "[", "x", "]"}], " ", ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "0", ",", "L"}], "}"}], ",", 
+          RowBox[{"AccuracyGoal", "\[Rule]", "8"}]}], "]"}]}]}], ";", 
+      RowBox[{
+       RowBox[{"b", "[", "0", "]"}], "=", "0.0"}], ";", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", "[", "n", "]"}], "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"2.0", "/", "L"}], ")"}], 
+            RowBox[{"NIntegrate", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"fbas", "[", "x", "]"}], " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"n", " ", "\[Pi]", " ", "x"}], ")"}], "/", "L"}], 
+                "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "0", ",", "L"}], "}"}], ",", 
+              RowBox[{"AccuracyGoal", "\[Rule]", "8"}]}], "]"}]}]}], ";", 
+          RowBox[{
+           RowBox[{"b", "[", "n", "]"}], "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"2.0", "/", "L"}], ")"}], 
+            RowBox[{"NIntegrate", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"fbas", "[", "x", "]"}], " ", 
+               RowBox[{"Sin", "[", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"n", " ", "\[Pi]", " ", "x"}], ")"}], "/", "L"}], 
+                "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "0", ",", "L"}], "}"}], ",", 
+              RowBox[{"AccuracyGoal", "\[Rule]", "8"}]}], "]"}]}]}]}], ")"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "1", ",", "ncoeffmax"}], "}"}]}], "]"}]}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.473268373542884*^9, 3.473268441264841*^9}, {
+   3.4732686383395157`*^9, 3.473268638931332*^9}, {3.473268723268154*^9, 
+   3.473268740276464*^9}, 3.4732688266345787`*^9, 3.4732691738727207`*^9, 
+   3.473269578459836*^9, {3.473269705149004*^9, 3.473269722901613*^9}, {
+   3.4732703248673983`*^9, 3.473270342651043*^9}, {3.473270383542499*^9, 
+   3.473270396251143*^9}, {3.4732706186909313`*^9, 3.47327063210196*^9}, {
+   3.4732707606015368`*^9, 3.473270996117632*^9}, 3.4732714443316298`*^9, {
+   3.473272717250242*^9, 3.4732727730562267`*^9}, {3.473272845571073*^9, 
+   3.4732728477051363`*^9}, {3.4732730156740313`*^9, 3.473273079012635*^9}, 
+   3.473273147907776*^9, {3.473416480014574*^9, 3.473416522301907*^9}}],
+
+Cell["\<\
+Now we execute calcoeff to calculate and store the coefficients.\
+\>", "Text",
+ CellChangeTimes->{{3.47341653689616*^9, 3.473416551608193*^9}}],
+
+Cell[BoxData[
+ RowBox[{"calcoeff", ";"}]], "Input",
+ CellChangeTimes->{{3.473416555270692*^9, 3.473416557993203*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Terms and Partial Sums of Fourier Series", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+     Now we define the nth term of the Fourier cosine series, called \
+fourtermev, and the nth term of the Fourier sine series, called fourtermod.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+fourtermev[x_,n_] := 
+\tN[a[n]*Cos[(n*\[Pi]*x)/L]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+fourtermod[x_,n_] := 
+\tN[b[n]*Sin[(n*\[Pi]*x)/L]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+     The nth partial sums of both series are defined as functions of x and n.\
+\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4731002575973167`*^9, 3.473100319429006*^9}, {
+  3.4734166049069157`*^9, 3.473416617161353*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"foursumev", "[", 
+   RowBox[{"x_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{"fourtermev", "[", 
+     RowBox[{"x", ",", "k"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4731003754481792`*^9, 3.4731004121202803`*^9}, {
+  3.4734166229877167`*^9, 3.473416634147583*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"foursumod", "[", 
+   RowBox[{"x_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{"fourtermod", "[", 
+     RowBox[{"x", ",", "k"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4731003754481792`*^9, 3.4731004402566013`*^9}, {
+  3.4734166393397207`*^9, 3.473416654051888*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4. Graphs of fev[x], fod[x] and Partial Sums of Fourier Series\
+\>", "Section",
+ Evaluatable->False,
+ CellChangeTimes->{{3.47344097382187*^9, 3.47344097765273*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+     The function picev[n] gives a graph of the function fev[x] and of the \
+nth partial sum of the Fourier cosine series.  The function picod[n] gives a \
+graph of the function fod[x] and of the nth partial sum of the Fourier sine \
+series.  To get a plot of the function fev only, use picfuncev.  To get a \
+plot of the function fod only, use picfuncod.  The functions fev and fod are \
+in blue, and the partial sums of the Fourier series are in red.  The range \
+that is plotted can be user-specified, but the default which is used here \
+works for most examples.  The left end-point is lfend, the right end-point is \
+rtend.  The default, as set below, gives a half-period extension on either \
+end of the basic period.  We define a command setrange that sets up the \
+default.  It is incorporated into the graphics commands. \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4734167617326193`*^9, 3.473416794172207*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"setrange", ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"lfend", "=", 
+     RowBox[{
+      RowBox[{"-", "1.5"}], "*", "L"}]}], ";", " ", 
+    RowBox[{"rtend", "=", 
+     RowBox[{"1.5", "*", "L"}]}], ";", 
+    RowBox[{"frange", "=", 
+     RowBox[{"fmax", "-", "fmin"}]}], ";", 
+    RowBox[{"pltrange", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"lfend", ",", "rtend"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"fmin", "-", 
+          RowBox[{"0.2", "*", "frange"}]}], ",", 
+         RowBox[{"fmax", "+", 
+          RowBox[{"0.2", "*", "frange"}]}]}], "}"}]}], "}"}]}]}], 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.473275236648801*^9, 3.473275294172019*^9}}],
+
+Cell["\<\
+picfuncev := (setrange; Plot[fev[x],{x,lfend,rtend},PlotStyle ->
+\t\t{RGBColor[0,0,1],Thickness[0.004]},
+\t\tPlotRange -> pltrange,
+\tAxesLabel -> {\"x\",\"fev[x]\"},AspectRatio -> 1.0])
+\t\t\
+\>", "Input",
+ CellChangeTimes->{{3.424276227043367*^9, 3.424276236775056*^9}, {
+  3.473416912798147*^9, 3.473416946974595*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+picfuncod := (setrange; Plot[fod[x],{x,lfend,rtend},PlotStyle ->
+\t\t{RGBColor[0,0,1],Thickness[0.004]},
+\t\tPlotRange -> pltrange,
+\tAxesLabel -> {\"x\",\"fod[x]\"},AspectRatio -> 1.0]) \
+\>", "Input",
+ CellChangeTimes->{{3.4242762529831944`*^9, 3.424276261679305*^9}, {
+  3.4519053662035637`*^9, 3.451905372650679*^9}, {3.4734169559907093`*^9, 
+  3.473416975070714*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+picev[n_] := (setrange; Plot[{foursumev[x,n],fev[x]},{x,lfend,rtend},
+\tPlotStyle -> \
+{{RGBColor[1,0,0],Thickness[0.004]},{RGBColor[0,0,1],Thickness[0.004]}},
+\tPlotRange -> pltrange,
+\tAxesLabel -> {\"x\",\"fev[x]\"},AspectRatio -> 1.0,
+\tPlotLabel -> Row[{\"n =\",PaddedForm[n,2]}]])\
+\>", "Input",
+ CellChangeTimes->{{3.389637134480064*^9, 3.389637155921899*^9}, {
+  3.424276276167582*^9, 3.424276300543839*^9}, {3.451905132327298*^9, 
+  3.451905134350307*^9}, {3.473416983038827*^9, 3.473417019087388*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+picod[n_] := (setrange; Plot[{foursumod[x,n],fod[x]},{x,lfend,rtend},
+\tPlotStyle -> \
+{{RGBColor[1,0,0],Thickness[0.004]},{RGBColor[0,0,1],Thickness[0.004]}},
+\tPlotRange -> pltrange,
+\tAxesLabel -> {\"x\",\"fod[x]\"},AspectRatio -> 1.0,
+\tPlotLabel -> Row[{\"n =\",PaddedForm[n,2]}]])\
+\>", "Input",
+ CellChangeTimes->{{3.389637172806017*^9, 3.389637189889327*^9}, {
+  3.4242763102479486`*^9, 3.424276336928199*^9}, {3.451905167519071*^9, 
+  3.451905171375002*^9}, {3.473417003607214*^9, 3.473417041272327*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+     Let's try this out.  We produce first  graphs of the basic functions, \
+then graphs of the partial sums for n = 5, and then a sequence of graphs of \
+partial sums for each series, up to and including n = 5.  We produce the \
+sequences by Do loops.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["picfuncev", "Input",
+ CellChangeTimes->{3.389637205545689*^9},
+ AspectRatioFixed->True],
+
+Cell["picfuncod", "Input",
+ CellChangeTimes->{3.389637234743881*^9},
+ AspectRatioFixed->True],
+
+Cell["picev[5]", "Input",
+ CellChangeTimes->{3.389637248353694*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"picod", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{3.3896372597855864`*^9}],
+
+Cell["Do[Print[picev[n]],{n,1,5}];", "Input",
+ CellChangeTimes->{{3.389637294658*^9, 3.389637300667678*^9}},
+ AspectRatioFixed->True],
+
+Cell["Do[Print[picod[n]],{n,1,5}];", "Input",
+ CellChangeTimes->{{3.389637312403596*^9, 3.3896373174940567`*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tThe extended fod has discontinuities, and we can see from its graphs that \
+many more terms in the partial sum are needed to get a result closely \
+resembling the original fod[x].  It is possible to produce a much longer \
+sequence of graphs by this same technique, but the computation time becomes \
+large.  The problem is that our technique is very inefficient.  For each \
+graph in the sequence we are recomputing all of the previous terms.  An \
+efficient technique would store the result for partial sum k and use it to \
+compute partial sum k+1.  We develop such a technique next, and use it to \
+generate a large graph sequence.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3896373436188173`*^9, 3.389637373101894*^9}, {
+  3.451905465156829*^9, 3.4519054804442987`*^9}, {3.47310048528811*^9, 
+  3.4731004933519373`*^9}, {3.473423284510841*^9, 3.473423293069784*^9}},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. Efficient Production of a Sequence of Partial Sum Graphs", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "     Our technique is to find and save the values of the kth partial sums \
+at every plotted point.  Then to get the partial sums for k+1, we only have \
+to increment those values by the value of the new term.  Thus each succeeding \
+graph requires the evaluation of only one term in the series.  We must then \
+change our graphing technique, though, because Plot works only for functions \
+defined analytically.  For the present case, we can use ListPlot, which plots \
+a given numerical set of points.  The routines defined here are called \
+picarrayev and picarrayod, with integer arguments [first, last, grinc].  ",
+ StyleBox["First",
+  FontSlant->"Italic"],
+ " is the n value of the first partial sum in the sequence and ",
+ StyleBox["last",
+  FontSlant->"Italic"],
+ " is the last n value.  The variable ",
+ StyleBox["grinc",
+  FontSlant->"Italic"],
+ " specifies the step between displayed graphs.  All the partial sums are \
+calculated, but by choosing grinc greater than 1, you can display every \
+\"grincth\" graph.   The functions defined below are used by picarray to \
+calculate coordinate lists and to produce graphs.     "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.473423860227932*^9, 3.473423879560803*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"ListPlot", ",", 
+    RowBox[{"ImageSize", "->", "250"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.451296447840659*^9, 3.451296467499071*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"npoints", "=", "500"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4734172212991447`*^9, 3.473417227563829*^9}}],
+
+Cell["\<\
+mksumlistev[n_] := Module[{ans,x,inc,j},
+\tans = {{lfend,foursumev[lfend,n]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{x,foursumev[x,n]}],{j,1,npoints}];
+\tans]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+mksumlistod[n_] := Module[{ans,x,inc,j},
+\tans = {{lfend,foursumod[lfend,n]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{x,foursumod[x,n]}],{j,1,npoints}];
+\tans]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+mktermlistev[n_] := Module[{ans,x,inc,j},
+\tans = {{0.0,fourtermev[lfend,n]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{0.0,fourtermev[x,n]}],{j,1,npoints}];
+\tans]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+mktermlistod[n_] := Module[{ans,x,inc,j},
+\tans = {{0.0,fourtermod[lfend,n]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{0.0,fourtermod[x,n]}],{j,1,npoints}];
+\tans]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+funclistev := Module[{ans,x,inc,j},
+\tans = {{lfend,fev[lfend]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{x,fev[x]}],{j,1,npoints}];
+\tans] \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+funclistod := Module[{ans,x,inc,j},
+\tans = {{lfend,fod[lfend]}};
+\tinc = (rtend-lfend)/npoints;
+\tDo[x = lfend + j*inc; 
+\tans = Append[ans,{x,fod[x]}],{j,1,npoints}];
+\tans] \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+mkgraph[list_,rcol_,gcol_,bcol_] := (setrange; ListPlot[list,
+\tPlotJoined -> True, PlotStyle -> 
+\t{RGBColor[rcol,gcol,bcol],Thickness[0.004]},
+\tPlotRange -> pltrange,ImageSize->250])\
+\>", "Input",
+ CellChangeTimes->{{3.389637420775621*^9, 3.389637426241819*^9}, {
+  3.424276377416586*^9, 3.424276391528709*^9}, {3.451906258770874*^9, 
+  3.451906265626638*^9}, {3.473417478465159*^9, 3.473417485223851*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+picarrayev[first_,last_,grinc_] := Module[
+\t{sumlist,termlist,k,grph,grph0},setrange;
+\tsumlist = mksumlistev[first];
+\tgrph0 = mkgraph[funclistev,0,0,1];
+\tgrph = mkgraph[sumlist,1,0,0];
+\tPrint[Show[{grph0,grph},AxesLabel -> {\"x\",\"fev[x]\"},
+\tAspectRatio -> 1.0, PlotLabel -> 
+\tRow[{\"n =\",PaddedForm[first,3]}]]];
+\tDo[sumlist = sumlist+mktermlistev[k];
+\t\tIf[(Mod[k-first,grinc]== 0),
+\t\t  (grph = mkgraph[sumlist,1,0,0];
+\t\t  Print[Show[{grph0,grph},AxesLabel -> {\"x\",\"fev[x]\"},
+\t\t  AspectRatio -> 1.0, PlotLabel -> 
+\t\t  Row[{\"n =\",PaddedForm[k,2]}]]])],
+\t\t{k,first+1,last}]]\
+\>", "Input",
+ CellChangeTimes->{{3.3896374447418633`*^9, 3.389637546204002*^9}, 
+   3.389637655180128*^9, {3.389638586510748*^9, 3.3896385871815033`*^9}, {
+   3.451905226176004*^9, 3.4519052329601192`*^9}, {3.451905589326455*^9, 
+   3.451905589622175*^9}, {3.473417502688244*^9, 3.473417523224646*^9}, {
+   3.473417556249256*^9, 3.4734175600491657`*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+picarrayod[first_,last_,grinc_] := Module[
+\t{sumlist,termlist,k,grph,grph0},setrange;
+\tsumlist = mksumlistod[first];
+\tgrph0 = mkgraph[funclistod,0,0,1];
+\tgrph = mkgraph[sumlist,1,0,0];
+\tPrint[Show[{grph0,grph},AxesLabel -> {\"x\",\"fod[x]\"},
+\tAspectRatio -> 1.0, PlotLabel -> 
+\tRow[{\"n =\",PaddedForm[first,3]}]]];
+\tDo[sumlist = sumlist+mktermlistod[k];
+\t\tIf[(Mod[k-first,grinc]== 0),
+\t\t  (grph = mkgraph[sumlist,1,0,0];
+\t\t  Print[Show[{grph0,grph},AxesLabel -> {\"x\",\"fod[x]\"},
+\t\t  AspectRatio -> 1.0, PlotLabel -> 
+\t\t  Row[{\"n =\",PaddedForm[k,2]}]]])],
+\t\t{k,first+1,last}]]\
+\>", "Input",
+ CellChangeTimes->{{3.389637562683556*^9, 3.389637664884667*^9}, {
+  3.389638594615395*^9, 3.38963859573706*^9}, {3.451905239288225*^9, 
+  3.451905248048332*^9}, {3.4519055934784603`*^9, 3.4519055936942453`*^9}, {
+  3.473417530808712*^9, 3.473417565601241*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+As an example, we execute picarrayev[1,5,4] and picarrayod[1,5,4]  This will \
+start with n = 1 and then display every 4th graph up to n = 5 -- i.e., graphs \
+1 and 5, for both the cosine and sine series.  \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.451905524541019*^9, 3.4519055687176933`*^9}, {
+  3.4734175936513844`*^9, 3.4734176070024*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.451906119327037*^9, 3.4519061263434467`*^9}, {
+  3.451906213338585*^9, 3.4519062390701637`*^9}}],
+
+Cell["picarrayev[1,5,4]", "Input",
+ CellChangeTimes->{{3.47341762745984*^9, 3.473417628410398*^9}},
+ AspectRatioFixed->True],
+
+Cell["picarrayod[1,5,4]", "Input",
+ CellChangeTimes->{{3.473417642371955*^9, 3.4734176429146633`*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "     Now we use this new faster method to display the partial sums for the \
+cosine series up to n = 20, and for the sine series up to n = 51.  We display \
+every graph in the sequence by setting grinc = 1.  We collect all of the \
+graphs into a single cell.  You can animate the graph sequence by selecting \
+the cell and using the Menu option ",
+ StyleBox["Graphics -> Rendering -> Animate Selected Graphics.  ",
+  FontWeight->"Bold"]
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4731005803374233`*^9, 3.473100645282477*^9}},
+ AspectRatioFixed->True],
+
+Cell["picarrayev[1,20,1];", "Input",
+ CellChangeTimes->{{3.473418681845881*^9, 3.473418692268667*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tFor visualization in the printed version of this notebook, we show every \
+second graph of the first 9. \
+\>", "Text",
+ CellChangeTimes->{{3.3896379098598146`*^9, 3.389637967984664*^9}}],
+
+Cell[BoxData[
+ RowBox[{"picarrayev", "[", 
+  RowBox[{"1", ",", "9", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.389637972523291*^9, 3.389637991654994*^9}, {
+  3.473418722063455*^9, 3.473418722806158*^9}}],
+
+Cell[TextData[{
+ "\tNow we look at the Fourier sine series for the odd extension.  In the \
+printed version of the notebook we see only the first graph, which is the top \
+graph in the cell containing all of the graphs.  To play the graph sequence \
+as a movie, select the cell and then go to the menu item ",
+ StyleBox["Graphics->Rendering->Animate Selected Graphics",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.389638067765215*^9, 3.38963811566862*^9}, {
+  3.451906505335639*^9, 3.451906544136178*^9}, {3.473100668514638*^9, 
+  3.473100700387032*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"picarrayod", "[", 
+   RowBox[{"1", ",", "51", ",", "1"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.473418750520018*^9, 3.473418751246799*^9}}],
+
+Cell["\<\
+\tFor visualization of the sine series in the printed version of this \
+notebook, we again construct a sequence running up to n = 51, displaying \
+every 10th graph.\
+\>", "Text",
+ CellChangeTimes->{{3.389638162024828*^9, 3.389638168326433*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"picarrayod", "[", 
+   RowBox[{"1", ",", "51", ",", "10"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4734187735683126`*^9, 3.473418774023221*^9}}],
+
+Cell["\<\
+\tThe Gibbs phenomenon (the overshoot near the discontinuities) shows clearly \
+here.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6. Use of Manipulate to Visualize the Graph Sequences", "Section",
+ Evaluatable->False,
+ CellChangeTimes->{{3.473100798455545*^9, 3.473100813260903*^9}, {
+  3.4738940675150843`*^9, 3.4738940714240913`*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tWe saw in section 5 above that many lines of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code were required to define a function which would produce efficiently a \
+graph sequence of partial sums.  Here we accomplish the same thing with a \
+single command Manipulate, although to be honest we make use here also of the \
+many lines of code defined earlier in our use of Manipulate.  The power of \
+manipulate is only evident in a fully interactive mode, so you need to \
+execute this ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " notebook to appreciate what Manipulate can do.  "
+}], "Text",
+ CellChangeTimes->{{3.397233831256123*^9, 3.397233874501709*^9}, {
+   3.397233912646385*^9, 3.397234065282246*^9}, {3.397234452628986*^9, 
+   3.397234456314179*^9}, {3.397292321117763*^9, 3.3972923564625273`*^9}, {
+   3.451302337641251*^9, 3.45130233859127*^9}, {3.4730921556933107`*^9, 
+   3.473092181964679*^9}, {3.473278752262885*^9, 3.4732787940740356`*^9}, {
+   3.473361068372231*^9, 3.473361102299086*^9}, {3.473423928825083*^9, 
+   3.473423975121728*^9}, 3.473892603570051*^9}],
+
+Cell["\<\
+\t We start by modifying the earlier code for picarray[first, last, grinc] to \
+produce a Manipulate panal as an output, rather than a sequence of printed \
+graphs.  For convenience, we repeat the definition of the arguments of \
+picarray here.  The argument first is the n value of the first partial sum in \
+the sequence and the argument last is the last n value.  The variable grinc \
+specifies the step between displayed graphs.  All the partial sums are \
+calculated, but by choosing grinc greater than 1, you can display every \
+\"grincth\" graph.   Now we define two new commands, \
+manpicarrayev[first,last,grinc] and manpicarrayod[first,last,grinc].  They do \
+exactly what picarrayev and picarrayod do except that the outputs are now \
+displayed in Manipulate panels.    \
+\>", "Text",
+ CellChangeTimes->{{3.473251146535671*^9, 3.4732512780467777`*^9}, {
+  3.473251346586563*^9, 3.473251433721422*^9}, {3.473255438542667*^9, 
+  3.473255475916149*^9}, {3.473255650562291*^9, 3.473255718071369*^9}, {
+  3.47327947897248*^9, 3.473279485739173*^9}, {3.473419264976997*^9, 
+  3.473419350832006*^9}}],
+
+Cell["\<\
+manpicarrayev[first_,last_,grinc_] := DynamicModule[
+\t{sumlist,termlist,k,grph,grph0,mangraph},setrange;
+\tsumlist = mksumlistev[first];
+\tgrph0 = mkgraph[funclistev,0,0,1];
+\tgrph = mkgraph[sumlist,1,0,0];
+\tmangraph[first] = Show[{grph0,grph},AxesLabel -> {\"x\",\"fev[x]\"},
+\tAspectRatio -> 1.0, PlotLabel -> 
+\tRow[{\"n =\",PaddedForm[first,3]}]];
+\tDo[sumlist = sumlist+mktermlistev[k];
+\t\tIf[(Mod[k-first,grinc]== 0),
+\t\t  (grph = mkgraph[sumlist,1,0,0];
+\t\t  mangraph[k] = Show[{grph0,grph},AxesLabel -> {\"x\",\"fev[x]\"},
+\t\t  AspectRatio -> 1.0, PlotLabel -> 
+\t\t  Row[{\"n =\",PaddedForm[k,2]}]])],
+\t\t{k,first+1,last}]; Manipulate[mangraph[n],{n,first,last,grinc}]]\
+\>", "Input",
+ CellChangeTimes->{{3.389637562683556*^9, 3.389637664884667*^9}, {
+  3.389638594615395*^9, 3.38963859573706*^9}, {3.451905239288225*^9, 
+  3.451905248048332*^9}, {3.4519055934784603`*^9, 3.4519055936942453`*^9}, {
+  3.473417530808712*^9, 3.473417565601241*^9}, {3.473419487890629*^9, 
+  3.473419488586481*^9}, {3.473419550395788*^9, 3.4734195817884274`*^9}, {
+  3.473419628197254*^9, 3.473419645469509*^9}, {3.4734196901343403`*^9, 
+  3.473419791079939*^9}, {3.473501589703184*^9, 3.473501591772944*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+manpicarrayod[first_,last_,grinc_] := DynamicModule[
+\t{sumlist,termlist,k,grph,grph0,mangraph},setrange;
+\tsumlist = mksumlistod[first];
+\tgrph0 = mkgraph[funclistod,0,0,1];
+\tgrph = mkgraph[sumlist,1,0,0];
+\tmangraph[first] = Show[{grph0,grph},AxesLabel -> {\"x\",\"fod[x]\"},
+\tAspectRatio -> 1.0, PlotLabel -> 
+\tRow[{\"n =\",PaddedForm[first,3]}]];
+\tDo[sumlist = sumlist+mktermlistod[k];
+\t\tIf[(Mod[k-first,grinc]== 0),
+\t\t  (grph = mkgraph[sumlist,1,0,0];
+\t\t  mangraph[k] = Show[{grph0,grph},AxesLabel -> {\"x\",\"fod[x]\"},
+\t\t  AspectRatio -> 1.0, PlotLabel -> 
+\t\t  Row[{\"n =\",PaddedForm[k,2]}]])],
+\t\t{k,first+1,last}]; Manipulate[mangraph[n],{n,first,last,grinc}]]\
+\>", "Input",
+ CellChangeTimes->{{3.389637562683556*^9, 3.389637664884667*^9}, {
+  3.389638594615395*^9, 3.38963859573706*^9}, {3.451905239288225*^9, 
+  3.451905248048332*^9}, {3.4519055934784603`*^9, 3.4519055936942453`*^9}, {
+  3.473417530808712*^9, 3.473417565601241*^9}, {3.473419487890629*^9, 
+  3.473419488586481*^9}, {3.473419550395788*^9, 3.4734195817884274`*^9}, {
+  3.473419628197254*^9, 3.473419645469509*^9}, {3.4734196901343403`*^9, 
+  3.4734197262868757`*^9}, {3.4735015954850407`*^9, 3.473501597589119*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tNow we use our new commands to produce partial sum sequences for both the \
+cosine and sine series.\
+\>", "Text",
+ CellChangeTimes->{{3.473419957290559*^9, 3.4734199823946533`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"manpicarrayev", "[", 
+  RowBox[{"1", ",", "20", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4734198493428907`*^9, 3.473419860057754*^9}}],
+
+Cell[BoxData[
+ RowBox[{"manpicarrayod", "[", 
+  RowBox[{"1", ",", "51", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.473419901467177*^9, 3.473419911498507*^9}}],
+
+Cell["\<\
+The production process is quick, and both of the Manipulate panels have \
+sliders and movies which are very responsive -- no lags for computation.  \
+\>", "Text",
+ CellChangeTimes->{{3.4734200086590967`*^9, 3.473420043595683*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["7. Summary", "Section",
+ Evaluatable->False,
+ CellChangeTimes->{{3.473420160160349*^9, 3.4734201669584007`*^9}, 
+   3.473892705160391*^9},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tWe summarize the process of creating Manipulate displays of partial sums \
+of Fourier series by doing one more example.  We will obtain the displays of \
+the sine and cosine series for the base function fbas[x] = x(2 L - x), with L \
+= 2.  We define this for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", after clearing any earlier definitions. "
+}], "Text",
+ CellChangeTimes->{{3.473420495469777*^9, 3.473420552749357*^9}, {
+  3.4734207273617983`*^9, 3.473420775745565*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "fev", ",", "fod", ",", "fbasev", ",", "fbasod", ",", "a", ",", "b"}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.473420778650257*^9, 3.4734207881066217`*^9}, {
+  3.473422316583207*^9, 3.473422355574239*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbas", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "L"}], " ", "-", " ", "x"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.47342079151539*^9, 3.473420809731265*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"L", "=", "2.0"}], ";"}]], "Input",
+ CellChangeTimes->{{3.473420817842798*^9, 3.47342082166562*^9}}],
+
+Cell["\<\
+Now we define the even and odd extensions, and then extend both periodically.\
+\
+\>", "Text",
+ CellChangeTimes->{{3.473420837314797*^9, 3.473420848626729*^9}, {
+  3.4734209419646072`*^9, 3.473420957708847*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbasev", "[", "x_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ")"}], ",", 
+    RowBox[{"fbas", "[", "x", "]"}], ",", 
+    RowBox[{"fbas", "[", 
+     RowBox[{"-", "x"}], "]"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fbasod", "[", "x_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ")"}], ",", 
+    RowBox[{"fbas", "[", "x", "]"}], ",", 
+    RowBox[{"-", 
+     RowBox[{"fbas", "[", 
+      RowBox[{"-", "x"}], "]"}]}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fev", "[", "x_", "]"}], ":=", 
+  RowBox[{"fbasev", "[", 
+   RowBox[{"Mod", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"2", "*", "L"}], ",", 
+     RowBox[{"-", "L"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fod", "[", "x_", "]"}], ":=", 
+  RowBox[{"fbasod", "[", 
+   RowBox[{"Mod", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"2", "*", "L"}], ",", 
+     RowBox[{"-", "L"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell["\<\
+The function fbas has a maximum absolute value of 4 on the interval (at x = \
+L), so we assign fmin and fmax as\
+\>", "Text",
+ CellChangeTimes->{{3.473421000693322*^9, 3.4734210333738937`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fmin", "=", 
+   RowBox[{"-", "4.0"}]}], ";", 
+  RowBox[{"fmax", "=", "4.0"}], ";"}]], "Input",
+ CellChangeTimes->{{3.473421036233699*^9, 3.47342105459129*^9}}],
+
+Cell["\<\
+Now we check our work by plotting our two extended functions.\
+\>", "Text",
+ CellChangeTimes->{{3.47342106496655*^9, 3.473421077702759*^9}}],
+
+Cell[BoxData["picfuncod"], "Input",
+ CellChangeTimes->{{3.4734210831788187`*^9, 3.473421084815686*^9}, {
+  3.473422248373695*^9, 3.473422249459979*^9}}],
+
+Cell[BoxData["picfuncev"], "Input",
+ CellChangeTimes->{{3.4734223986199007`*^9, 3.473422400561718*^9}}],
+
+Cell["We calculate the Fourier coefficients.", "Text",
+ CellChangeTimes->{{3.473422424565568*^9, 3.473422444142027*^9}}],
+
+Cell[BoxData["calcoeff"], "Input",
+ CellChangeTimes->{{3.473422446991457*^9, 3.473422448374403*^9}}],
+
+Cell["\<\
+Finally we create the two Manipulate panels with up to 20 terms in the \
+partial sum of the cosine series, and up to 51 terms in the partial sum of \
+the sine series.\
+\>", "Text",
+ CellChangeTimes->{{3.4734224771359177`*^9, 3.473422576480562*^9}}],
+
+Cell[BoxData[
+ RowBox[{"manpicarrayev", "[", 
+  RowBox[{"1", ",", "20", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.473422496825809*^9, 3.47342250832014*^9}, {
+  3.473422581346286*^9, 3.473422581617567*^9}}],
+
+Cell[BoxData[
+ RowBox[{"manpicarrayod", "[", 
+  RowBox[{"1", ",", "51", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.473422612345871*^9, 3.473422624018437*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{767, 682},
+WindowMargins->{{Automatic, 218}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrivateNotebookOptions->{"ColorPalette"->{RGBColor, 128}},
+ShowCellLabel->True,
+ShowCellTags->False,
+RenderingOptions->{"ObjectDithering"->True,
+"RasterDithering"->False},
+CharacterEncoding->"MacintoshAutomaticEncoding",
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 410, 9, 170, "Title",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[1002, 35, 80, 2, 67, "Section",
+ Evaluatable->False],
+Cell[1085, 39, 1255, 20, 131, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2377, 64, 115, 2, 67, "Section",
+ Evaluatable->False],
+Cell[2495, 68, 792, 21, 74, "Text",
+ Evaluatable->False],
+Cell[3290, 91, 130, 4, 30, "Input"],
+Cell[3423, 97, 48, 1, 27, "Input"],
+Cell[3474, 100, 299, 9, 27, "Input"],
+Cell[3776, 111, 321, 10, 27, "Input"],
+Cell[4100, 123, 577, 15, 56, "Text"],
+Cell[4680, 140, 227, 7, 27, "Input"],
+Cell[4910, 149, 227, 7, 27, "Input"],
+Cell[5140, 158, 473, 10, 56, "Text"],
+Cell[5616, 170, 212, 5, 27, "Input"],
+Cell[5831, 177, 568, 15, 27, "Input"],
+Cell[6402, 194, 613, 16, 27, "Input"],
+Cell[7018, 212, 426, 9, 41, "Text",
+ Evaluatable->False],
+Cell[7447, 223, 54, 1, 27, "Input"],
+Cell[7504, 226, 53, 1, 27, "Input"],
+Cell[7560, 229, 1601, 24, 146, "Text",
+ Evaluatable->False],
+Cell[9164, 255, 183, 4, 27, "Input"],
+Cell[9350, 261, 2903, 71, 88, "Input"],
+Cell[12256, 334, 153, 3, 26, "Text"],
+Cell[12412, 339, 117, 2, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12566, 346, 108, 2, 67, "Section",
+ Evaluatable->False],
+Cell[12677, 350, 216, 5, 41, "Text",
+ Evaluatable->False],
+Cell[12896, 357, 100, 4, 40, "Input"],
+Cell[12999, 363, 100, 4, 40, "Input"],
+Cell[13102, 369, 268, 7, 26, "Text",
+ Evaluatable->False],
+Cell[13373, 378, 413, 11, 27, "Input"],
+Cell[13789, 391, 413, 11, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14239, 407, 199, 5, 67, "Section",
+ Evaluatable->False],
+Cell[14441, 414, 968, 15, 101, "Text",
+ Evaluatable->False],
+Cell[15412, 431, 746, 23, 43, "Input"],
+Cell[16161, 456, 356, 9, 79, "Input"],
+Cell[16520, 467, 407, 9, 66, "Input"],
+Cell[16930, 478, 546, 11, 79, "Input"],
+Cell[17479, 491, 548, 11, 79, "Input"],
+Cell[18030, 504, 322, 7, 41, "Text",
+ Evaluatable->False],
+Cell[18355, 513, 93, 2, 27, "Input"],
+Cell[18451, 517, 93, 2, 27, "Input"],
+Cell[18547, 521, 92, 2, 27, "Input"],
+Cell[18642, 525, 102, 2, 27, "Input"],
+Cell[18747, 529, 133, 2, 27, "Input"],
+Cell[18883, 533, 138, 2, 27, "Input"],
+Cell[19024, 537, 922, 15, 86, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19983, 557, 124, 2, 67, "Section",
+ Evaluatable->False],
+Cell[20110, 561, 1277, 24, 131, "Text",
+ Evaluatable->False],
+Cell[21390, 587, 214, 5, 27, "Input"],
+Cell[21607, 594, 143, 3, 27, "Input"],
+Cell[21753, 599, 246, 8, 92, "Input"],
+Cell[22002, 609, 246, 8, 92, "Input"],
+Cell[22251, 619, 249, 8, 92, "Input"],
+Cell[22503, 629, 249, 8, 92, "Input"],
+Cell[22755, 639, 226, 8, 92, "Input"],
+Cell[22984, 649, 226, 8, 92, "Input"],
+Cell[23213, 659, 445, 9, 66, "Input"],
+Cell[23661, 670, 994, 22, 209, "Input"],
+Cell[24658, 694, 914, 21, 209, "Input"],
+Cell[25575, 717, 393, 8, 41, "Text",
+ Evaluatable->False],
+Cell[25971, 727, 145, 2, 27, "Input"],
+Cell[26119, 731, 124, 2, 27, "Input"],
+Cell[26246, 735, 127, 2, 27, "Input"],
+Cell[26376, 739, 580, 11, 56, "Text",
+ Evaluatable->False],
+Cell[26959, 752, 127, 2, 27, "Input"],
+Cell[27089, 756, 198, 4, 23, "Text"],
+Cell[27290, 762, 211, 4, 27, "Input"],
+Cell[27504, 768, 572, 11, 56, "Text"],
+Cell[28079, 781, 182, 4, 27, "Input"],
+Cell[28264, 787, 254, 5, 38, "Text"],
+Cell[28521, 794, 185, 4, 27, "Input"],
+Cell[28709, 800, 109, 3, 26, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28855, 808, 237, 4, 67, "Section",
+ Evaluatable->False],
+Cell[29095, 814, 1116, 20, 71, "Text"],
+Cell[30214, 836, 1114, 17, 101, "Text"],
+Cell[31331, 855, 1240, 24, 209, "Input"],
+Cell[32574, 881, 1244, 24, 209, "Input"],
+Cell[33821, 907, 193, 4, 26, "Text"],
+Cell[34017, 913, 168, 3, 27, "Input"],
+Cell[34188, 918, 166, 3, 27, "Input"],
+Cell[34357, 923, 240, 4, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34634, 932, 169, 4, 67, "Section",
+ Evaluatable->False],
+Cell[34806, 938, 505, 10, 56, "Text"],
+Cell[35314, 950, 279, 7, 27, "Input"],
+Cell[35596, 959, 250, 7, 27, "Input"],
+Cell[35849, 968, 134, 3, 27, "Input"],
+Cell[35986, 973, 220, 5, 26, "Text"],
+Cell[36209, 980, 299, 9, 27, "Input"],
+Cell[36511, 991, 321, 10, 27, "Input"],
+Cell[36835, 1003, 227, 7, 27, "Input"],
+Cell[37065, 1012, 227, 7, 27, "Input"],
+Cell[37295, 1021, 203, 4, 26, "Text"],
+Cell[37501, 1027, 194, 5, 27, "Input"],
+Cell[37698, 1034, 150, 3, 26, "Text"],
+Cell[37851, 1039, 152, 2, 27, "Input"],
+Cell[38006, 1043, 103, 1, 27, "Input"],
+Cell[38112, 1046, 120, 1, 26, "Text"],
+Cell[38235, 1049, 100, 1, 27, "Input"],
+Cell[38338, 1052, 258, 5, 41, "Text"],
+Cell[38599, 1059, 214, 4, 27, "Input"],
+Cell[38816, 1065, 166, 3, 27, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

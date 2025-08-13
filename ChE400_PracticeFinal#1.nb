@@ -1,0 +1,2505 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     48832,       2495]
+NotebookOptionsPosition[     46950,       2431]
+NotebookOutlinePosition[     47373,       2447]
+CellTagsIndexPosition[     47330,       2444]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], "=", "x"}], "\[IndentingNewLine]", 
+ RowBox[{"graph2", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", 
+      RowBox[{"-", "\[Pi]"}], ",", " ", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", " ", "\"\<function\>\""}], "}"}]}], ",", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"1", ",", "0", ",", "1"}], "]"}], "}"}]}]}], "]"}]}]}], "Input"],
+
+Cell[BoxData["x"], "Output"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.151576 0.309017 0.0936792 [
+[.04527 .29652 -6 -9 ]
+[.04527 .29652 6 0 ]
+[.19685 .29652 -6 -9 ]
+[.19685 .29652 6 0 ]
+[.34842 .29652 -6 -9 ]
+[.34842 .29652 6 0 ]
+[.65158 .29652 -3 -9 ]
+[.65158 .29652 3 0 ]
+[.80315 .29652 -3 -9 ]
+[.80315 .29652 3 0 ]
+[.95473 .29652 -3 -9 ]
+[.95473 .29652 3 0 ]
+[1.025 .30902 0 -6.28125 ]
+[1.025 .30902 10 6.28125 ]
+[.4875 .02798 -12 -4.5 ]
+[.4875 .02798 0 4.5 ]
+[.4875 .12166 -12 -4.5 ]
+[.4875 .12166 0 4.5 ]
+[.4875 .21534 -12 -4.5 ]
+[.4875 .21534 0 4.5 ]
+[.4875 .4027 -6 -4.5 ]
+[.4875 .4027 0 4.5 ]
+[.4875 .49638 -6 -4.5 ]
+[.4875 .49638 0 4.5 ]
+[.4875 .59005 -6 -4.5 ]
+[.4875 .59005 0 4.5 ]
+[.5 .64303 -26 0 ]
+[.5 .64303 26 12.5625 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.04527 .30902 m
+.04527 .31527 L
+s
+[(-3)] .04527 .29652 0 1 Mshowa
+.19685 .30902 m
+.19685 .31527 L
+s
+[(-2)] .19685 .29652 0 1 Mshowa
+.34842 .30902 m
+.34842 .31527 L
+s
+[(-1)] .34842 .29652 0 1 Mshowa
+.65158 .30902 m
+.65158 .31527 L
+s
+[(1)] .65158 .29652 0 1 Mshowa
+.80315 .30902 m
+.80315 .31527 L
+s
+[(2)] .80315 .29652 0 1 Mshowa
+.95473 .30902 m
+.95473 .31527 L
+s
+[(3)] .95473 .29652 0 1 Mshowa
+.125 Mabswid
+.07559 .30902 m
+.07559 .31277 L
+s
+.1059 .30902 m
+.1059 .31277 L
+s
+.13622 .30902 m
+.13622 .31277 L
+s
+.16653 .30902 m
+.16653 .31277 L
+s
+.22716 .30902 m
+.22716 .31277 L
+s
+.25748 .30902 m
+.25748 .31277 L
+s
+.28779 .30902 m
+.28779 .31277 L
+s
+.31811 .30902 m
+.31811 .31277 L
+s
+.37874 .30902 m
+.37874 .31277 L
+s
+.40905 .30902 m
+.40905 .31277 L
+s
+.43937 .30902 m
+.43937 .31277 L
+s
+.46968 .30902 m
+.46968 .31277 L
+s
+.53032 .30902 m
+.53032 .31277 L
+s
+.56063 .30902 m
+.56063 .31277 L
+s
+.59095 .30902 m
+.59095 .31277 L
+s
+.62126 .30902 m
+.62126 .31277 L
+s
+.68189 .30902 m
+.68189 .31277 L
+s
+.71221 .30902 m
+.71221 .31277 L
+s
+.74252 .30902 m
+.74252 .31277 L
+s
+.77284 .30902 m
+.77284 .31277 L
+s
+.83347 .30902 m
+.83347 .31277 L
+s
+.86378 .30902 m
+.86378 .31277 L
+s
+.8941 .30902 m
+.8941 .31277 L
+s
+.92441 .30902 m
+.92441 .31277 L
+s
+.01496 .30902 m
+.01496 .31277 L
+s
+.98504 .30902 m
+.98504 .31277 L
+s
+.25 Mabswid
+0 .30902 m
+1 .30902 L
+s
+gsave
+1.025 .30902 -61 -10.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(x) show
+69.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+.5 .02798 m
+.50625 .02798 L
+s
+[(-3)] .4875 .02798 1 0 Mshowa
+.5 .12166 m
+.50625 .12166 L
+s
+[(-2)] .4875 .12166 1 0 Mshowa
+.5 .21534 m
+.50625 .21534 L
+s
+[(-1)] .4875 .21534 1 0 Mshowa
+.5 .4027 m
+.50625 .4027 L
+s
+[(1)] .4875 .4027 1 0 Mshowa
+.5 .49638 m
+.50625 .49638 L
+s
+[(2)] .4875 .49638 1 0 Mshowa
+.5 .59005 m
+.50625 .59005 L
+s
+[(3)] .4875 .59005 1 0 Mshowa
+.125 Mabswid
+.5 .04672 m
+.50375 .04672 L
+s
+.5 .06545 m
+.50375 .06545 L
+s
+.5 .08419 m
+.50375 .08419 L
+s
+.5 .10292 m
+.50375 .10292 L
+s
+.5 .14039 m
+.50375 .14039 L
+s
+.5 .15913 m
+.50375 .15913 L
+s
+.5 .17787 m
+.50375 .17787 L
+s
+.5 .1966 m
+.50375 .1966 L
+s
+.5 .23407 m
+.50375 .23407 L
+s
+.5 .25281 m
+.50375 .25281 L
+s
+.5 .27155 m
+.50375 .27155 L
+s
+.5 .29028 m
+.50375 .29028 L
+s
+.5 .32775 m
+.50375 .32775 L
+s
+.5 .34649 m
+.50375 .34649 L
+s
+.5 .36522 m
+.50375 .36522 L
+s
+.5 .38396 m
+.50375 .38396 L
+s
+.5 .42143 m
+.50375 .42143 L
+s
+.5 .44017 m
+.50375 .44017 L
+s
+.5 .4589 m
+.50375 .4589 L
+s
+.5 .47764 m
+.50375 .47764 L
+s
+.5 .51511 m
+.50375 .51511 L
+s
+.5 .53385 m
+.50375 .53385 L
+s
+.5 .55258 m
+.50375 .55258 L
+s
+.5 .57132 m
+.50375 .57132 L
+s
+.5 .00924 m
+.50375 .00924 L
+s
+.5 .60879 m
+.50375 .60879 L
+s
+.25 Mabswid
+.5 0 m
+.5 .61803 L
+s
+gsave
+.5 .64303 -87 -4 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(function) show
+111.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+1 0 1 r
+.5 Mabswid
+.02381 .01472 m
+.06244 .03859 L
+.10458 .06463 L
+.14415 .08909 L
+.18221 .11261 L
+.22272 .13765 L
+.26171 .16175 L
+.30316 .18736 L
+.34309 .21204 L
+.3815 .23578 L
+.42237 .26104 L
+.46172 .28536 L
+.49955 .30874 L
+.53984 .33364 L
+.57861 .3576 L
+.61984 .38308 L
+.65954 .40762 L
+.69774 .43123 L
+.73838 .45635 L
+.77751 .48053 L
+.81909 .50623 L
+.85916 .53099 L
+.89771 .55482 L
+.93871 .58016 L
+.97619 .60332 L
+s
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{288, 177.938},
+ ImageMargins->{{49, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 
+  1}},ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzdmXtTFEcUxYddEB/Bt6hAZJcFFRWf+AgRQRGkREVFRXzyVEBBA1paldIg
+MZKytFKVSvRz+AnXnQdnZnvPaWYt9Q+HYunt/t1z7+3H9ExzfujJ+NjU0JOJ
+kaHUmZmhx+MTI7OprkczuapkieOUpBzH+ZRy3HI2Vww+FpxsNuskHe9LruT+
+fvA+naWaEm7DR7+iImCzThbsM22/2rfP1VmgtYCm4a5M4+tJCJPeZ2kenrtK
+tcoGOH1IoKSZ9ybgw26pVMWY0B43k7jHio57CwK5F6ezqmRnUbwa6pNmD/yM
+pnFtXytzpHgKmhaojmgOm9Fl8seHKzUAGtTQDuLutsZ3QtMC7QJ00wx8D3F3
+XSs1QckC7QN0TUMHiOM+jR+EZp+ZQjOaLmn7I8TdBY0fhWYX1ptlVfxC1DsI
+blkpLTElSs30f0Wox62hJrXvVuK7LfAW/9ZwAoG0I0ZLwu3E6WkzuZPQPK2V
+OgCd0lCnzJHiXdC0QN2AWs3AzxJ3LVqpB0oW6DygYxrqJY4Pa/wiNA+bKVxG
+0yFtf4W426/xq9C0QP1Es0nj16HZZKZwA027tf0t4m6nxm9D09s+ylzEsrbu
+EvVaglskBuFRGkaTHgbuPTV8yQ1hlARdVZzEGKLYigAtd4P7wLeZ+UyQYKq1
+0iSULNDD/Og4NE0cV2r8ETQrzRR+Q9NGbT9L3K3T+CY4yWCYM5iR4ZMvk6gD
+l4ZtPfTqfQd+qAU7QB3R207q1pJ0VhOuntSlJVcQTsYvsHFhkTaQunUk0gr0
+BrOIq+xzftrymb0KrWyV1lhb12OYK0gr69pMzNDTMSZBQTUTWpzx0d5dWdQ8
+EGOupkK4MMIp3YDSZvQYCyJjtQ0WxguSUbleqC/hsRxKwX1hDk2WW+M8IMvt
+9jWg4Ka8yLyBz0iDe/3kf3sDw78NdffyZ5Wf3Su3wiNfuqUVJJhAcxVpYgmy
+Gc24uHU/ll7+/M79MPMfK+Vvq7diiaWwEFjmdbvf9c5/UYScuXjr4t8IlPfA
+E71T/KOVyqBkgcqJ5juNL4emBVoJ6K2ZAjtxW9BKFVCyQGsA/aUhtivPazzc
+CefNFMLDszltX0ncvdB4uI1YoK2AftdQNXH83EwhPP16rpW2EaWnGq+FZgD9
+4f6R7zNp4P6DqvOKQMwwQ8J6vIREdOPNVS+Fi8fRqMep4iR2wHdgOIew2K2l
+kXicNAdxNzSjTYYSO5C7r/HwQM4C7SOaoxrfD81RM4VDaBrW9uGB3KCGjgC6
+o6FjgG5piJ2cDZiBH4fSgFZqBdSvoTbi7orG26FpgU4BumwGzs6terVSJ5QC
+yFvU8v3hDFE/FzGMsat2E4meyJphG7iX2VmE2lPc2uwhHrujQcc6tTwH992R
+aOUKv0Ccdupx6IV6FPLUw3O1Dm3fB+ikhsLTtDYN9QNq1dAAya7FDPwmlFq0
+EjtNO6rx8DTNAt0lms0aH4Rms5nCCFE6oJVGoGSBxojmXo3fg6YFGge0x0zh
+AXHXqJUeQKkxzjSfIurbi15b03Aa2No3+vB4LHjDnic4+9fmDIk2XXS0s3Cf
+jtNFT4HX6m5/RiKrMYfyo7aP+b9x3uR9SX//sveY5nW5N7bL3FIC2XqlJFoT
+GA6jLkFK/vzxJwqdFwUDba1me4yYKoWvg0Wqz3370Nkm/bXiDsc06JDFa3Fo
+jHdpY1iNVjb84VB7bv7U/cUOz//38Rko1RDovX3eOiWfAdS8Oc4=\
+\>"],ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-3.49206, -3.29871, \
+0.0258089, 0.0417596}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"datalist", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "\[Pi]"}], ",", 
+      RowBox[{"-", "\[Pi]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", ".5"}], ",", 
+      RowBox[{"-", ".5"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{".5", ",", ".5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Pi]", ",", "\[Pi]"}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"graph9", "=", 
+  RowBox[{"ListPlot", "[", "datalist", "]"}]}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[Pi]"}], ",", 
+     RowBox[{"-", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5`"}], ",", 
+     RowBox[{"-", "0.5`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.5`", ",", "0.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Pi]", ",", "\[Pi]"}], "}"}]}], "}"}]], "Output"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.151576 0.309017 0.0936792 [
+[.04527 .29652 -6 -9 ]
+[.04527 .29652 6 0 ]
+[.19685 .29652 -6 -9 ]
+[.19685 .29652 6 0 ]
+[.34842 .29652 -6 -9 ]
+[.34842 .29652 6 0 ]
+[.65158 .29652 -3 -9 ]
+[.65158 .29652 3 0 ]
+[.80315 .29652 -3 -9 ]
+[.80315 .29652 3 0 ]
+[.95473 .29652 -3 -9 ]
+[.95473 .29652 3 0 ]
+[.4875 .02798 -12 -4.5 ]
+[.4875 .02798 0 4.5 ]
+[.4875 .12166 -12 -4.5 ]
+[.4875 .12166 0 4.5 ]
+[.4875 .21534 -12 -4.5 ]
+[.4875 .21534 0 4.5 ]
+[.4875 .4027 -6 -4.5 ]
+[.4875 .4027 0 4.5 ]
+[.4875 .49638 -6 -4.5 ]
+[.4875 .49638 0 4.5 ]
+[.4875 .59005 -6 -4.5 ]
+[.4875 .59005 0 4.5 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.04527 .30902 m
+.04527 .31527 L
+s
+[(-3)] .04527 .29652 0 1 Mshowa
+.19685 .30902 m
+.19685 .31527 L
+s
+[(-2)] .19685 .29652 0 1 Mshowa
+.34842 .30902 m
+.34842 .31527 L
+s
+[(-1)] .34842 .29652 0 1 Mshowa
+.65158 .30902 m
+.65158 .31527 L
+s
+[(1)] .65158 .29652 0 1 Mshowa
+.80315 .30902 m
+.80315 .31527 L
+s
+[(2)] .80315 .29652 0 1 Mshowa
+.95473 .30902 m
+.95473 .31527 L
+s
+[(3)] .95473 .29652 0 1 Mshowa
+.125 Mabswid
+.07559 .30902 m
+.07559 .31277 L
+s
+.1059 .30902 m
+.1059 .31277 L
+s
+.13622 .30902 m
+.13622 .31277 L
+s
+.16653 .30902 m
+.16653 .31277 L
+s
+.22716 .30902 m
+.22716 .31277 L
+s
+.25748 .30902 m
+.25748 .31277 L
+s
+.28779 .30902 m
+.28779 .31277 L
+s
+.31811 .30902 m
+.31811 .31277 L
+s
+.37874 .30902 m
+.37874 .31277 L
+s
+.40905 .30902 m
+.40905 .31277 L
+s
+.43937 .30902 m
+.43937 .31277 L
+s
+.46968 .30902 m
+.46968 .31277 L
+s
+.53032 .30902 m
+.53032 .31277 L
+s
+.56063 .30902 m
+.56063 .31277 L
+s
+.59095 .30902 m
+.59095 .31277 L
+s
+.62126 .30902 m
+.62126 .31277 L
+s
+.68189 .30902 m
+.68189 .31277 L
+s
+.71221 .30902 m
+.71221 .31277 L
+s
+.74252 .30902 m
+.74252 .31277 L
+s
+.77284 .30902 m
+.77284 .31277 L
+s
+.83347 .30902 m
+.83347 .31277 L
+s
+.86378 .30902 m
+.86378 .31277 L
+s
+.8941 .30902 m
+.8941 .31277 L
+s
+.92441 .30902 m
+.92441 .31277 L
+s
+.01496 .30902 m
+.01496 .31277 L
+s
+.98504 .30902 m
+.98504 .31277 L
+s
+.25 Mabswid
+0 .30902 m
+1 .30902 L
+s
+.5 .02798 m
+.50625 .02798 L
+s
+[(-3)] .4875 .02798 1 0 Mshowa
+.5 .12166 m
+.50625 .12166 L
+s
+[(-2)] .4875 .12166 1 0 Mshowa
+.5 .21534 m
+.50625 .21534 L
+s
+[(-1)] .4875 .21534 1 0 Mshowa
+.5 .4027 m
+.50625 .4027 L
+s
+[(1)] .4875 .4027 1 0 Mshowa
+.5 .49638 m
+.50625 .49638 L
+s
+[(2)] .4875 .49638 1 0 Mshowa
+.5 .59005 m
+.50625 .59005 L
+s
+[(3)] .4875 .59005 1 0 Mshowa
+.125 Mabswid
+.5 .04672 m
+.50375 .04672 L
+s
+.5 .06545 m
+.50375 .06545 L
+s
+.5 .08419 m
+.50375 .08419 L
+s
+.5 .10292 m
+.50375 .10292 L
+s
+.5 .14039 m
+.50375 .14039 L
+s
+.5 .15913 m
+.50375 .15913 L
+s
+.5 .17787 m
+.50375 .17787 L
+s
+.5 .1966 m
+.50375 .1966 L
+s
+.5 .23407 m
+.50375 .23407 L
+s
+.5 .25281 m
+.50375 .25281 L
+s
+.5 .27155 m
+.50375 .27155 L
+s
+.5 .29028 m
+.50375 .29028 L
+s
+.5 .32775 m
+.50375 .32775 L
+s
+.5 .34649 m
+.50375 .34649 L
+s
+.5 .36522 m
+.50375 .36522 L
+s
+.5 .38396 m
+.50375 .38396 L
+s
+.5 .42143 m
+.50375 .42143 L
+s
+.5 .44017 m
+.50375 .44017 L
+s
+.5 .4589 m
+.50375 .4589 L
+s
+.5 .47764 m
+.50375 .47764 L
+s
+.5 .51511 m
+.50375 .51511 L
+s
+.5 .53385 m
+.50375 .53385 L
+s
+.5 .55258 m
+.50375 .55258 L
+s
+.5 .57132 m
+.50375 .57132 L
+s
+.5 .00924 m
+.50375 .00924 L
+s
+.5 .60879 m
+.50375 .60879 L
+s
+.25 Mabswid
+.5 0 m
+.5 .61803 L
+s
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+.008 w
+.02381 .01472 Mdot
+.42421 .26218 Mdot
+.5 .30902 Mdot
+.57579 .35586 Mdot
+.97619 .60332 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{288, 177.938},
+ ImageMargins->{{43, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 
+  1}},ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJztWM1OwkAQntqWkAjV6ANYD0jB99CTD9EQEzgYDXLh5kXQiz6LT1i73bpa
+/Lbbsi1dSEnYLvPzzdedmW3Zu3AxvX8IF7NJ6N/Ow6fpbPLs3zzOY5FtEVk+
+EX35xOZRPE2HT4qiiGxKfsQz9v1IRlKpjpiCG1EH2K7k/iXNc5isBROEmRpx
+aCejij+u3OMNqBw2JqLU6IVdHBmSXSWfQrdZJmEaed/D4Kby0g++yq3BTL1l
+VTl1tAYqV178jqxXjCr+wy2BfQ1ef1+4svJU7fKVPBRK9kVJMm1TEC2B6rwy
+8xPBJBA5DURZDYDjldAOsx4JisdhvTSzfx1/PDbwroFsIPBGQItQAhywzyen
+BVHGMi4wmlqG2Pc4pa5YPPRQuMhtsMtcbVHCiBySHRdI6T+xzkpKICXi/mYh
+j8RsLGYo2UNg9+vrKRuz0R0kuXWfDRYXoEpAmyaqNmRXVKaDZ5KvK7LZNZzp
+Lnx18Ph/wrQvt9uGdPZXZNdT9pOpfV4jrzMgW1Zmbszi1Rq8sTfwqjBrfO8+
+wJZpgytaoYlDmpK13Z5L7ji4qbz0gzd5Lv8OjMw4jX8Fss725vppIusblBLv
+0Q==\
+\>"],ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-3.30686, -3.29871, \
+0.0230443, 0.0372864}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["b", "1"], "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"2", "/", "\[Pi]"}], ")"}], "*", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"1", "*", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData["2"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["b", "2"], "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"2", "/", "\[Pi]"}], ")"}], "*", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "*", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["b", "3"], "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"2", "/", "\[Pi]"}], ")"}], "*", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"3", "*", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["2", "3"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["b", "4"], "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"2", "/", "\[Pi]"}], ")"}], "*", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "*", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["1", "2"]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["b", "5"], "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"2", "/", "\[Pi]"}], ")"}], "*", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"5", "*", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["2", "5"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "1"}], "5"], 
+   RowBox[{
+    SubscriptBox["b", "k"], "*", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"k", "*", "x"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"2", " ", 
+   RowBox[{"Sin", "[", "x", "]"}]}], "-", 
+  RowBox[{"Sin", "[", 
+   RowBox[{"2", " ", "x"}], "]"}], "+", 
+  RowBox[{
+   FractionBox["2", "3"], " ", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"3", " ", "x"}], "]"}]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"4", " ", "x"}], "]"}]}], "+", 
+  RowBox[{
+   FractionBox["2", "5"], " ", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"5", " ", "x"}], "]"}]}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"graph3", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"k", "=", "1"}], "5"], 
+     RowBox[{
+      SubscriptBox["b", "k"], "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k", "*", "x"}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", 
+      RowBox[{"-", "\[Pi]"}], ",", " ", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", " ", "\"\<function\>\""}], "}"}]}], ",", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0", ",", "1"}], "]"}], "}"}]}]}], "]"}]}]], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.151576 0.309025 0.0929684 [
+[.04527 .29653 -6 -9 ]
+[.04527 .29653 6 0 ]
+[.19685 .29653 -6 -9 ]
+[.19685 .29653 6 0 ]
+[.34842 .29653 -6 -9 ]
+[.34842 .29653 6 0 ]
+[.65158 .29653 -3 -9 ]
+[.65158 .29653 3 0 ]
+[.80315 .29653 -3 -9 ]
+[.80315 .29653 3 0 ]
+[.95473 .29653 -3 -9 ]
+[.95473 .29653 3 0 ]
+[1.025 .30903 0 -6.28125 ]
+[1.025 .30903 10 6.28125 ]
+[.4875 .03012 -12 -4.5 ]
+[.4875 .03012 0 4.5 ]
+[.4875 .12309 -12 -4.5 ]
+[.4875 .12309 0 4.5 ]
+[.4875 .21606 -12 -4.5 ]
+[.4875 .21606 0 4.5 ]
+[.4875 .40199 -6 -4.5 ]
+[.4875 .40199 0 4.5 ]
+[.4875 .49496 -6 -4.5 ]
+[.4875 .49496 0 4.5 ]
+[.4875 .58793 -6 -4.5 ]
+[.4875 .58793 0 4.5 ]
+[.5 .64303 -26 0 ]
+[.5 .64303 26 12.5625 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.04527 .30903 m
+.04527 .31528 L
+s
+[(-3)] .04527 .29653 0 1 Mshowa
+.19685 .30903 m
+.19685 .31528 L
+s
+[(-2)] .19685 .29653 0 1 Mshowa
+.34842 .30903 m
+.34842 .31528 L
+s
+[(-1)] .34842 .29653 0 1 Mshowa
+.65158 .30903 m
+.65158 .31528 L
+s
+[(1)] .65158 .29653 0 1 Mshowa
+.80315 .30903 m
+.80315 .31528 L
+s
+[(2)] .80315 .29653 0 1 Mshowa
+.95473 .30903 m
+.95473 .31528 L
+s
+[(3)] .95473 .29653 0 1 Mshowa
+.125 Mabswid
+.07559 .30903 m
+.07559 .31278 L
+s
+.1059 .30903 m
+.1059 .31278 L
+s
+.13622 .30903 m
+.13622 .31278 L
+s
+.16653 .30903 m
+.16653 .31278 L
+s
+.22716 .30903 m
+.22716 .31278 L
+s
+.25748 .30903 m
+.25748 .31278 L
+s
+.28779 .30903 m
+.28779 .31278 L
+s
+.31811 .30903 m
+.31811 .31278 L
+s
+.37874 .30903 m
+.37874 .31278 L
+s
+.40905 .30903 m
+.40905 .31278 L
+s
+.43937 .30903 m
+.43937 .31278 L
+s
+.46968 .30903 m
+.46968 .31278 L
+s
+.53032 .30903 m
+.53032 .31278 L
+s
+.56063 .30903 m
+.56063 .31278 L
+s
+.59095 .30903 m
+.59095 .31278 L
+s
+.62126 .30903 m
+.62126 .31278 L
+s
+.68189 .30903 m
+.68189 .31278 L
+s
+.71221 .30903 m
+.71221 .31278 L
+s
+.74252 .30903 m
+.74252 .31278 L
+s
+.77284 .30903 m
+.77284 .31278 L
+s
+.83347 .30903 m
+.83347 .31278 L
+s
+.86378 .30903 m
+.86378 .31278 L
+s
+.8941 .30903 m
+.8941 .31278 L
+s
+.92441 .30903 m
+.92441 .31278 L
+s
+.01496 .30903 m
+.01496 .31278 L
+s
+.98504 .30903 m
+.98504 .31278 L
+s
+.25 Mabswid
+0 .30903 m
+1 .30903 L
+s
+gsave
+1.025 .30903 -61 -10.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(x) show
+69.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+.5 .03012 m
+.50625 .03012 L
+s
+[(-3)] .4875 .03012 1 0 Mshowa
+.5 .12309 m
+.50625 .12309 L
+s
+[(-2)] .4875 .12309 1 0 Mshowa
+.5 .21606 m
+.50625 .21606 L
+s
+[(-1)] .4875 .21606 1 0 Mshowa
+.5 .40199 m
+.50625 .40199 L
+s
+[(1)] .4875 .40199 1 0 Mshowa
+.5 .49496 m
+.50625 .49496 L
+s
+[(2)] .4875 .49496 1 0 Mshowa
+.5 .58793 m
+.50625 .58793 L
+s
+[(3)] .4875 .58793 1 0 Mshowa
+.125 Mabswid
+.5 .04871 m
+.50375 .04871 L
+s
+.5 .06731 m
+.50375 .06731 L
+s
+.5 .0859 m
+.50375 .0859 L
+s
+.5 .1045 m
+.50375 .1045 L
+s
+.5 .14168 m
+.50375 .14168 L
+s
+.5 .16028 m
+.50375 .16028 L
+s
+.5 .17887 m
+.50375 .17887 L
+s
+.5 .19746 m
+.50375 .19746 L
+s
+.5 .23465 m
+.50375 .23465 L
+s
+.5 .25324 m
+.50375 .25324 L
+s
+.5 .27184 m
+.50375 .27184 L
+s
+.5 .29043 m
+.50375 .29043 L
+s
+.5 .32762 m
+.50375 .32762 L
+s
+.5 .34621 m
+.50375 .34621 L
+s
+.5 .36481 m
+.50375 .36481 L
+s
+.5 .3834 m
+.50375 .3834 L
+s
+.5 .42059 m
+.50375 .42059 L
+s
+.5 .43918 m
+.50375 .43918 L
+s
+.5 .45777 m
+.50375 .45777 L
+s
+.5 .47637 m
+.50375 .47637 L
+s
+.5 .51356 m
+.50375 .51356 L
+s
+.5 .53215 m
+.50375 .53215 L
+s
+.5 .55074 m
+.50375 .55074 L
+s
+.5 .56934 m
+.50375 .56934 L
+s
+.5 .01153 m
+.50375 .01153 L
+s
+.5 .60652 m
+.50375 .60652 L
+s
+.25 Mabswid
+.5 0 m
+.5 .61803 L
+s
+gsave
+.5 .64303 -87 -4 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(function) show
+111.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+0 0 1 r
+.5 Mabswid
+.02381 .30903 m
+.04262 .19688 L
+.06244 .0987 L
+.07286 .06084 L
+.07784 .04663 L
+.08255 .03562 L
+.08523 .03043 L
+.08813 .02566 L
+.09054 .02237 L
+.0932 .01944 L
+.09607 .01708 L
+.09764 .01614 L
+.0984 .01577 L
+.09912 .01548 L
+.09977 .01525 L
+.10049 .01505 L
+.10175 .01481 L
+.10246 .01474 L
+.10322 .01472 L
+.10393 .01474 L
+.10458 .0148 L
+.10578 .01502 L
+.1069 .01533 L
+.10813 .0158 L
+.10945 .01644 L
+.11215 .01818 L
+.1146 .02024 L
+.11934 .02541 L
+.12383 .03158 L
+.14465 .07081 L
+.16287 .10843 L
+.17324 .12678 L
+.18298 .14048 L
+.18761 .14562 L
+.19249 .15004 L
+.19505 .15195 L
+.19784 .15373 L
+.20037 .15506 L
+.20275 .15608 L
+.20551 .157 L
+.20801 .15759 L
+.20942 .15783 L
+.21071 .158 L
+.21139 .15806 L
+.21213 .15812 L
+.21291 .15816 L
+.21363 .15818 L
+.21494 .15818 L
+.21618 .15813 L
+.2173 .15806 L
+Mistroke
+.21851 .15795 L
+.21983 .15779 L
+.22124 .15757 L
+.22376 .15709 L
+.24377 .15109 L
+.24925 .14957 L
+.25225 .1489 L
+.25504 .14841 L
+.25626 .14825 L
+.25742 .14811 L
+.25807 .14805 L
+.25876 .148 L
+.25998 .14792 L
+.26063 .1479 L
+.26134 .14788 L
+.26209 .14788 L
+.26279 .14789 L
+.26404 .14794 L
+.26475 .14798 L
+.26539 .14803 L
+.26662 .14816 L
+.26774 .14831 L
+.27024 .14878 L
+.27255 .14937 L
+.27474 .15006 L
+.27964 .15214 L
+.28495 .1552 L
+.29565 .16382 L
+.30551 .17426 L
+.32591 .20046 L
+.34497 .22489 L
+.35436 .23507 L
+.36327 .24296 L
+.36818 .24651 L
+.37354 .2497 L
+.37804 .25185 L
+.38291 .25365 L
+.38543 .25438 L
+.38774 .25494 L
+.3901 .25541 L
+.39229 .25576 L
+.3947 .25606 L
+.39608 .2562 L
+.39734 .25629 L
+.39857 .25637 L
+.39991 .25644 L
+.40064 .25646 L
+.40132 .25649 L
+.40197 .2565 L
+.40266 .25651 L
+Mistroke
+.40396 .25653 L
+.40514 .25653 L
+.4058 .25653 L
+.40652 .25652 L
+.40782 .2565 L
+.40903 .25648 L
+.41033 .25645 L
+.41265 .25639 L
+.41562 .25632 L
+.41708 .25629 L
+.41772 .25628 L
+.41842 .25627 L
+.41965 .25626 L
+.42094 .25625 L
+.42162 .25626 L
+.42234 .25626 L
+.42366 .25629 L
+.42488 .25632 L
+.42557 .25635 L
+.42622 .25638 L
+.42764 .25646 L
+.42895 .25655 L
+.4313 .25678 L
+.43384 .25711 L
+.43642 .25755 L
+.43923 .25816 L
+.44491 .25985 L
+.44995 .26191 L
+.45534 .26472 L
+.46504 .27142 L
+.47529 .28065 L
+.4864 .29267 L
+.50655 .31703 L
+.52605 .33872 L
+.53713 .34831 L
+.54245 .35199 L
+.54749 .35489 L
+.55225 .35711 L
+.55743 .35898 L
+.55971 .35962 L
+.56214 .36021 L
+.56441 .36066 L
+.5665 .36099 L
+.56916 .36132 L
+.57055 .36146 L
+.57203 .36157 L
+.57331 .36165 L
+.5745 .36171 L
+.57581 .36175 L
+.57655 .36177 L
+Mistroke
+.57722 .36178 L
+.57846 .36179 L
+.57961 .3618 L
+.58087 .36179 L
+.5815 .36178 L
+.5822 .36177 L
+.58337 .36175 L
+.58464 .36173 L
+.58692 .36167 L
+.58945 .3616 L
+.59084 .36157 L
+.59215 .36155 L
+.59338 .36153 L
+.59407 .36153 L
+.5947 .36152 L
+.59583 .36152 L
+.59701 .36153 L
+.59833 .36156 L
+.59906 .36158 L
+.59973 .3616 L
+.60104 .36166 L
+.60227 .36173 L
+.60371 .36184 L
+.60503 .36196 L
+.60804 .36233 L
+.61043 .36273 L
+.61267 .3632 L
+.61778 .36463 L
+.62276 .36655 L
+.62813 .36927 L
+.63769 .37585 L
+.64816 .38554 L
+.66926 .41112 L
+.6905 .43902 L
+.70054 .45046 L
+.7098 .45902 L
+.71439 .46241 L
+.71944 .46543 L
+.72451 .46771 L
+.72728 .46864 L
+.72988 .4693 L
+.73105 .46953 L
+.73233 .46975 L
+.73345 .4699 L
+.73465 .47002 L
+.73584 .47011 L
+.73692 .47015 L
+.738 .47017 L
+.73902 .47016 L
+.74021 .47012 L
+Mistroke
+.74148 .47004 L
+.74255 .46994 L
+.74374 .4698 L
+.74638 .46941 L
+.74884 .46892 L
+.7675 .46334 L
+.77262 .46184 L
+.77542 .46114 L
+.77804 .4606 L
+.78027 .46025 L
+.78153 .4601 L
+.78268 .45999 L
+.78387 .45991 L
+.78517 .45987 L
+.78582 .45987 L
+.78652 .45988 L
+.78779 .45993 L
+.78848 .45998 L
+.78922 .46005 L
+.79054 .46021 L
+.79196 .46045 L
+.79352 .4608 L
+.79632 .46163 L
+.79894 .46267 L
+.80382 .46534 L
+.80906 .4693 L
+.81446 .47461 L
+.81958 .4808 L
+.82919 .49525 L
+.84737 .53036 L
+.85773 .55224 L
+.86747 .57168 L
+.87697 .58764 L
+.88231 .59461 L
+.88485 .59729 L
+.88721 .59938 L
+.88957 .60105 L
+.89078 .60174 L
+.89209 .60235 L
+.89284 .60263 L
+.89353 .60285 L
+.89418 .60302 L
+.89489 .60317 L
+.89613 .60331 L
+.89743 .60332 L
+.89815 .60326 L
+.89883 .60315 L
+.90012 .60284 L
+.90083 .60259 L
+.90149 .60233 L
+Mistroke
+.903 .60156 L
+.90552 .59977 L
+.90821 .59715 L
+.91082 .59391 L
+.91357 .58971 L
+.9185 .58018 L
+.9238 .56702 L
+.92963 .54917 L
+.9498 .46214 L
+.97619 .30903 L
+Mfstroke
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{288, 177.938},
+ ImageMargins->{{43, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 
+  1}},ImageCache->GraphicsData["CompressedBitmap", "\<\
+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
+pd/99VaN/AMQP/Jp\
+\>"],ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-3.49206, -3.32401, \
+0.0258089, 0.0420789}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"graph2", ",", "graph3"}], "]"}]], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.151576 0.309025 0.0929684 [
+[.04527 .29653 -6 -9 ]
+[.04527 .29653 6 0 ]
+[.19685 .29653 -6 -9 ]
+[.19685 .29653 6 0 ]
+[.34842 .29653 -6 -9 ]
+[.34842 .29653 6 0 ]
+[.65158 .29653 -3 -9 ]
+[.65158 .29653 3 0 ]
+[.80315 .29653 -3 -9 ]
+[.80315 .29653 3 0 ]
+[.95473 .29653 -3 -9 ]
+[.95473 .29653 3 0 ]
+[1.025 .30903 0 -6.28125 ]
+[1.025 .30903 10 6.28125 ]
+[.4875 .03012 -12 -4.5 ]
+[.4875 .03012 0 4.5 ]
+[.4875 .12309 -12 -4.5 ]
+[.4875 .12309 0 4.5 ]
+[.4875 .21606 -12 -4.5 ]
+[.4875 .21606 0 4.5 ]
+[.4875 .40199 -6 -4.5 ]
+[.4875 .40199 0 4.5 ]
+[.4875 .49496 -6 -4.5 ]
+[.4875 .49496 0 4.5 ]
+[.4875 .58793 -6 -4.5 ]
+[.4875 .58793 0 4.5 ]
+[.5 .64303 -26 0 ]
+[.5 .64303 26 12.5625 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.04527 .30903 m
+.04527 .31528 L
+s
+[(-3)] .04527 .29653 0 1 Mshowa
+.19685 .30903 m
+.19685 .31528 L
+s
+[(-2)] .19685 .29653 0 1 Mshowa
+.34842 .30903 m
+.34842 .31528 L
+s
+[(-1)] .34842 .29653 0 1 Mshowa
+.65158 .30903 m
+.65158 .31528 L
+s
+[(1)] .65158 .29653 0 1 Mshowa
+.80315 .30903 m
+.80315 .31528 L
+s
+[(2)] .80315 .29653 0 1 Mshowa
+.95473 .30903 m
+.95473 .31528 L
+s
+[(3)] .95473 .29653 0 1 Mshowa
+.125 Mabswid
+.07559 .30903 m
+.07559 .31278 L
+s
+.1059 .30903 m
+.1059 .31278 L
+s
+.13622 .30903 m
+.13622 .31278 L
+s
+.16653 .30903 m
+.16653 .31278 L
+s
+.22716 .30903 m
+.22716 .31278 L
+s
+.25748 .30903 m
+.25748 .31278 L
+s
+.28779 .30903 m
+.28779 .31278 L
+s
+.31811 .30903 m
+.31811 .31278 L
+s
+.37874 .30903 m
+.37874 .31278 L
+s
+.40905 .30903 m
+.40905 .31278 L
+s
+.43937 .30903 m
+.43937 .31278 L
+s
+.46968 .30903 m
+.46968 .31278 L
+s
+.53032 .30903 m
+.53032 .31278 L
+s
+.56063 .30903 m
+.56063 .31278 L
+s
+.59095 .30903 m
+.59095 .31278 L
+s
+.62126 .30903 m
+.62126 .31278 L
+s
+.68189 .30903 m
+.68189 .31278 L
+s
+.71221 .30903 m
+.71221 .31278 L
+s
+.74252 .30903 m
+.74252 .31278 L
+s
+.77284 .30903 m
+.77284 .31278 L
+s
+.83347 .30903 m
+.83347 .31278 L
+s
+.86378 .30903 m
+.86378 .31278 L
+s
+.8941 .30903 m
+.8941 .31278 L
+s
+.92441 .30903 m
+.92441 .31278 L
+s
+.01496 .30903 m
+.01496 .31278 L
+s
+.98504 .30903 m
+.98504 .31278 L
+s
+.25 Mabswid
+0 .30903 m
+1 .30903 L
+s
+gsave
+1.025 .30903 -61 -10.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(x) show
+69.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+.5 .03012 m
+.50625 .03012 L
+s
+[(-3)] .4875 .03012 1 0 Mshowa
+.5 .12309 m
+.50625 .12309 L
+s
+[(-2)] .4875 .12309 1 0 Mshowa
+.5 .21606 m
+.50625 .21606 L
+s
+[(-1)] .4875 .21606 1 0 Mshowa
+.5 .40199 m
+.50625 .40199 L
+s
+[(1)] .4875 .40199 1 0 Mshowa
+.5 .49496 m
+.50625 .49496 L
+s
+[(2)] .4875 .49496 1 0 Mshowa
+.5 .58793 m
+.50625 .58793 L
+s
+[(3)] .4875 .58793 1 0 Mshowa
+.125 Mabswid
+.5 .04871 m
+.50375 .04871 L
+s
+.5 .06731 m
+.50375 .06731 L
+s
+.5 .0859 m
+.50375 .0859 L
+s
+.5 .1045 m
+.50375 .1045 L
+s
+.5 .14168 m
+.50375 .14168 L
+s
+.5 .16028 m
+.50375 .16028 L
+s
+.5 .17887 m
+.50375 .17887 L
+s
+.5 .19746 m
+.50375 .19746 L
+s
+.5 .23465 m
+.50375 .23465 L
+s
+.5 .25324 m
+.50375 .25324 L
+s
+.5 .27184 m
+.50375 .27184 L
+s
+.5 .29043 m
+.50375 .29043 L
+s
+.5 .32762 m
+.50375 .32762 L
+s
+.5 .34621 m
+.50375 .34621 L
+s
+.5 .36481 m
+.50375 .36481 L
+s
+.5 .3834 m
+.50375 .3834 L
+s
+.5 .42059 m
+.50375 .42059 L
+s
+.5 .43918 m
+.50375 .43918 L
+s
+.5 .45777 m
+.50375 .45777 L
+s
+.5 .47637 m
+.50375 .47637 L
+s
+.5 .51356 m
+.50375 .51356 L
+s
+.5 .53215 m
+.50375 .53215 L
+s
+.5 .55074 m
+.50375 .55074 L
+s
+.5 .56934 m
+.50375 .56934 L
+s
+.5 .01153 m
+.50375 .01153 L
+s
+.5 .60652 m
+.50375 .60652 L
+s
+.25 Mabswid
+.5 0 m
+.5 .61803 L
+s
+gsave
+.5 .64303 -87 -4 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(function) show
+111.000 12.813 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+1 0 1 r
+.5 Mabswid
+.02381 .01696 m
+.06244 .04065 L
+.10458 .0665 L
+.14415 .09077 L
+.18221 .11411 L
+.22272 .13896 L
+.26171 .16287 L
+.30316 .18829 L
+.34309 .21278 L
+.3815 .23634 L
+.42237 .26141 L
+.46172 .28554 L
+.49955 .30875 L
+.53984 .33346 L
+.57861 .35724 L
+.61984 .38253 L
+.65954 .40688 L
+.69774 .43031 L
+.73838 .45524 L
+.77751 .47924 L
+.81909 .50474 L
+.85916 .52931 L
+.89771 .55296 L
+.93871 .57811 L
+.97619 .60109 L
+s
+0 0 1 r
+.02381 .30903 m
+.04262 .19688 L
+.06244 .0987 L
+.07286 .06084 L
+.07784 .04663 L
+.08255 .03562 L
+.08523 .03043 L
+.08813 .02566 L
+.09054 .02237 L
+.0932 .01944 L
+.09607 .01708 L
+.09764 .01614 L
+.0984 .01577 L
+.09912 .01548 L
+.09977 .01525 L
+.10049 .01505 L
+.10175 .01481 L
+.10246 .01474 L
+.10322 .01472 L
+.10393 .01474 L
+.10458 .0148 L
+.10578 .01502 L
+.1069 .01533 L
+.10813 .0158 L
+.10945 .01644 L
+.11215 .01818 L
+.1146 .02024 L
+.11934 .02541 L
+.12383 .03158 L
+.14465 .07081 L
+.16287 .10843 L
+.17324 .12678 L
+.18298 .14048 L
+.18761 .14562 L
+.19249 .15004 L
+.19505 .15195 L
+.19784 .15373 L
+.20037 .15506 L
+.20275 .15608 L
+.20551 .157 L
+.20801 .15759 L
+.20942 .15783 L
+.21071 .158 L
+.21139 .15806 L
+.21213 .15812 L
+.21291 .15816 L
+.21363 .15818 L
+.21494 .15818 L
+.21618 .15813 L
+.2173 .15806 L
+Mistroke
+.21851 .15795 L
+.21983 .15779 L
+.22124 .15757 L
+.22376 .15709 L
+.24377 .15109 L
+.24925 .14957 L
+.25225 .1489 L
+.25504 .14841 L
+.25626 .14825 L
+.25742 .14811 L
+.25807 .14805 L
+.25876 .148 L
+.25998 .14792 L
+.26063 .1479 L
+.26134 .14788 L
+.26209 .14788 L
+.26279 .14789 L
+.26404 .14794 L
+.26475 .14798 L
+.26539 .14803 L
+.26662 .14816 L
+.26774 .14831 L
+.27024 .14878 L
+.27255 .14937 L
+.27474 .15006 L
+.27964 .15214 L
+.28495 .1552 L
+.29565 .16382 L
+.30551 .17426 L
+.32591 .20046 L
+.34497 .22489 L
+.35436 .23507 L
+.36327 .24296 L
+.36818 .24651 L
+.37354 .2497 L
+.37804 .25185 L
+.38291 .25365 L
+.38543 .25438 L
+.38774 .25494 L
+.3901 .25541 L
+.39229 .25576 L
+.3947 .25606 L
+.39608 .2562 L
+.39734 .25629 L
+.39857 .25637 L
+.39991 .25644 L
+.40064 .25646 L
+.40132 .25649 L
+.40197 .2565 L
+.40266 .25651 L
+Mistroke
+.40396 .25653 L
+.40514 .25653 L
+.4058 .25653 L
+.40652 .25652 L
+.40782 .2565 L
+.40903 .25648 L
+.41033 .25645 L
+.41265 .25639 L
+.41562 .25632 L
+.41708 .25629 L
+.41772 .25628 L
+.41842 .25627 L
+.41965 .25626 L
+.42094 .25625 L
+.42162 .25626 L
+.42234 .25626 L
+.42366 .25629 L
+.42488 .25632 L
+.42557 .25635 L
+.42622 .25638 L
+.42764 .25646 L
+.42895 .25655 L
+.4313 .25678 L
+.43384 .25711 L
+.43642 .25755 L
+.43923 .25816 L
+.44491 .25985 L
+.44995 .26191 L
+.45534 .26472 L
+.46504 .27142 L
+.47529 .28065 L
+.4864 .29267 L
+.50655 .31703 L
+.52605 .33872 L
+.53713 .34831 L
+.54245 .35199 L
+.54749 .35489 L
+.55225 .35711 L
+.55743 .35898 L
+.55971 .35962 L
+.56214 .36021 L
+.56441 .36066 L
+.5665 .36099 L
+.56916 .36132 L
+.57055 .36146 L
+.57203 .36157 L
+.57331 .36165 L
+.5745 .36171 L
+.57581 .36175 L
+.57655 .36177 L
+Mistroke
+.57722 .36178 L
+.57846 .36179 L
+.57961 .3618 L
+.58087 .36179 L
+.5815 .36178 L
+.5822 .36177 L
+.58337 .36175 L
+.58464 .36173 L
+.58692 .36167 L
+.58945 .3616 L
+.59084 .36157 L
+.59215 .36155 L
+.59338 .36153 L
+.59407 .36153 L
+.5947 .36152 L
+.59583 .36152 L
+.59701 .36153 L
+.59833 .36156 L
+.59906 .36158 L
+.59973 .3616 L
+.60104 .36166 L
+.60227 .36173 L
+.60371 .36184 L
+.60503 .36196 L
+.60804 .36233 L
+.61043 .36273 L
+.61267 .3632 L
+.61778 .36463 L
+.62276 .36655 L
+.62813 .36927 L
+.63769 .37585 L
+.64816 .38554 L
+.66926 .41112 L
+.6905 .43902 L
+.70054 .45046 L
+.7098 .45902 L
+.71439 .46241 L
+.71944 .46543 L
+.72451 .46771 L
+.72728 .46864 L
+.72988 .4693 L
+.73105 .46953 L
+.73233 .46975 L
+.73345 .4699 L
+.73465 .47002 L
+.73584 .47011 L
+.73692 .47015 L
+.738 .47017 L
+.73902 .47016 L
+.74021 .47012 L
+Mistroke
+.74148 .47004 L
+.74255 .46994 L
+.74374 .4698 L
+.74638 .46941 L
+.74884 .46892 L
+.7675 .46334 L
+.77262 .46184 L
+.77542 .46114 L
+.77804 .4606 L
+.78027 .46025 L
+.78153 .4601 L
+.78268 .45999 L
+.78387 .45991 L
+.78517 .45987 L
+.78582 .45987 L
+.78652 .45988 L
+.78779 .45993 L
+.78848 .45998 L
+.78922 .46005 L
+.79054 .46021 L
+.79196 .46045 L
+.79352 .4608 L
+.79632 .46163 L
+.79894 .46267 L
+.80382 .46534 L
+.80906 .4693 L
+.81446 .47461 L
+.81958 .4808 L
+.82919 .49525 L
+.84737 .53036 L
+.85773 .55224 L
+.86747 .57168 L
+.87697 .58764 L
+.88231 .59461 L
+.88485 .59729 L
+.88721 .59938 L
+.88957 .60105 L
+.89078 .60174 L
+.89209 .60235 L
+.89284 .60263 L
+.89353 .60285 L
+.89418 .60302 L
+.89489 .60317 L
+.89613 .60331 L
+.89743 .60332 L
+.89815 .60326 L
+.89883 .60315 L
+.90012 .60284 L
+.90083 .60259 L
+.90149 .60233 L
+Mistroke
+.903 .60156 L
+.90552 .59977 L
+.90821 .59715 L
+.91082 .59391 L
+.91357 .58971 L
+.9185 .58018 L
+.9238 .56702 L
+.92963 .54917 L
+.9498 .46214 L
+.97619 .30903 L
+Mfstroke
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{288, 177.938},
+ ImageMargins->{{43, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 
+  1}},ImageCache->GraphicsData["CompressedBitmap", "\<\
+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\
+\>"],ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-3.49206, -3.32401, \
+0.0258089, 0.0420789}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]]
+},
+WindowSize->{491, 469},
+WindowMargins->{{58, Automatic}, {Automatic, 74}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 608, 16, 92, "Input"],
+Cell[1191, 40, 28, 0, 31, "Output"],
+Cell[1222, 42, 8792, 440, 186, 6786, 405, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[10017, 484, 134, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10188, 493, 595, 19, 72, "Input"],
+Cell[10786, 514, 460, 16, 52, "Output"],
+Cell[11249, 532, 4625, 300, 186, 3765, 283, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[15877, 834, 134, 4, 31, "Output"]
+}, Open  ]],
+Cell[16026, 841, 52, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[16103, 846, 371, 12, 47, "Input"],
+Cell[16477, 860, 28, 0, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16542, 865, 371, 12, 47, "Input"],
+Cell[16916, 879, 45, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16998, 885, 371, 12, 47, "Input"],
+Cell[17372, 899, 48, 1, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17457, 905, 371, 12, 47, "Input"],
+Cell[17831, 919, 66, 2, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17934, 926, 371, 12, 47, "Input"],
+Cell[18308, 940, 48, 1, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18393, 946, 265, 9, 57, "Input"],
+Cell[18661, 957, 491, 17, 67, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19189, 979, 699, 20, 107, "Input"],
+Cell[19891, 1001, 12825, 685, 186, 10550, 645, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[32719, 1688, 134, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32890, 1697, 90, 2, 31, "Input"],
+Cell[32983, 1701, 13814, 721, 186, 10958, 672, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[46800, 2424, 134, 4, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

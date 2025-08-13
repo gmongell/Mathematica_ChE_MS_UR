@@ -1,0 +1,211 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7662,        202]
+NotebookOptionsPosition[      7145,        181]
+NotebookOutlinePosition[      7491,        196]
+CellTagsIndexPosition[      7448,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{"Guy", " ", 
+   RowBox[{"F", ".", " ", "Mongelli"}], "                               ", 
+   "ChE", " ", "400", "\[IndentingNewLine]", "   ", 
+   RowBox[{"Prof", ".", " ", "Clark"}], "                                   ", 
+   RowBox[{
+    RowBox[{"9", "/", "26"}], "/", "2010"}]}], "     ", "*)"}]], "Input",
+ CellChangeTimes->{{3.4937379944477596`*^9, 3.493737999977865*^9}, 
+   3.493940386069982*^9, {3.494533411068514*^9, 3.494533416292514*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{"Assignment", " ", "#4"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.494533179021514*^9, 3.4945331892235146`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Problem", " ", "#2"}], "   ", "*)"}]], "Input",
+ CellChangeTimes->{{3.494533191091514*^9, 3.4945331968955145`*^9}, {
+  3.494545208463691*^9, 3.494545208895691*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "At", " ", "first", " ", "look", " ", "this", " ", "problem", " ", 
+     "appears", " ", "to", " ", "be", " ", "asking", " ", "for", " ", "the", 
+     " ", "student", " ", "to", " ", "expand", " ", "the", " ", "Diffusion", 
+     " ", "equation", " ", "in", " ", "spherical", " ", "coordinates", " ", 
+     "as", " ", 
+     RowBox[{"such", ":", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      FractionBox[
+       RowBox[{"\[PartialD]", "T"}], 
+       RowBox[{"\[PartialD]", "t"}]]}]}], "=", 
+    RowBox[{"D", 
+     RowBox[{
+      FractionBox["\[PartialD]", 
+       RowBox[{"\[PartialD]", "r"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["r", "2"], 
+        FractionBox[
+         RowBox[{"\[PartialD]", "T"}], 
+         RowBox[{"\[PartialD]", "r"}]]}], ")"}]}]}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"with", " ", 
+      RowBox[{"B", ".", "C", ".", "s"}], " ", "of", " ", 
+      "\[IndentingNewLine]", "1.", " ", "uniform", " ", "initial", " ", 
+      "temperature"}], "\[Rule]", "   ", 
+     RowBox[{"T", 
+      RowBox[{"(", 
+       RowBox[{"r", ",", "0"}], ")"}]}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "T1", "\[IndentingNewLine]", " ", "2.", " ", "constant", " ", 
+        "fluid"}], "-", 
+       RowBox[{
+       "solid", " ", "interfacial", " ", "temperature", " ", "ignoring", " ", 
+        "convection"}]}], "\[Rule]", "  ", "T"}], "=", 
+     RowBox[{
+      RowBox[{"Ts", " ", "when", " ", "r"}], "=", 
+      RowBox[{"R", "  ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+         "R", " ", "is", " ", "the", " ", "spherical", " ", "radius", " ", 
+          "of", " ", "4", "cm"}], ")"}], ".", "\[IndentingNewLine]", "Then"}],
+        " ", "the", " ", "solution", " ", "T", 
+       RowBox[{"(", 
+        RowBox[{"r", ",", "t"}], ")"}], " ", "would", " ", "allow", " ", 
+       "for", " ", "an", " ", "approxamation", " ", "of", " ", "when", " ", 
+       "95", "%", " ", "of", " ", "heat", " ", "transfer", " ", "would", " ", 
+       "be", " ", 
+       RowBox[{
+       "completed", ".", "\[IndentingNewLine]", "Unfortunately"}]}]}]}]}], 
+   ",", " ", 
+   RowBox[{"this", " ", "is", " ", "a", " ", "problem", " ", "that", " ", 
+    RowBox[{"I", "'"}], "m", " ", "not", " ", "ready", " ", "to", " ", 
+    "handle", " ", "due", " ", "to", " ", 
+    RowBox[{"it", "'"}], "s", " ", "complexity", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+      "My", " ", "readings", " ", "have", " ", "indicated", " ", "that", " ", 
+       "it", " ", "may", " ", "be", " ", "a", " ", "solution", " ", "is", " ",
+        "terms", " ", "of", " ", "percent", " ", "of", " ", "incompleted", 
+       " ", "heat", " ", "transfer", " ", "related", " ", "to", " ", "erf", 
+       RowBox[{"(", ")"}], " ", "and", " ", "bessel", " ", "functions"}], 
+      ")"}], ".", "  ", "\[IndentingNewLine]", "Instead"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{
+    "I", " ", "will", " ", "approximate", " ", "the", " ", "solution", " ", 
+     "with", " ", "a", " ", "back", " ", "of", " ", "the", " ", "envelope", 
+     " ", "computation", " ", "from", " ", "the", " ", "definition", " ", 
+     "of", " ", 
+     RowBox[{"diffusivity", ".", "  ", "The"}], " ", "Diffusivity", " ", 
+     "relates", " ", "the", " ", "legnthscale", " ", "of", " ", "diffusion", 
+     " ", "to", " ", "the", " ", "timescale", " ", "of", " ", 
+     RowBox[{"diffusion", ".", "  ", "This"}], " ", "relationship", " ", "is",
+      " ", "given", " ", "by", " ", "the", " ", "following", " ", 
+     RowBox[{"equation", ":", "\[IndentingNewLine]", "D"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"diffusion", " ", "legnthscale"}], ")"}], "^", "2"}], 
+       RowBox[{"Diffusion", " ", "timecale"}]], ".", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "Rearrangement"}], " ", "allows", " ", "for", 
+     " ", "the", " ", "determination", " ", "of", " ", "an", " ", 
+     "approximate", " ", "diffusion", " ", 
+     RowBox[{"timescale", "."}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.4945455508635397`*^9, 3.494545688812541*^9}, {
+  3.4945457233784523`*^9, 3.4945460880740285`*^9}, {3.4945462512803473`*^9, 
+  3.4945462655697765`*^9}, {3.4946757199122715`*^9, 3.494675720142271*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"8", "*", 
+       RowBox[{"10", "^", 
+        RowBox[{"-", "2"}]}]}], ")"}], "^", "2"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"1.47", "*", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "6"}]}]}], ")"}]}], ",", "1.0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.494546113122533*^9, 3.4945461564998703`*^9}}],
+
+Cell[BoxData["4353.74149659864`"], "Output",
+ CellChangeTimes->{3.494546156787899*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"The", " ", "above", " ", "result", " ", "is", " ", "in", " ", 
+    RowBox[{"seconds", ".", "  ", "Therefore"}]}], ",", " ", 
+   RowBox[{
+   "I", " ", "would", " ", "ask", " ", "the", " ", "collegue", " ", "that", 
+    " ", "guessed", " ", "150", "s", " ", "for", " ", "further", " ", "help", 
+    " ", "because", " ", "he", " ", "has", " ", "the", " ", "best", " ", 
+    "guestimate"}], ",", " ", 
+   RowBox[{
+   "supporting", " ", "a", " ", "great", " ", "understanding", " ", "of", " ",
+     "the", " ", "heat", " ", "transfer", " ", "involved"}]}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.494546180758296*^9, 3.4945462479910183`*^9}, {
+  3.494675093772271*^9, 3.494675095403271*^9}, {3.4946757318222713`*^9, 
+  3.494675733762271*^9}}]
+},
+WindowSize->{607, 637},
+WindowMargins->{{189, Automatic}, {Automatic, 45}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 493, 9, 52, "Input"],
+Cell[1041, 31, 163, 3, 31, "Input"],
+Cell[1207, 36, 210, 4, 31, "Input"],
+Cell[1420, 42, 4382, 98, 566, "Input"],
+Cell[CellGroupData[{
+Cell[5827, 144, 407, 13, 31, "Input"],
+Cell[6237, 159, 86, 1, 30, "Output"]
+}, Open  ]],
+Cell[6338, 163, 803, 16, 92, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

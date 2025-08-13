@@ -1,0 +1,5976 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    188494,       5966]
+NotebookOptionsPosition[    155148,       4992]
+NotebookOutlinePosition[    155490,       5007]
+CellTagsIndexPosition[    155447,       5004]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["MATHEMATICA TUTORIAL ", "Title",
+ Evaluatable->False,
+ CellChangeTimes->{{3.472391798644853*^9, 3.4723918124834137`*^9}, {
+  3.472582018336547*^9, 3.472582020479267*^9}, {3.472582084784224*^9, 
+  3.4725820856242647`*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+Version 5.3
+January 13, 2010\
+\>", "Subtitle",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388916796607993*^9, 3.3889168174849663`*^9}, {
+  3.418138013092744*^9, 3.418138043204447*^9}, {3.418308337204719*^9, 
+  3.4183083421893597`*^9}, {3.450796583912322*^9, 3.450796634092544*^9}, {
+  3.450796693584691*^9, 3.4507966962783546`*^9}, {3.472391826412238*^9, 
+  3.472391851347559*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+Al Clark
+Department of Mechanical Engineering
+University of Rochester\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\t         The purpose of this tutorial is to give you a first look at some \
+of the capabilities of ",
+ "Mathematica",
+ ".  The interface between you and ",
+ "Mathematica",
+ " is a document like this, which is called a notebook.  Notebooks can \
+contain text (like this paragraph), ",
+ "Mathematica",
+ " commands, and ",
+ "Mathematica",
+ " output in the form of numbers, expressions, graphs or sounds.  In this \
+tutorial, we use a color code to distinguish among these:  text is black, ",
+ "Mathematica",
+ " commands are bold in blue, and output (other than graphs) is in plain face \
+black.   For example, consider the command below (in blue), which tells ",
+ "Mathematica",
+ " to calculate 2 + 2.  Move the cursor to any location in this expression \
+and then click the mouse to fix the cursor there.  Then hit the ",
+ StyleBox["enter ",
+  FontWeight->"Bold"],
+ "key.  Congratulations!  You have just executed your first ",
+ "Mathematica",
+ " command.  ",
+ "Mathematica",
+ " responded with an output line, giving the answer 4.     "
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["2+2", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tIt is important to note that ",
+ "Mathematica",
+ " distinguishes between the ",
+ StyleBox["enter",
+  FontWeight->"Bold"],
+ " key and the ",
+ StyleBox["return",
+  FontWeight->"Bold"],
+ " key.  ",
+ StyleBox["Return",
+  FontWeight->"Bold"],
+ " is used to move to the next line when entering input.  It does not cause \
+any evaluation to take place.  When you hit ",
+ StyleBox["enter",
+  FontWeight->"Bold"],
+ ", ",
+ "Mathematica",
+ " executes the line in which the cursor resides.  The key combination ",
+ StyleBox["shift-return ",
+  FontWeight->"Bold"],
+ "is equivalent to ",
+ StyleBox["enter",
+  FontWeight->"Bold"],
+ "."
+}], "Text"],
+
+Cell["\<\
+            Executing your first Mathematica command was easy and that's the \
+good news.  The bad news is that there are approximately 2200 more commands \
+to learn!  Fortunately, a very small subset of these is sufficient to get you \
+started on useful calculations.  In this tutorial, you will learn enough \
+commands to work with all of the following:  arithmetic, algebra, defining \
+functions, plotting in both two and three dimensions, root-finding, \
+replacement rules, differentiation,  integration, solving differential \
+equations, summing series, manipulating matrices and lists, fitting curves to \
+data, and graph animation.  Near the end of this tutorial, we will take a \
+very brief look at programming in Mathematica, and the basics of writing your \
+own notebook.  The sections in this tutorial are independent of one another, \
+so that you may concentrate on those topics that you need to know now.       \
+\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3889170984082127`*^9, 3.3889170988235397`*^9}, {
+  3.472392868704452*^9, 3.4723928732218857`*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Eventually you will need information about Mathematica beyond \
+this tutorial.  The first place to look for help is in the Mathematica \
+program itself, in what is called the help browser.  This is accessed by \
+going to the ",
+ StyleBox["Help",
+  FontWeight->"Bold"],
+ " menu and selecting ",
+ StyleBox["Documention Center",
+  FontWeight->"Bold"],
+ ".  Try it now, going through the following sequence.  After selecting ",
+ StyleBox["Documentation Center ",
+  FontWeight->"Bold"],
+ "from the ",
+ StyleBox["Help  ",
+  FontWeight->"Bold"],
+ "menu, you will see the Documentation Center Window.  Go to the row labeled \
+Mathematics and Algorithms, click on the arrow at the right of the row to \
+open it, and then click on ",
+ StyleBox["Mathematical Functions.  ",
+  FontWeight->"Bold"],
+ "Under the heading elementary functions, click on ",
+ StyleBox["Sin",
+  FontWeight->"Bold"],
+ ".  ",
+ StyleBox["  ",
+  FontWeight->"Bold"],
+ " You then get a window on the sine function, with information and \
+executable examples."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388917229086323*^9, 3.38891726280238*^9}, {
+   3.388917299542942*^9, 3.388917308514501*^9}, {3.388917341053691*^9, 
+   3.388917444447006*^9}, {3.388917502035037*^9, 3.388917518897002*^9}, 
+   3.388917553157497*^9, {3.418138394771638*^9, 3.418138474093967*^9}, {
+   3.450797054927372*^9, 3.45079709180399*^9}, {3.450797127463046*^9, 
+   3.450797129516823*^9}, {3.472392933114579*^9, 3.472392957398967*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tTwo important features of Mathematica style show up in this example.  \
+First, built-in functions always begin with a capital letter (Mathematica \
+always distinguishes between upper-and lower-case letters).  Second, \
+functional arguments are always enclosed in square brackets.  Parentheses ( ) \
+are used only for algebraic grouping in expressions, and curly brackets { } \
+are used only to enclose lists.\
+\>", "Text",
+ CellChangeTimes->{{3.472393039130591*^9, 3.472393041184575*^9}}],
+
+Cell["\<\
+\tLet' s go just a bit further with the sine example, in order to illustrate \
+a very useful feature of the Help facility.  Suppose we want the sine of 1.2 \
+radians.  We get it by typing\
+\>", "Text",
+ CellChangeTimes->{{3.388942668017685*^9, 3.388942748744115*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", "1.2", "]"}]], "Input",
+ CellChangeTimes->{{3.38894275562823*^9, 3.388942759755604*^9}}],
+
+Cell[TextData[{
+ "Evaluate this by putting the cursor anywhere in the line containing this \
+command, and then hit enter.  You should get 0.932039.  Now suppose that you \
+would like more information about the function Sin in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  Using the mouse, highlight Sin in the above command.  Now go to the help \
+menu and choose ",
+ StyleBox["Find Selected Function",
+  FontWeight->"Bold"],
+ ".  ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will return the same well-organized collection of information on the sine \
+function."
+}], "Text",
+ CellChangeTimes->{{3.38894276493985*^9, 3.388942888951833*^9}, {
+  3.388942947513707*^9, 3.388942989564994*^9}, {3.4181385904880257`*^9, 
+  3.4181386077586718`*^9}}],
+
+Cell[TextData[{
+ "\tAlthough this tutorial is intended for version 7 of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", it should run also in version 6, in spite of the warning you will get if \
+you open this notebook in version 6."
+}], "Text",
+ CellChangeTimes->{{3.388917754996855*^9, 3.388917845520694*^9}, {
+  3.418138616406514*^9, 3.418138641110805*^9}, {3.450797261017256*^9, 
+  3.450797356441629*^9}, {3.4507973888825073`*^9, 3.45079741568283*^9}}],
+
+Cell[TextData[{
+ "          More detailed help can be obtained from some of the good books \
+which have been published recently on ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " 6 and 7.  (Versions 6 and 7 are sufficiently close that books written for \
+either version are useful for both. )  Four of these books are listed and \
+described  below."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388917863937079*^9, 3.388917912146145*^9}, {
+  3.4181386652945957`*^9, 3.418138669326549*^9}, {3.4507974629536963`*^9, 
+  3.450797556164289*^9}, {3.450797594749086*^9, 3.450797614908752*^9}, {
+  3.472393108211299*^9, 3.4723931810991297`*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["The Student\[CloseCurlyQuote] s Introduction to Mathematica, \
+B.F.Torrence and E.A.Torrence",
+  FontWeight->"Bold"],
+ ", second edition, Cambridge, 2009. This excellent introduction to \
+Mathematica is focused on basic undergraduate mathematics, including \
+graphics, algebra, calculus, multivariable calculus, and linear algebra."
+}], "Text",
+ CellChangeTimes->{
+  3.450797831321377*^9, {3.450797903353963*^9, 3.450797947370677*^9}}],
+
+Cell[TextData[{
+ StyleBox["\t",
+  FontFamily->"Times",
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox["A Physicist\[CloseCurlyQuote]s Guide to Mathematica",
+  FontFamily->"Times",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[", P. T. Tam, second edition, Academic Press/Elsevier, 2008.  About \
+two-thirds of this book is an introduction to Mathematica, including a long \
+and useful chapter on programming in Mathematica.  The remainder of the book \
+has applications to mechanics, electricity and magnetism, and quantum \
+mechanics.",
+  FontFamily->"Times",
+  FontWeight->"Plain",
+  FontColor->RGBColor[0., 0., 0.]]
+}], "Text",
+ CellChangeTimes->{{3.450797990690731*^9, 3.450798016621163*^9}, 
+   3.45079805199375*^9, 3.450798082224092*^9}],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["Mathematica by Example",
+  FontWeight->"Bold"],
+ ", M. L. Abell and J. P. Braselton, fourth edition, Academic Press/Elsevier, \
+2009.  This very useful book has been a deservedly popular reference through \
+4 editions.  In it you can find examples of all of the commonly used commands \
+in Mathematica. "
+}], "Text",
+ CellChangeTimes->{{3.450798230230217*^9, 3.45079825738074*^9}}],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["The Mathematica Navigator,",
+  FontWeight->"Bold"],
+ " H. Ruskeep\[ADoubleDot]\[ADoubleDot], 3 rd edition, Academic \
+Press/Elsevier, 2009.  This superb book has in its 1000+ pages material for \
+everybody, from beginners to advanced users of Mathematica.  It is very \
+clearly written and full of interesting examples.  Each of the 30 chapters \
+deals with a specific area of Mathematica. "
+}], "Text",
+ CellChangeTimes->{{3.4507982695287943`*^9, 3.45079831578351*^9}, {
+  3.4723932535888147`*^9, 3.472393263349489*^9}}],
+
+Cell[TextData[{
+ "          In the remainder of this notebook, there are Mathematica commands \
+along with explanatory material.  You should work through the rest of the \
+tutorial, executing every Mathematica command as you come to it.  After you \
+have executed all of the commands, you might want to print out a copy of this \
+notebook for reference.  You can do this by selecting the ",
+ StyleBox["Print",
+  FontWeight->"Bold"],
+ " option in the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu.  If you prefer to print out only a part of the notebook, you can do \
+that by first selecting those cells to be printed by using the mouse.  After \
+selecting the cell or cells, go to the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu and choose ",
+ StyleBox["Print Selection",
+  FontWeight->"Bold"],
+ ".  Here is a little more detail on the process of selecting.  The material \
+in a Mathematica notebook is grouped into cells, which are denoted by the \
+square brackets on the right side of the page.  To select one cell, just use \
+the mouse to click the bracket for that cell.  To select more than one cell, \
+hold down the mouse button and drag the cursor through all the cells you wish \
+to highlight.  When a cell has been selected, the right-hand bracket defining \
+the cell becomes black.      "
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "           You can also save your notebook to disk at any time.  To do \
+this, select the ",
+ StyleBox["SaveAs",
+  FontWeight->"Bold"],
+ " option from the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu.  This will take you to a dialogue box which will allow you to \
+specify the name under which you save the notebook, and the location where \
+the notebook is to be saved.  If you want to re-save the notebook later with \
+the same name and location, you can do this without going through the \
+dialogue box by selecting the ",
+ StyleBox["Save",
+  FontWeight->"Bold"],
+ " option under the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let me end this introduction with some encouragement.  Even though \
+this tutorial covers only a very small fraction of Mathematica, it still may \
+seem overwhelming.  Remember that the purpose of this tutorial is just to \
+give you a sample of what Mathematica can do.  Your actual learning of \
+Mathematica will occur gradually as you work through your own problems.  So \
+don't feel discouraged if you still feel ill-at-ease with Mathematica after \
+you have completed this tutorial.  Time and practice will eventually take you \
+to where you need to be.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          To work through the material on any of the topics below, double \
+click on the square bracket at the extreme right of the line with the section \
+title.  This will open that section and display the material in it.  When you \
+are through with the section, you can close it by double clicking on the \
+right-hand bracket that spans the entire open section.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Arithmetic", "Section",
+ Evaluatable->False,
+ CellChangeTimes->{3.388918882717519*^9, 3.388918925882017*^9},
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["Real Numbers", "Subsection",
+ CellChangeTimes->{{3.3889394758147097`*^9, 3.3889394804501543`*^9}}],
+
+Cell["\<\
+          Let's start with some very basic arithmetic by executing the five \
+commands given below.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{3.3889188827179728`*^9, 3.388918925882505*^9},
+ AspectRatioFixed->True],
+
+Cell["2+2", "Input",
+ CellChangeTimes->{3.388918882718237*^9, 3.388918925882761*^9},
+ AspectRatioFixed->True],
+
+Cell["2*2", "Input",
+ CellChangeTimes->{3.388918882718676*^9, 3.3889189258870173`*^9},
+ AspectRatioFixed->True],
+
+Cell["2 2", "Input",
+ CellChangeTimes->{3.388918882719089*^9, 3.388918925887497*^9},
+ AspectRatioFixed->True],
+
+Cell["2 / 3", "Input",
+ CellChangeTimes->{3.388918882719656*^9, 3.388918925888035*^9},
+ AspectRatioFixed->True],
+
+Cell["2^3", "Input",
+ CellChangeTimes->{3.388918882720066*^9, 3.388918925888492*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Notice that in the third command, a space between two numbers gives \
+us the same result as the asterisk denoting multiplication.  All of the \
+commands except the fourth one give what we would expect.  For 2/3 we might \
+have expected something like 0.66667.  However, Mathematica tries, as much as \
+possible, to calculate things exactly.  In particular, it does the arithmetic \
+of rational numbers exactly, and so returns 2/3 for integer 2 divided by \
+integer 3.  Execute the three commands below to see ways to get a decimal \
+approximation to the exact 2/3.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{3.3889188827204723`*^9, 3.388918925888941*^9},
+ AspectRatioFixed->True],
+
+Cell["2./3.", "Input",
+ CellChangeTimes->{3.388918882720636*^9, 3.3889189258891573`*^9},
+ AspectRatioFixed->True],
+
+Cell["N[2/3]", "Input",
+ CellChangeTimes->{3.388918882721109*^9, 3.388918925889703*^9},
+ AspectRatioFixed->True],
+
+Cell["N[2/3,30]", "Input",
+ CellChangeTimes->{3.3889188827215137`*^9, 3.3889189258901587`*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          When Mathematica sees 2./3., it assumes that the numbers 2. and 3. \
+are decimal approximations, and it then performs decimal arithmetic.  The \
+second command shows that even with an exact expression like 2/3, we can \
+force a decimal answer by using the function N, which returns a decimal \
+approximation for its argument.  If we want more precision, the last command \
+above shows us how to achieve it.  The second argument of N tells how many \
+decimal places are desired, with the default being 6.  The commands below \
+give other illustrations of these ideas.  Among other things, we see that \
+Mathematica knows the number Pi, which also can be entered as \[Pi].\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{3.3889188827219152`*^9, 3.3889189258905993`*^9},
+ AspectRatioFixed->True],
+
+Cell["Sqrt[12]", "Input",
+ CellChangeTimes->{3.388918882722073*^9, 3.388918925891045*^9},
+ AspectRatioFixed->True],
+
+Cell["Sqrt[12.]", "Input",
+ CellChangeTimes->{3.388918882722477*^9, 3.3889189258915167`*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", 
+  RowBox[{"N", "[", "12", "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.3889188827229443`*^9, 3.388918925891963*^9}],
+
+Cell["N[Sqrt[12]]", "Input",
+ CellChangeTimes->{3.388918882723336*^9, 3.388918925892404*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Sqrt[12],20]", "Input",
+ CellChangeTimes->{3.388918882723792*^9, 3.3889189258928432`*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Pi,100]", "Input",
+ CellChangeTimes->{3.388918882724246*^9, 3.3889189258932877`*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"\[Pi]", ",", "100"}], "]"}]], "Input",
+ CellChangeTimes->{3.3889188827246513`*^9, 3.3889189258937283`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Complex Numbers", "Subsection",
+ CellChangeTimes->{{3.388939501196723*^9, 3.388939504002582*^9}}],
+
+Cell[TextData[{
+ "          Mathematica also knows about complex numbers, and uses either the \
+symbol I or the symbol \[ImaginaryI] (available on several of the palettes) \
+for ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{"-", "1"}]], TraditionalForm]]],
+ ".  Here are a few examples of complex arithmetic."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{3.38891888272506*^9, 3.3889189258941593`*^9},
+ AspectRatioFixed->True],
+
+Cell["z1 = 2 + 3I", "Input",
+ CellChangeTimes->{3.388918882725219*^9, 3.388918925894372*^9},
+ AspectRatioFixed->True],
+
+Cell["z2 = -1 + 4\[ImaginaryI]", "Input",
+ CellChangeTimes->{3.388918882725624*^9, 3.388918925894835*^9},
+ AspectRatioFixed->True],
+
+Cell["z1 + z2", "Input",
+ CellChangeTimes->{3.388918882726071*^9, 3.388918925895275*^9},
+ AspectRatioFixed->True],
+
+Cell["z1*z2", "Input",
+ CellChangeTimes->{3.388918882726494*^9, 3.388918925895772*^9},
+ AspectRatioFixed->True],
+
+Cell["z1^2", "Input",
+ CellChangeTimes->{3.388918882727007*^9, 3.3889189258962383`*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ SqrtBox["z2"]], "Input",
+ CellChangeTimes->{3.388918882727427*^9, 3.388918925896676*^9}],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  SqrtBox["z2"], "]"}]], "Input",
+ CellChangeTimes->{3.388918882727869*^9, 3.388918925897105*^9}],
+
+Cell["z2^0.5", "Input",
+ CellChangeTimes->{3.388918882728271*^9, 3.388918925897546*^9},
+ AspectRatioFixed->True],
+
+Cell["Abs[z1]", "Input",
+ CellChangeTimes->{3.388918882728668*^9, 3.388918925898058*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Abs[z1]]", "Input",
+ CellChangeTimes->{3.388918882729065*^9, 3.3889189258985043`*^9},
+ AspectRatioFixed->True],
+
+Cell["Arg[z1]", "Input",
+ CellChangeTimes->{3.3889188827294617`*^9, 3.388918925898942*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Arg[z1]]", "Input",
+ CellChangeTimes->{3.388918882729857*^9, 3.3889189258993893`*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Arg[z2]]", "Input",
+ CellChangeTimes->{3.388918882730249*^9, 3.388918925899826*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Arg[z1*z2]]", "Input",
+ CellChangeTimes->{3.388918882730645*^9, 3.388918925900269*^9},
+ AspectRatioFixed->True],
+
+Cell["N[Arg[z1]] + N[Arg[z2]]", "Input",
+ CellChangeTimes->{3.388918882731044*^9, 3.388918925900717*^9},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tThe special symbols \[Pi] and \[ImaginaryI], as well as many others, are \
+available on the various palettes in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  Those two in particular are on the Basic Math Assistant, which can be \
+opened from the ",
+ StyleBox["Palette",
+  FontWeight->"Bold"],
+ " menu.  "
+}], "Text",
+ CellChangeTimes->{{3.388918815433913*^9, 3.388918843827037*^9}, 
+   3.388918882731493*^9, 3.388918925901144*^9, {3.450798974886241*^9, 
+   3.450798997380628*^9}}],
+
+Cell["\<\
+\tWe end this section by clearing the values defined for variables here.  \
+Otherwise we run the risk of introducing a variable of the same name later, \
+with the value having already been assigned here.\
+\>", "Text",
+ CellChangeTimes->{3.388918882731707*^9, 3.3889189259013243`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"z1", ",", "z2"}], "]"}]], "Input",
+ CellChangeTimes->{3.3889188827318573`*^9, 3.388918925901524*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Algebra", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica has very powerful capabilities for dealing with \
+symbols.  Execute the commands below for examples of algebraic manipulation.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["3 x + 5 x", "Input",
+ AspectRatioFixed->True],
+
+Cell["x*(x+y) - y*(x+y)", "Input",
+ AspectRatioFixed->True],
+
+Cell["Simplify[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The first command added the literals 3x and 5x to get 8x.  The \
+second command simply returned unchanged the expression entered.  Mathematica \
+will do this either when it cannot evaluate something, or when (as in this \
+case) we haven't indicated a preference for the form of the answer.  From the \
+last command -- Simplify[%] -- we get a better result, and we also see a \
+useful short-cut.  The symbol % means the expression in the previous output \
+line.  Thus rather than retyping an output to use as an input in the \
+following line, we can use the symbol %.  The Simplify command here cancelled \
+the xy and -xy terms, and gave us a simpler answer.  What would have happened \
+had we assigned values to either x or y or both before doing the algebra?  \
+Let's try it and see.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450799228099187*^9, 3.450799231169703*^9}},
+ AspectRatioFixed->True],
+
+Cell["x = 5", "Input",
+ AspectRatioFixed->True],
+
+Cell["y = 2", "Input",
+ AspectRatioFixed->True],
+
+Cell["x*(x+y)-y*(x+y)", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Thus Mathematica used the assigned values of x and y in the \
+expression.  In general, Mathematica will evaluate symbols whenever it can.  \
+If we want to revert to the situation where x and y do not have values, we \
+can use the Clear command.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450799273328301*^9, 3.450799274173913*^9}},
+ AspectRatioFixed->True],
+
+Cell["Clear[x,y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Simplify[x*(x+y)-y*(x+y)]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica can also factor polynomials.  We look at several \
+examples here.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"Factor", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], "-", 
+   SuperscriptBox["y", "2"]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Factor", "[", 
+  RowBox[{
+   SuperscriptBox["x", "3"], "-", 
+   SuperscriptBox["y", "3"]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "Here's one more, a factoring problem (from the first edition of Beginners \
+Guide to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", Gray and Glynn, p. 40) with an interesting result.  (Interesting because \
+the polynomial has two real quadratic factors and four complex roots.)"
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450799336833501*^9, 3.450799346775517*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"Factor", "[", 
+  RowBox[{
+   SuperscriptBox["x", "4"], "+", " ", "64"}], "]"}]], "Input"],
+
+Cell["\<\
+We can find the four roots easily now by solving the two quadratics.  \
+Alternatively, we can use the Mathematica function Solve.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "4"], "+", "64"}], "==", "0"}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input"],
+
+Cell["\<\
+We will talk more about root finding in the section by that name.  Note that \
+Mathematica uses the double equals sign for equality, in contrast to the use \
+of the single equals sign for assignment.\
+\>", "Text"],
+
+Cell["\<\
+\tMathematica also can combine fractions.  Here are a few examples.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Together", "[", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"x", "+", "a"}]], "+", 
+   FractionBox[
+    RowBox[{"2", " ", "x"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"x", "+", "a"}], ")"}], "2"]], "-", 
+   FractionBox[
+    SuperscriptBox["x", "2"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"x", "+", "a"}], ")"}], "3"]]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "\tFinally, we can use ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to expand powers of polynomials."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"1", " ", "+", " ", "x", " ", "+", " ", 
+     SuperscriptBox["x", "2"]}], ")"}], "4"], "]"}]], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Defining Constants, Expressions, and Functions ", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["Defining Constants", "Subsection",
+ CellChangeTimes->{{3.3889396240709667`*^9, 3.388939631854117*^9}}],
+
+Cell["\<\
+          We saw in a previous section how to assign values to the symbols x \
+and y.  We repeat that process here with new variables a and b.  Execute the \
+commands below to assign them values.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.472394463235976*^9, 3.472394465082449*^9}},
+ AspectRatioFixed->True],
+
+Cell["a = 3", "Input",
+ AspectRatioFixed->True],
+
+Cell["b = 7.2", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          After these values have been assigned, the symbols a and b will be \
+replaced by their values in any expression.  As examples, execute the two \
+commands below.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["a^2 + 5 b", "Input",
+ AspectRatioFixed->True],
+
+Cell["a + b c", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          If we want to assign another value to either, we do not have to \
+clear the old value first.  The new assignment replaces the old.  The \
+commands below give an example of this.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["a = 4", "Input",
+ AspectRatioFixed->True],
+
+Cell["a + b", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Sometimes we don't want the Mathematica output, such as the echoing \
+of the 4 after we have defined a = 4.  We can avoid output from any statement \
+by typing a semicolon after the statement.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4181451606744947`*^9, 3.418145172745199*^9}},
+ AspectRatioFixed->True],
+
+Cell["a = 4;", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          If we want to restore either a or b or both to being symbols with \
+no numerical value, we can use Clear.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[b]", "Input",
+ AspectRatioFixed->True],
+
+Cell["a+b", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Symbols such as a and b can be assigned symbolic values as well as \
+numerical values.  In this way, we can give names to algebraic expressions.  \
+The commands below give some examples.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Defining Expressions ", "Subsection",
+ CellChangeTimes->{{3.3889396940583572`*^9, 3.388939705304345*^9}}],
+
+Cell["a = x^2 - 2 x y + y^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["b = (x - y)^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["a - b", "Input",
+ AspectRatioFixed->True],
+
+Cell["Simplify[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          In the above commands we have assigned algebraic expressions in x \
+and y to a and b.  The expressions are equivalent, which we learned when we \
+applied Simplify to their difference.  As we also saw above, the expressions \
+a and b will return numerical values if we have assigned values to x and y.  \
+The commands below illustrate this.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["x = 4.5", "Input",
+ AspectRatioFixed->True],
+
+Cell["y = 2.2", "Input",
+ AspectRatioFixed->True],
+
+Cell["a", "Input",
+ AspectRatioFixed->True],
+
+Cell["b", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We clear the values of x, y, a and b, so that some later \
+calculation won't pick up the present values by mistake.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[a,b,x,y]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Replacement Operator for Evaluating Expressions", "Subsection",
+ CellChangeTimes->{{3.388939724831121*^9, 3.3889397358226423`*^9}}],
+
+Cell[TextData[{
+ "          Now we will look briefly at a superior way to evaluate \
+expressions.  We start by defining ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " as an expression in x and y."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["a = x^3 - 2 x^2 y + x y^2 +4 y^3;", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Suppose we want to evaluate this expression for x = 2 and y = 3.  \
+One way is to assign these values to x and y, and then evaluate a.  This is \
+not the best way, but let's do it anyway.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["x = 2;", "Input",
+ AspectRatioFixed->True],
+
+Cell["y = 3;", "Input",
+ AspectRatioFixed->True],
+
+Cell["a", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          What is the downside with this?  We have replaced the variables x \
+and y with numbers, so x and y are no longer available as variables for other \
+expressions.  Now we show how to carry out the evaluation of a without \
+disturbing the status of x and y as variables.  First we clear x and y to \
+remove the numbers we have attached to them above. \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.418145272300983*^9, 3.4181452739391613`*^9}},
+ AspectRatioFixed->True],
+
+Cell["Clear[x,y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's check that a still has the algebraic form that was assigned \
+above, and then carry out the evaluation of a using the new method.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["a", "Input",
+ AspectRatioFixed->True],
+
+Cell["a /. {x -> 2 , y -> 3} ", "Input",
+ AspectRatioFixed->True],
+
+Cell["x", "Input",
+ AspectRatioFixed->True],
+
+Cell["y", "Input",
+ AspectRatioFixed->True],
+
+Cell["a", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Here is what has happened.  The operator /. is the replacement \
+operator.  The expression a /. {x -> 2 , y -> 3} tells Mathematica to \
+calculate a value by replacing every x in ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " by 2 and replacing every y in ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " by 3.  The result is the value 110 which we calculated before.  This time, \
+however, the variables x and y have remained intact as variables, and the \
+expression a has retained its form in terms of x and y.  We can thus carry \
+out such evaluations repeatedly without ever modifying the original \
+expression ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ ".  "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450799762428811*^9, 3.4507997714922028`*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tNow that we are done with this definition of a, we clear it.            \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[a]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Defining Functions", "Subsection",
+ CellChangeTimes->{{3.38893976438202*^9, 3.3889397699529552`*^9}}],
+
+Cell["\<\
+          We end this section with a very important lesson -- how to define a \
+function.  Let's start with an example.  Suppose we want to define the \
+function f[x] = a*x, where a is a constant.  Execute the Mathematica command \
+below to do this. \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.41814535285373*^9, 3.418145354756712*^9}},
+ AspectRatioFixed->True],
+
+Cell["f[x_] := a*x", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          There are two important syntactical features here:  the \
+underscore following the x on the left-hand side, and the colon before the \
+equals sign.  The underscore must be used after each argument of the function \
+on the left-hand side of the defining statement.  (There are logical reasons \
+for this, having to do with the concept of pattern in Mathematica.  It is \
+best not to get into that now.)  The colon-equals, called a delayed \
+assignment, has an important purpose.  It tells Mathematica to evaluate the \
+right-hand side at the time the function is ",
+ StyleBox["used",
+  FontSlant->"Italic"],
+ " and not at the time the function is ",
+ StyleBox["defined",
+  FontSlant->"Italic"],
+ ".  This means that if we change the value of a at any time, future \
+evaluations of f will use the most recently assigned value.  The commands \
+below illustrate this.  "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.472394955172262*^9, 3.472394956252323*^9}},
+ AspectRatioFixed->True],
+
+Cell["f[2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Because we have not yet given any value to a, it is returned as a \
+symbol.  Now let's give values to a and repeat this.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["a = 3", "Input",
+ AspectRatioFixed->True],
+
+Cell["f[2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["a = 5", "Input",
+ AspectRatioFixed->True],
+
+Cell["f[2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["f[y]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          This last example shows what happens if the argument of ",
+ StyleBox["f",
+  FontSlant->"Italic"],
+ " is a symbol which has not been assigned a value.  As a final illustration \
+of these concepts, let's define a function g[x] without using the colon."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["g[x_] = a*x", "Input",
+ AspectRatioFixed->True],
+
+Cell["g[2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["a = 20", "Input",
+ AspectRatioFixed->True],
+
+Cell["g[2]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Now we see what happens when delayed assignment is not used.  The \
+function ",
+ StyleBox["g",
+  FontSlant->"Italic"],
+ " picked up the value of ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " in effect when the function was defined.  Any future changes in ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " will not be reflected in ",
+ StyleBox["g",
+  FontSlant->"Italic"],
+ ".  The situation can even be worse, as you can see by executing the \
+following commands."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["x = 4", "Input",
+ AspectRatioFixed->True],
+
+Cell["h[x_] = x^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["h[6]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This apparently ridiculous outcome is quite logical.  Mathematica \
+is doing exactly what we ask.  It is getting the value of x (in this case 4) \
+at the time the definition is made.  Forever after h[x] is 4^2 for any x!  \
+Had we used the deferred mode, we would have avoided this problem, even \
+though x had a value at the time of definition.  Let's try it.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", "^", "2"}]}]], "Input"],
+
+Cell[BoxData["x"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"m", "[", "6", "]"}]], "Input"],
+
+Cell["Let's clear x before we go on.", "Text"],
+
+Cell["Clear[x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We can also define functions piecewise in different ranges.  There \
+are several ways to do this.  The commands below show two common ways to \
+define a step function which is 1 for positive argument, and -1 for zero and \
+negative argument.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["step1[x_] := If[x>0,1,-1]", "Input",
+ CellChangeTimes->{{3.4181455088805027`*^9, 3.418145516279324*^9}},
+ AspectRatioFixed->True],
+
+Cell["step2[x_] := 1 /; x > 0", "Input",
+ AspectRatioFixed->True],
+
+Cell["step2[x_] := -1 /; x <= 0", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          In the first definition, the If statement checks the first \
+argument -- the logical statement x > 0 -- and returns the second argument \
+(1) if the logical statement is true, and returns the third argument (-1) if \
+the logical statement is false.  The second definition occurs in two pieces.  \
+In both cases, there is on the right-hand side a function value, followed by \
+the delimiter /; , called ",
+ StyleBox["condition",
+  FontSlant->"Italic"],
+ ", followed by a logical statement.  The function takes on the assigned \
+value only when the logical statement is true.  To make sure that we really \
+have what we want, let's plot these functions, even though our \"official\" \
+discussion of plotting comes a little later.  "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4723950777413197`*^9, 3.472395079269174*^9}},
+ AspectRatioFixed->True],
+
+Cell["Plot[step1[x], {x,-1,1}]", "Input",
+ CellChangeTimes->{3.3889198417077436`*^9},
+ AspectRatioFixed->True],
+
+Cell["Plot[step2[x], {x,-1,1}]", "Input",
+ CellChangeTimes->{3.388919847219511*^9},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tFinally, we look briefly at an example of defining a function of several \
+variables.  The commands below define and use the function func[x,y,z] = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ " - ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["y", "2"], TraditionalForm]]],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["z", "2"], TraditionalForm]]],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4723951722639837`*^9, 3.472395258609537*^9}, 
+   3.472396101860571*^9},
+ AspectRatioFixed->True],
+
+Cell["func[x_,y_,z_] := x^2 - y^2 + z^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["func[1,2,3]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Built-In Functions", "Subsection",
+ CellChangeTimes->{{3.388939804166521*^9, 3.388939810994934*^9}}],
+
+Cell["\<\
+          Mathematica has many built in functions.  As a sample, we start \
+with the exponential function.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Exp[1]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Mathematica has given us the exact result -- namely \
+\[ExponentialE], which is Mathematica's notation for the mathematical \
+constant ",
+ StyleBox["e",
+  FontSlant->"Italic"],
+ ".  (As an alternative, you may also use E for this number in input \
+statements.)  We can get a numerical result by using a decimal argument, or \
+by use of the N function."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Exp[1.0]", "Input",
+ AspectRatioFixed->True],
+
+Cell["N[Exp[1]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tThere is also a step function built in to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  The function UnitStep[x] is 0 for x < 0 and 1 for x \[GreaterSlantEqual] \
+0.  We plot it.  We plot it in red so that we can distinguish the function \
+from the axis for x < 0."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"UnitStep", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "0", ",", "0"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388919885498127*^9}],
+
+Cell["\<\
+          As further examples of built-in functions, we look at some of the \
+trig functions.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Sin[1]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Sin[1.0]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Sin[Pi]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Cos[\[Pi]/4]", "Input",
+ AspectRatioFixed->True],
+
+Cell["N[Cos[\[Pi]/4]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Sin[x]/Cos[x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["(Sin[x])^2 + (Cos[x])^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["Simplify[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+These last two examples show that Mathematica knows at least some of the \
+basic rules for trig functions. \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+For all of the trig functions, Mathematica assumes that the argument is in \
+radians.  If you want to specify an argument in degrees, either you can \
+convert the argument first, or use the form shown below.\
+\>", "Text",
+ CellChangeTimes->{{3.418145664575336*^9, 3.418145724242725*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", 
+  RowBox[{"30.", " ", "Degree"}], "]"}]], "Input",
+ CellChangeTimes->{{3.41814572809862*^9, 3.418145752469294*^9}}],
+
+Cell["\<\
+          Mathematica also correctly evaluates built-in functions for complex \
+arguments.  Here are a few examples.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Exp[1.0 + 2.0 I]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Sin[1.0 + 2.0 I]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's end this section by clearing all the constants and functions \
+we have defined here.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[f,g,h,step1,step2,func]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Plotting", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["Plotting Functions", "Subsection",
+ CellChangeTimes->{{3.3889389054986343`*^9, 3.388938913341683*^9}}],
+
+Cell["\<\
+          Mathematica makes plotting very easy.  We have already seen an \
+example in our discussion of the step function above.  We will consider four \
+kinds of plots here:  the plotting of functions, the plotting of data, \
+three-dimensional plots of surfaces, and contour plots of surfaces.  We begin \
+with the plotting of functions, using the built-in function Sin as an example.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Plot[Sin[x],{x,0,2 \[Pi]}]", "Input",
+ CellChangeTimes->{3.388938092585431*^9},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          We get very quickly a plot of the sine function from 0 to 2\[Pi]. \
+ The arguments of Plot are, first the function to be plotted, Sin[x], and \
+then a list {x, 0, 2 \[Pi]} which contains the name of the independent \
+variable x, and the left and right plotting limits,  0 and 2 \[Pi].  That's \
+all there is to it unless you want more control over the appearance of the \
+plot.  There are ",
+ StyleBox["many ",
+  FontSlant->"Italic"],
+ "options for controlling plot appearance.  We will consider two by way of \
+example, starting with the option PlotRange to specify the plotting window.  \
+Let's plot the same function as above, but now with a range of [-2,2] in the \
+vertical."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.418145900072021*^9, 3.418145902317892*^9}},
+ AspectRatioFixed->True],
+
+Cell["Plot[Sin[x], {x,0,2 Pi},PlotRange->{-2,2}]", "Input",
+ CellChangeTimes->{3.388938128581587*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The arrow after PlotRange is made by typing the minus sign followed \
+by the  > sign with no space between.  We can also specify both the x and \
+vertical display ranges by including two lists in the argument of PlotRange:\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.418145919678609*^9, 3.4181459212702*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "10"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388938142547494*^9}],
+
+Cell["\<\
+Notice in this case that the list {x, 0, 2 \[Pi]} controls the range over \
+which the function is calculated and plotted, whereas the PlotRange argument \
+{0,10} controls the range of the display in the graph.   \
+\>", "Text"],
+
+Cell["\<\
+          Now let's plot a function that we have defined, rather than a \
+built-in function.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["ourfunc[x_] := x^3 - x^2 - 2 x + 1", "Input",
+ AspectRatioFixed->True],
+
+Cell["Plot[ourfunc[x],{x,-2,2}]", "Input",
+ CellChangeTimes->{3.388938166429702*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Among other things, this graph gives us a rough estimate of the \
+three roots of this cubic.  There is a quick way to estimate these roots.  If \
+we put the cursor in the graph area and click the mouse, we get a red box \
+around the graph.  Then if we press the period key, the numerical coordinates \
+of the cursor will be displayed.  In this way, we can estimate the first \
+positive root to be 0.43.  We will see in the next section how to find the \
+roots more accurately.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450800514146806*^9, 3.450800679165111*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tClearly our graphs would be improved with axes labels, and we consider this \
+as a second example of the use of options in the Plot command.  The option \
+which does this is AxesLabel.  We repeat our graph above, this time with \
+labels.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"ourfunc", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<x\>\"", ",", "\"\<ourfunc[x]\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.3889381877566957`*^9}],
+
+Cell[TextData[{
+ "As you can see from the above example, the two labels are in a list, with \
+each label surrounded by quotes.  If the quotes are not used, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will evaluate the labels before printing them, which is generally not what \
+we want.  Here is an example."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", "3"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4508007223569307`*^9, 3.450800727770156*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"ourfunc", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"ourfunc", "[", "x", "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388938205729742*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parametric Plots", "Subsection",
+ CellChangeTimes->{{3.388938944139695*^9, 3.388938947083646*^9}}],
+
+Cell[TextData[{
+ "\tIn plotting plane curves, it is common to specify the curve in parametric \
+form.  For example, a circle of radius ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " with center at ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " = ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["y",
+  FontSlant->"Italic"],
+ " = ",
+ StyleBox["b",
+  FontSlant->"Italic"],
+ " can be specified parametrically by ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ ") = ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ " + ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ "cos(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ "), ",
+ StyleBox["y",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ ") = ",
+ StyleBox["b",
+  FontSlant->"Italic"],
+ " + ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ "sin(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ "), with 0 \[LessEqual] ",
+ StyleBox["t \[LessEqual] ",
+  FontSlant->"Italic"],
+ "2\[Pi].  Let's define this example for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"a", ",", "b", ",", "r", ",", "x", ",", "y"}], "]"}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "t_", "]"}], ":=", 
+   RowBox[{"a", "+", 
+    RowBox[{"r", " ", 
+     RowBox[{"Cos", "[", "t", "]"}]}]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"y", "[", "t_", "]"}], ":=", 
+   RowBox[{"b", "+", 
+    RowBox[{"r", " ", 
+     RowBox[{"Sin", "[", "t", "]"}]}]}]}]}]], "Input"],
+
+Cell[TextData[{
+ "There is a special plotting function in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to deal with this, called ParametricPlot.  Its first argument is the list \
+of two functions to be plotted, and the second argument is the plotting range \
+for the parameter.  Let's look at an example, after setting values for ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["b",
+  FontSlant->"Italic"],
+ ", and ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ "."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", "2"}], ";", 
+  RowBox[{"b", "=", "3"}], ";", 
+  RowBox[{"r", "=", "4"}], ";"}]], "Input",
+ CellChangeTimes->{{3.3889384271104183`*^9, 3.388938450505391*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], ",", 
+      RowBox[{"y", "[", "t", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", " ", ",", 
+      RowBox[{"2", " ", "\[Pi]"}]}], "}"}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{3.3889382449567947`*^9}],
+
+Cell["\<\
+We can label the axis just as we did for the sine plot.  We can also specify \
+a plotting window with the option PlotRange.\
+\>", "Text",
+ CellChangeTimes->{{3.3889385158959827`*^9, 3.3889385674660387`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], ",", 
+      RowBox[{"y", "[", "t", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", " ", ",", 
+      RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+    RowBox[{"AxesLabel", "->", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\<y\>\""}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "9"}], "}"}]}], "}"}]}]}], "]"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.388938603499308*^9, 3.388938610032282*^9}, {
+  3.388938646030229*^9, 3.388938696613764*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plotting Data", "Subsection",
+ CellChangeTimes->{{3.3889389677511272`*^9, 3.3889389697321453`*^9}}],
+
+Cell["\<\
+          A very different kind of plotting occurs when we have a data set to \
+visualize.  We start by defining a list which contains 20 sets of number \
+pairs, which we will think of as x and y coordinates.  (These numbers were \
+generated from the function f[x] = x^4, plus a little noise.)\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "x", "]"}]], "Input"],
+
+Cell["\<\
+datlist = {{-1.0,1.0},{-0.9,0.6861},{-0.8,0.4796},
+\t{-0.7,0.2701},{-0.6,0.1396},{-0.5,0.0725},
+\t{-0.4,0.0266},{-0.3,0.0091},{-0.2,0.0016},
+\t{-0.1,0.0001},{0.0,0.0},{0.1,0.0001},
+\t{0.2,0.0014},{0.3,0.0071},{0.4,0.0216},
+\t{0.5,0.0525},{0.6,0.1096},{0.7,0.2201},
+\t{0.8,0.3896},{0.9,0.5861},{1.0,.91}};\t
+\t\t\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now we plot this list by using the function ListPlot.  We also \
+introduce a new concept here.  We name our graph graph1 -- that is, we assign \
+the graphical output to the variable graph1.  Then we can refer to the graph \
+later by this name.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["graph1 = ListPlot[datlist]", "Input",
+ CellChangeTimes->{3.388938747941245*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          If we want the points connected by lines, we use the option \
+Joined->True.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4181461085618134`*^9, 3.418146109817585*^9}},
+ AspectRatioFixed->True],
+
+Cell["ListPlot[datlist,Joined->True]", "Input",
+ CellChangeTimes->{
+  3.38893875611757*^9, {3.418146102802946*^9, 3.41814610419343*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now let's plot the function f[x] = x^4 and compare it with the plot \
+of the noisy data.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["y = x^4", "Input",
+ AspectRatioFixed->True],
+
+Cell["graph2 = Plot[y,{x,-1,1},PlotRange->{{-1,1},{0,1}}]", "Input",
+ CellChangeTimes->{3.388938772718041*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Notice something new here.  Instead of plotting a function, we \
+plotted the expression y, which was defined above as x^4.  Now we combine \
+this plot of x^4 with the plot of the data by using the Show command.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Show[graph1,graph2]", "Input",
+ CellChangeTimes->{3.388938784462069*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The two plots have been put on the same graph with the same scale.  \
+This allows an easy comparison of two (or more) plots.  By naming the graphs, \
+we made it easy to combine them with the Show command.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Three-Dimensional Plots of Surfaces", "Subsection",
+ CellChangeTimes->{{3.388938993509378*^9, 3.388939005645667*^9}}],
+
+Cell[TextData[{
+ "          Mathematica also has excellent capabilities for three-dimensional \
+plots.  To illustrate this, we generate a three-dimensional plot of the \
+surface defined by z = (x + y",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[")", "2"], TraditionalForm]]],
+ "+ 3(x - y",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[")", "2"], TraditionalForm]]],
+ "."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[x,y,z]", "Input",
+ AspectRatioFixed->True],
+
+Cell["z = (x+y)^2 + 3 (x-y)^2;", "Input",
+ AspectRatioFixed->True],
+
+Cell["Plot3D[z,{x,-2,2},{y,-2,2}]", "Input",
+ CellChangeTimes->{3.388939015658499*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Instead of plotting the expression z, we could have gotten the same \
+result by first defining the function f[x,y] = (x+y)^2 + 3(x-y)^2 and then \
+plotting f[x,y].  As with Plot and ListPlot, there are many options you can \
+use with Plot3D to control the appearance of the plot.  As an example, we use \
+the AxesLabel option to label the three axes.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Plot3D[z,{x,-2,2},{y,-2,2},AxesLabel->{\"x\",\"y\",\"z\"}]", "Input",
+ CellChangeTimes->{
+  3.38893903475698*^9, {3.388939318815186*^9, 3.388939340774753*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+It is very easy to rotate the view for these graphs, without replotting.  Use \
+the mouse to put the cursor anywhere in the picture.  The cursor will change \
+to a pair of circular arrows.  Then if you hold down the left mouse button \
+and drag, the picture will rotate.  \
+\>", "Text",
+ CellChangeTimes->{{3.388939268133574*^9, 3.388939297717411*^9}, {
+   3.41814644927229*^9, 3.418146532848028*^9}, 3.424091980263505*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Contour Plots", "Subsection",
+ CellChangeTimes->{{3.388939379608975*^9, 3.388939381655862*^9}}],
+
+Cell["\<\
+          We can also get a contour plot of the level surfaces of z, by using \
+the command ContourPlot. \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["ContourPlot[z,{x,-2,2},{y,-2,2}]", "Input",
+ CellChangeTimes->{3.388939388895917*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Here the darkest regions are the lowest values, and the lightest \
+regions the highest values.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tCan we label the axes on this plot?  Yes, but because the plot is enclosed \
+in a frame, we must use the option FrameLabel rather than AxesLabel.\
+\>", "Text"],
+
+Cell["ContourPlot[z,{x,-2,2},{y,-2,2},FrameLabel->{\"x\",\"y\"}]", "Input",
+ CellChangeTimes->{3.3889394052708197`*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+If you use the mouse to move the cursor into the picture, you will get useful \
+information.  As you the cursor crosses any contour in the plot, the value of \
+the function on that contour is displayed.  \
+\>", "Text",
+ CellChangeTimes->{{3.418146588250141*^9, 3.418146632801754*^9}}],
+
+Cell["\<\
+          As a final bit of cleaning up, let's clear the functions and \
+variables we defined above.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[datlist,graph1,graph2,x,y,z,ourfunc]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Root Finding", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's return to the problem of finding the roots of a cubic, \
+suggested by the graph of the cubic function in the last section.  We begin \
+by defining and plotting the cubic again, calling the function cubic this \
+time.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["cubic[x_] := x^3 - x^2 - 2 x + 1", "Input",
+ AspectRatioFixed->True],
+
+Cell["Plot[cubic[x],{x,-2,2},AxesLabel->{\"x\",\"cubic\"}]", "Input",
+ CellChangeTimes->{3.388939948237864*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that there are three roots, located very roughly at -1.2, \
+0.4, and 1.8.  Let's see how close these graphic estimates are.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["cubic[-1.2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["cubic[0.4]", "Input",
+ AspectRatioFixed->True],
+
+Cell["cubic[1.8]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          The 1.8 estimate is closer than the other two.  We can get better \
+values by using some of the built-in functions in Mathematica",
+ StyleBox[".",
+  FontSlant->"Italic"],
+ "  We first try to find the roots exactly, by using the command solve.  \
+Notice the double equals sign in the command below.  In Mathematica",
+ StyleBox[",",
+  FontSlant->"Italic"],
+ "  the single equals sign is used only for assignment statements.  To \
+express logical equality, as we are doing here, we must use the double equals \
+sign.  The command below tells Mathematica to solve the equation cubic[x]==0 \
+for the variable x."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Solve[cubic[x] == 0,x]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Because this is a cubic, it can be solved exactly, and ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " has done just that, returning three complicated expressions for the three \
+roots.  The expressions are in the form of replacement rules, which would be \
+helpful if we wanted to substitute the answers into some other expression.  \
+However this exact solution is not convenient.  The expressions for the roots \
+contain complex numbers even though the roots are real.  We clean up the \
+answer by applying the function N to the above expression."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3889399983064213`*^9, 3.388940028570346*^9}, {
+  3.388940607069792*^9, 3.388940642513935*^9}},
+ AspectRatioFixed->True],
+
+Cell["N[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now we have the three roots, contaminated very slightly by \
+numerical error, as evidenced by the spurious small imaginary parts.  For \
+general polynomials of degree higher than four, there are no exact solutions. \
+ For such cases, one has to look directly for numerical solutions, rather \
+than first trying to find an exact solution and then evaluating it \
+numerically.   Even in the present case, the direct numerical approach is \
+more convenient, as we shall see now.  We can use the command NSolve to find \
+numerical roots of polynomials, or we can use the more general command \
+FindRoot for more general functions.  Let's apply both of these to cubic.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["NSolve[cubic[x] == 0,x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This time we have gotten our three roots very directly.  Let's \
+repeat this with FindRoot.  In FindRoot, we must also specify an initial \
+guess.  We use our original graphical estimates for the initial guesses.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["FindRoot[cubic[x] == 0,{x,-1.2}]", "Input",
+ AspectRatioFixed->True],
+
+Cell["FindRoot[cubic[x] == 0, {x,0.4}]", "Input",
+ AspectRatioFixed->True],
+
+Cell["FindRoot[cubic[x] == 0,{x,1.8}]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          With non-polynomial functions, NSolve will not work and we must use \
+FindRoot.  Let's look at an example.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["nonpoly[x_] := 1 + x - 0.5*Exp[x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["          We plot this first to spot any roots.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Plot[nonpoly[x],{x,0,2},PlotRange->{{0,2},{-1,1}}]", "Input",
+ CellChangeTimes->{3.388940706161107*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see a root somewhere between 1.6 and 1.7.  We use FindRoot to \
+locate it accurately, and then check the root by evaluating the function at \
+that value.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4723968718138313`*^9, 3.472396876203258*^9}},
+ AspectRatioFixed->True],
+
+Cell["FindRoot[nonpoly[x]==0,{x,1.6}]", "Input",
+ CellChangeTimes->{{3.4723968821566133`*^9, 3.472396882901471*^9}},
+ AspectRatioFixed->True],
+
+Cell["nonpoly[x] /. %", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tHere we are using the replacement operator /. to evaluate the polynomial \
+with the replacement rule returned by FindRoot, using % as a shorthand \
+reference to the immediately preceding line of output.\
+\>", "Text"],
+
+Cell["          We finish this section by clearing our functions.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[cubic,nonpoly]", "Input",
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Replacement Rules", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Using Replacement Rules for Evaluating Expressions", "Subsection",
+ CellChangeTimes->{{3.388941193649233*^9, 3.388941202640723*^9}}],
+
+Cell[TextData[{
+ "\tReplacement rules are an important and useful part of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  The object of this section is to give a basic view of such rules and how \
+they are used.  We start with an example:  {x->3} is a replacement rule, \
+which says to replace x with the value 3.  By itself, the rule does not cause \
+anything to happen.  It has to be applied to an expression.  Let's define an \
+expression named poly in x and y and then apply this replacement rule and \
+some others to it."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"poly", "=", 
+  RowBox[{
+   RowBox[{"x", "^", "2"}], " ", "+", " ", 
+   RowBox[{"y", "^", "3"}]}]}]], "Input"],
+
+Cell["\<\
+Suppose we want to evaluate this expression when x = 3.  We can do that with \
+a replacement rule:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"poly", "/.", 
+  RowBox[{"{", 
+   RowBox[{"x", "->", "3"}], "}"}]}]], "Input"],
+
+Cell["\<\
+Here /. is the replacement operator.  It separates the expression to be acted \
+on -- poly in this case -- and the replacement rule -- {x->3} in this case.  \
+It returns the value of poly after x has been replaced by 3.  Suppose now we \
+want to replace x by 3 and y by 4.  Here is how we do that.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"poly", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "->", "3"}], ",", 
+    RowBox[{"y", "->", "4"}]}], "}"}]}]], "Input"],
+
+Cell[TextData[{
+ "Why such an elaborate procedure for evaluating an expression?  Why not just \
+set x = 3 and y = 4?  Before we answer that, let's make one more point:  the \
+operations above have NOT left any values assigned to poly, x, or y.  We can \
+see that by asking ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " for the values of these symbols."
+}], "Text"],
+
+Cell[BoxData["x"], "Input"],
+
+Cell[BoxData["y"], "Input"],
+
+Cell[BoxData["poly"], "Input"],
+
+Cell["\<\
+Thus the replacement operator has allowed us to evaluate poly at x = 3 and y \
+= 4 without changing in any way the original expression for poly, and without \
+assigning any values to the variables x and y.  Now let's see what happens if \
+we perform the evaluation by assigning values to x and y.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"x", "=", "3"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"y", "=", "4"}]], "Input"],
+
+Cell[BoxData["poly"], "Input"],
+
+Cell["\<\
+We get the correct value, but now poly, x, and y all have numerical values.  \
+This can have unwanted side effects.  Any other expressions in x and y will \
+also acquire these values:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", "*", "x"}], "-", 
+  RowBox[{"2", "*", "y"}]}]], "Input"],
+
+Cell["\<\
+Furthermore, we have lost the ability to evaluate poly for other values of x \
+and y, because it is now just a number.  We can restore our original state by \
+clearing the values of x and y.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "y"}], "]"}]], "Input"],
+
+Cell[BoxData["poly"], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", "*", "x"}], "-", 
+  RowBox[{"2", "*", "y"}]}]], "Input"],
+
+Cell["\<\
+In general it is safer and more convenient to use replacement rules for \
+evaluation, for then we never alter the original algebraic expressions.\
+\>", "Text",
+ CellChangeTimes->{{3.38894100738736*^9, 3.3889410086275787`*^9}, {
+  3.3889411447036743`*^9, 3.388941157639244*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Examples of Built-in Functions Which Return Replacement Rules\
+\>", "Subsection",
+ CellChangeTimes->{{3.38894122247052*^9, 3.388941244836253*^9}}],
+
+Cell[TextData[{
+ "\tAnother reason for learning about replacement rules is that many ",
+ "Mathematica",
+ " functions return answers in the form of replacement rules.  For example, \
+let's consider the command FindRoot which looks for roots of equations.  \
+Suppose we have the following two-step computational task:  (1) find the root \
+of the equation ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", "x"], TraditionalForm]]],
+ " = 2 - ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ ";  (2) evaluate the expression ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "3"], TraditionalForm]]],
+ "-2",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+3x +4 with x equal to the root found in (1).  The use of replacement rules \
+make this very easy.  First we do part (1).  We use the command FindRoot."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ans", "=", 
+  RowBox[{"FindRoot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Exp", "[", "x", "]"}], "==", 
+     RowBox[{"2", "-", 
+      RowBox[{"x", "^", "2"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell["\<\
+The first argument of FindRoot, Exp[x]== 2 - x^2,  is the equation to be \
+solved.  The second argument, {x,1}, is a list in which the first element is \
+x, the variable to be solved for, and the second element is an initial guess \
+(1 in this case) for x.  FindRoot returns the answer in the form of a \
+replacement rule, and we have assigned that rule to a variable named ans.  \
+\>", "Text"],
+
+Cell[BoxData["ans"], "Input"],
+
+Cell[TextData[{
+ "To evaluate the expression ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "3"], TraditionalForm]]],
+ "-2",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+3x +4 for this value of x, we simply apply the replacement rule to the \
+expression."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "^", "3"}], "-", 
+   RowBox[{"2", "*", 
+    RowBox[{"x", "^", "2"}]}], "+", 
+   RowBox[{"3", "*", "x"}], "+", "4"}], "/.", "ans"}]], "Input"],
+
+Cell[TextData[{
+ "\tWe also see replacement rules as output from the differential equation \
+solvers  DSolve and NDSolve.   Let's look at one example for DSolve.  We \
+solve y'[t] +(1/t)y[t] = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", "t"], TraditionalForm]]],
+ "/t, with y[1]=2. "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ans", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "t", "]"}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "/", "t"}], ")"}], "*", 
+         RowBox[{"y", "[", "t", "]"}]}]}], "==", 
+       RowBox[{
+        RowBox[{"Exp", "[", "t", "]"}], "/", "t"}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "1", "]"}], "==", "2"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input"],
+
+Cell["\<\
+We see that DSolve has returned a replacement rule and we have assigned the \
+rule to ans.  This rule, when applied, will replace y[t] by an expression \
+which is the solution of the initial value problem  Suppose we want to assign \
+this solution to a function, say sol1[t].  We do that by using the \
+replacement rule in the definition of sol1.  But first we get rid of the \
+extra curly brackets around the rule by the command Flatten.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"ans", "=", 
+  RowBox[{"Flatten", "[", "ans", "]"}]}]], "Input"],
+
+Cell["Now we create a function sol1[t] using this rule.", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sol1", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", "ans"}]}]], "Input"],
+
+Cell["We can evaluate the solution at any t, or plot it.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"sol1", "[", "1", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"sol1", "[", "2", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"sol1", "[", "2", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"sol1", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<sol1[t]\>\""}], "}"}]}], ",", 
+   RowBox[{"AxesOrigin", "->", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "7"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.3889413743624077`*^9}],
+
+Cell["\<\
+\tWe could have been more efficient.  We could create the function defining \
+the solution at the same time that we ask for the solution of the \
+differential equation.  Let's solve the problem again, this time with an \
+initial condition of y[1]=0.  We do everything in one step.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sol2", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"DSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "t", "]"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "/", "t"}], ")"}], "*", 
+           RowBox[{"y", "[", "t", "]"}]}]}], "==", 
+         RowBox[{
+          RowBox[{"Exp", "[", "t", "]"}], "/", "t"}]}], ",", 
+        RowBox[{
+         RowBox[{"y", "[", "1", "]"}], "==", "0"}]}], "}"}], ",", 
+      RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"sol2", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<sol2[t]\>\""}], "}"}]}], ",", 
+   RowBox[{"AxesOrigin", "->", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "7"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388941408171256*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", 
+   RowBox[{"ans", ",", "sol1", ",", "sol2"}], "]"}], ";"}]], "Input"],
+
+Cell["\<\
+\tSee the last section of this tutorial for a brief discussion of the \
+commands Clear and Remove.\
+\>", "Text"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Differentiation", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica has very powerful symbolic processing capabilities.  It \
+can find symbolically the derivatives of many functions or expressions.  The \
+command for differentiation is D, and it has as first argument the function \
+or expression to be differentiated, and as second argument the independent \
+variable in the differentiation.  We look at examples of both functions and \
+expressions. \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["f[x_] := x*Sin[x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[f[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["y = x*Cos[x];", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[y,x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Clear[f,y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[f[x]/g[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Together[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see from these examples that Mathematica knows rules for \
+differentiation -- both specific rules, such as for sine and cosine, and \
+general rules, such as the quotient rule above.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tWe can do multiple differentiations in one operation with a modified form \
+of the D command.  We illustrate this by calculating the second derivative of \
+the sine function.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2"}], "}"}]}], "]"}]], "Input"],
+
+Cell["\<\
+With this notation, we could also write the first derivative as\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1"}], "}"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " recognizes several other ways of writing derivatives.  We may use the \
+apostrophe to denote a prime indicating differentiation.  Here is an \
+example."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", " ", 
+  SuperscriptBox["x", "3"]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "'"}], "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "''"}], "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "'''"}], "[", "x", "]"}]], "Input"],
+
+Cell["\<\
+\tStill another way of writing the derivative is to use the partial \
+derivative symbol with a subscript indicating the variable of differentiation.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[PartialD]", "x"], 
+  RowBox[{"f", "[", "x", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[PartialD]", 
+   RowBox[{"x", ",", "x"}]], 
+  RowBox[{"f", "[", "x", "]"}]}]], "Input"],
+
+Cell["\<\
+          Partial derivatives are calculated in the same way.  We simply have \
+to tell Mathematica which variable we are differentiating with respect to.  \
+Here are a few examples.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[f,x,y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["f[x_,y_] := x^2 - x y + y^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[f[x,y],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[f[x,y],y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[D[f[x,y],x],y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["This last is written more transparently as", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[PartialD]", 
+   RowBox[{"x", ",", "y"}]], 
+  RowBox[{"f", "[", 
+   RowBox[{"x", ",", "y"}], "]"}]}]], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Integration", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["Indefinite Integrals", "Subsection",
+ CellChangeTimes->{{3.388942161230802*^9, 3.388942165313623*^9}}],
+
+Cell["\<\
+          Mathematica can do most of the integrations that you would find in \
+a good integral table.  The command is Integrate, with two arguments.  The \
+first argument is the function or expression to be integrated, and the second \
+argument is the variable of integration.  Here is an example with a specified \
+function f[x,].\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["x", "2"], "-", 
+   RowBox[{"2", "x"}], "+", "3"}]}]], "Input"],
+
+Cell["Integrate[f[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+If the function depends on more than one variable, the same procedure works, \
+with the second argument specifying the variable of integration.  Here is an \
+example.\
+\>", "Text"],
+
+Cell["f[x_,y_] := x^2 - x y + y^2", "Input",
+ AspectRatioFixed->True],
+
+Cell["Integrate[f[x,y],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Integrate[f[x,y],y]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tNow we look at the integration of an expression q, as defined below.\
+\>", "Text"],
+
+Cell["q = x*Sin[x];", "Input",
+ AspectRatioFixed->True],
+
+Cell["Integrate[q,x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["          We check this last result by differentiating.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["D[%,x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          What happens if we try to integrate a function whose integral is \
+not expressible in terms of elementary functions?  Let's find out.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\[CapitalPhi][x_] := Exp[Cos[x]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Integrate[\[CapitalPhi][x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["In this case, Mathematica just returns the input as output.", "Text",
+ CellChangeTimes->{3.3889417631814747`*^9}],
+
+Cell[TextData[{
+ "\tThis last result suggests that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " knows the traditional mathematical notation for integrals.  The necessary \
+symbols are available on the Basic Math Assistant Palette.  Let's redo a few \
+of our examples using this new notation."
+}], "Text",
+ CellChangeTimes->{{3.388941782889358*^9, 3.388941784111796*^9}, {
+  3.450802003631515*^9, 3.4508020116691*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[Integral]", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", "y"}], "]"}], 
+   RowBox[{"\[DifferentialD]", "x"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Integral]", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", "y"}], "]"}], 
+   RowBox[{"\[DifferentialD]", "y"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Integral]", 
+  RowBox[{"q", 
+   RowBox[{"\[DifferentialD]", "x"}]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Definite Integrals", "Subsection",
+ CellChangeTimes->{{3.388942217536353*^9, 3.3889422211223783`*^9}}],
+
+Cell["\tWe start with a simple example involving our expression q: ", "Text",
+ CellChangeTimes->{{3.3889422829247837`*^9, 3.388942317989297*^9}, {
+  3.388942428888214*^9, 3.388942436808648*^9}}],
+
+Cell[BoxData["q"], "Input",
+ CellChangeTimes->{{3.3889423216259623`*^9, 3.388942322815868*^9}, {
+  3.388942443231448*^9, 3.388942444084794*^9}}],
+
+Cell["\<\
+We ask for the integral of q from 0 to \[Pi].\
+\>", "Text",
+ CellChangeTimes->{{3.388942384281151*^9, 3.388942400181158*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{"q", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.388942359561667*^9, 3.388942375571439*^9}, {
+  3.388942451791849*^9, 3.388942452955701*^9}}],
+
+Cell["The alternative notation for the same thing:", "Text",
+ CellChangeTimes->{{3.388942461864991*^9, 3.388942469424611*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Integral]", "0", "\[Pi]"], 
+  RowBox[{"q", 
+   RowBox[{"\[DifferentialD]", "x"}]}]}]], "Input"],
+
+Cell[TextData[{
+ "\tNow let's look at an example from Fourier series, in which we ask ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to calculate the Fourier coefficients.  We will do this for the Fourier \
+cosine expansion of the function f[x] = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "3"], TraditionalForm]]],
+ "on the interval [0",
+ ", ",
+ StyleBox["L",
+  FontSlant->"Italic"],
+ "].  We denote the nth expansion coefficient by a[n], with a temporary \
+notation of coeffn.  Then we have"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"L", ",", "a"}], "]"}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "[", "0", "]"}], "=", 
+  RowBox[{
+   FractionBox["1", "L"], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "L"], 
+    RowBox[{
+     SuperscriptBox["x", "3"], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"coeffn", "=", 
+  RowBox[{
+   FractionBox["2", "L"], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "L"], 
+    RowBox[{
+     SuperscriptBox["x", "3"], 
+     RowBox[{"Cos", "[", 
+      RowBox[{"(", 
+       RowBox[{"n", " ", "\[Pi]", " ", 
+        RowBox[{"x", "/", "L"}]}], ")"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input"],
+
+Cell[TextData[{
+ "We see that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " hasn't made some simplifications that arise from ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " being an integer.  We can ask for those simplifications by using the \
+command Simplify with the assumption n \[Element] Integers, which means that ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " is in the set of integers.  ",
+ "(The set inclusion symbol \[Element] is obtained from one of the palettes.  \
+It is not the same as the Greek letter \[Epsilon].)  We carry this out. ",
+ "    "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "[", "n_", "]"}], "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"coeffn", ",", 
+    RowBox[{"n", "\[Element]", " ", "Integers"}]}], "]"}]}]], "Input"],
+
+Cell["We look at the first few coefficients.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"a", "[", "1", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"a", "[", "2", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"a", "[", "3", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", "coeffn", "]"}], ";"}]], "Input"],
+
+Cell[TextData[{
+ "\tWe return now to the example which ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " couldn't do, namely"
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{"\[CapitalPhi]", "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Integral]", "0", "2"], 
+  RowBox[{
+   RowBox[{"\[CapitalPhi]", "[", "x", "]"}], 
+   RowBox[{"\[DifferentialD]", "x"}]}]}]], "Input"],
+
+Cell["\<\
+Again not much progress.  But we can always do such integrals numerically.  \
+The function which does this is NIntegrate, which we now use to evaluate this \
+integral.  The first argument of NIntegrate is the name of the function, and \
+the second is a list, with the variable of integration and the two endpoints.\
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["NIntegrate[\[CapitalPhi][x],{x,0,2}]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+Very quick and very easy.  We do one more numerical integral. \
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalPsi]", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   FractionBox["2", 
+    SqrtBox["\[Pi]"]], 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     SuperscriptBox["x", "2"]}]]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "If we try to do this analytically, we discover that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " knows the function defined by this integral. "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"\[Integral]", 
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", "x", "]"}], 
+   RowBox[{"\[DifferentialD]", "x"}]}]}]], "Input"],
+
+Cell["\<\
+Erf[x] is the error function and it arises frequently in probability theory \
+and diffusion theory.\
+\>", "Text"],
+
+Cell["Thus our original integral from 0 to 1 is", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Erf", "[", "1.0", "]"}], "-", 
+  RowBox[{"Erf", "[", "0", "]"}]}]], "Input"],
+
+Cell["which agrees with our numerical integration.", "Text",
+ CellChangeTimes->{{3.4182047346787853`*^9, 3.4182047359173393`*^9}}],
+
+Cell["\<\
+We may even do some integrals numerically when one or both of the limits are \
+infinite.  Here is an example.\
+\>", "Text",
+ CellChangeTimes->{{3.388942018515934*^9, 3.388942038157282*^9}}],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.388942062652651*^9, 3.388942064634597*^9}}],
+
+Cell["\<\
+This is the well-known result that Erf[\[Infinity]] = 1.\
+\>", "Text",
+ CellChangeTimes->{{3.388942093545372*^9, 3.388942116263736*^9}}],
+
+Cell["Clear[f,g,x,y,q,\[CapitalPhi],L,\[CapitalPsi]]", "Input",
+ AspectRatioFixed->True]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Differential Equations", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["Using DSolve for Analytical Solutions", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["First Order Equations", "Subsubsection",
+ CellChangeTimes->{{3.38894378310732*^9, 3.388943788143824*^9}}],
+
+Cell["\<\
+          Mathematica can solve analytically most of the linear differential \
+equations that are studied in a first course in ordinary differential \
+equations.  In addition, it has a very powerful built-in command to integrate \
+differential equations numerically.  We will look at a few examples of each.  \
+We start with some analytical solutions.  The command is DSolve.  DSolve has \
+three arguments.  The first is the equation to be solved, the second is the \
+function to be solved for, and the third is the independent variable.  \
+Consider a simple first-order equation.  Note that the prime indicating the \
+derivative is simply the apostrophe (repeated n times for an nth derivative). \
+ \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["DSolve[y'[x] == y[x],y[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that we get the general solution of this equation, with C[1] \
+being an arbitrary constant.  (Note again the double equals sign for logical \
+equality in the definition of the differential equation.)  Let's generalize \
+this slightly by putting in a general constant coefficient.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4182059084158688`*^9, 3.418205932149633*^9}},
+ AspectRatioFixed->True],
+
+Cell["DSolve[{y'[x] == k*y[x]},y[x],x] ", "Input",
+ AspectRatioFixed->True],
+
+Cell["Again we get the general solution.  ", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3889438056184196`*^9, 3.388943815759766*^9}},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Second Order Equations", "Subsubsection",
+ CellChangeTimes->{{3.388943825233061*^9, 3.3889438288322477`*^9}}],
+
+Cell["\tNow let's look at some second order equations.", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3889438056184196`*^9, 3.3889438075048313`*^9}},
+ AspectRatioFixed->True],
+
+Cell["DSolve[{y''[x] + k*y[x] == 0},y[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This general solution is correct for both k positive and k \
+negative, but the form is not particularly convenient for k negative, because \
+it gives a complex-valued solution basis.  If we put an actual number in for \
+k, Mathematica will give us a real-valued solution basis in either case.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["DSolve[{y''[x] + 4*y[x] == 0},y[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Let's repeat this for a negative constant.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["DSolve[{y''[x] - 4*y[x] == 0},y[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+Alternatively, in the case of negative k, we can rewrite the equation in \
+terms of m = -k.\
+\>", "Text"],
+
+Cell["DSolve[{y''[x] - m*y[x] == 0},y[x],x]", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "This is a useful form, and it suggests that, at least in some cases, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will regard unspecified symbols in the equation as positive constants."
+}], "Text"],
+
+Cell["\<\
+          Here is a useful addition to this technique.  If we also include \
+initial conditions in the arguments of DSolve, Mathematica will take care of \
+them for us as well.  Let's redo the problem with k = -4, this time including \
+initial conditions.  The initial conditions are grouped with the equation by \
+curly brackets.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.418205999239272*^9, 3.418206012509593*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+DSolve[{y''[x]-4*y[x] == 0,y[0] == 1,y'[0] == 1},
+\ty[x],x] \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We can also solve inhomogenous equations.  Here's an example.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+DSolve[{y''[t] + 16*y[t] == Cos[2 t], 
+\ty[0] == 1, y'[0] == 0},y[t],t]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+This answer is in an inconveniently complicated form.  We apply Simplify to \
+it.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%", "]"}]], "Input"],
+
+Cell["Much better.", "Text"],
+
+Cell["\<\
+          Notice that all of the answers we have gotten are in the form of \
+replacement rules.  If for example we want to plot our answer, we will have \
+to put it in a slightly different form by creating an expression or function \
+to be plotted from the replacement rule.  Let's work through this procedure \
+for the equation we have just solved.  We solve it again, but this time we \
+give a name to the replacement rule.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+solution = DSolve[{y''[t] + 16*y[t] == 
+\t\tCos[2 t], y[0] == 1, y'[0] == 0},y[t],t]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now we create a function sol[t] which is the solution, by using the \
+replacement rule.  We also apply Simplify.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["sol[t_] = Simplify[y[t] /. Flatten[solution]] ", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Why the command Flatten?  To get rid of the extra curly brackets \
+around the replacement rule.  Let's look at that in more detail.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Simplify[solution]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Flatten[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\tNow let's check our solution.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["D[sol[t],{t,2}] + 16*sol[t] - Cos[2 t]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Looks a little complicated, so we attack it with Simplify.", "Text"],
+
+Cell["Simplify[%]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          It checks out OK.  Now we check the initial conditions.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["sol[0]", "Input",
+ AspectRatioFixed->True],
+
+Cell["D[sol[t],t] /. t->0", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          These also are OK.  Let's plot our solution over the time range \
+[0,10].\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Plot[sol[t],{t,0,10}]", "Input",
+ CellChangeTimes->{3.3889432936439667`*^9},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", "sol", "]"}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Systems of First Order Equations", "Subsubsection",
+ CellChangeTimes->{{3.388943856284577*^9, 3.388943861456653*^9}}],
+
+Cell["\<\
+\tWe can use DSolve for systems of equations as well.  To illustrate that, we \
+convert the above problem to a system.  The original equation is\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], "y"}], 
+     SuperscriptBox["dt", "2"]], " ", "+", " ", 
+    RowBox[{"16", " ", "y"}]}], " ", "=", " ", 
+   RowBox[{"cos", " ", 
+    RowBox[{"(", 
+     RowBox[{"2", " ", "t"}], ")"}]}]}], "  ", ",", " ", 
+  RowBox[{
+   RowBox[{"y", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", "1"}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "'"}], 
+    RowBox[{"(", "0", ")"}]}], "=", " ", "0."}]}]], "Text",
+ TextAlignment->Center,
+ FontFamily->"Times"],
+
+Cell["\<\
+We convert this to a system of two first order equations by letting v = \
+dy/dt.  The resulting set is\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["dy", "dt"], " ", "=", " ", "v"}], " ", ",", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   FractionBox["dv", "dt"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "16"}], " ", "y"}], " ", "+", " ", 
+    RowBox[{"cos", 
+     RowBox[{"(", " ", 
+      RowBox[{"2", " ", "t"}], ")"}]}]}]}], " ", ",", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"with", " ", "y", 
+    RowBox[{"(", "0", ")"}]}], "=", " ", "1"}], ",", " ", 
+  RowBox[{
+   RowBox[{"v", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", "0."}]}]], "Text",
+ TextAlignment->Center,
+ FontFamily->"Times"],
+
+Cell["To solve this using DSolve, we type", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "==", 
+      RowBox[{"v", "[", "t", "]"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"v", "'"}], "[", "t", "]"}], "==", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "16"}], " ", 
+        RowBox[{"y", "[", "t", "]"}]}], " ", "+", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"2", " ", "t"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "==", "1"}], ",", 
+     RowBox[{
+      RowBox[{"v", "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], ",", 
+     RowBox[{"v", "[", "t", "]"}]}], "}"}], ",", "t"}], "]"}]], "Input"],
+
+Cell["\<\
+This looks a little more complicated than it should be, so we try Simplify.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%", "]"}]], "Input"],
+
+Cell["\<\
+This worked, and as expected, we get the same solution as before.  As we did \
+earlier, we can use the replacement rule form of the solution to create \
+functions.  To do this, we first repeat the solution, this time giving the \
+name sysolution to the output.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"sysolution", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"DSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "t", "]"}], "==", 
+        RowBox[{"v", "[", "t", "]"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"v", "'"}], "[", "t", "]"}], "==", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "16"}], " ", 
+          RowBox[{"y", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "t"}], "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], "==", "1"}], ",", 
+       RowBox[{
+        RowBox[{"v", "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"y", "[", "t", "]"}], ",", 
+       RowBox[{"v", "[", "t", "]"}]}], "}"}], ",", "t"}], "]"}], 
+   "]"}]}]], "Input"],
+
+Cell["\<\
+Now we use this rule to assign the answer to functions ysol[t] and velsol[t].\
+\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"ysol", "[", "t_", "]"}], ",", 
+    RowBox[{"velsol", "[", "t_", "]"}]}], "}"}], "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], ",", 
+     RowBox[{"v", "[", "t", "]"}]}], "}"}], "/.", 
+   RowBox[{"Flatten", "[", "sysolution", "]"}]}]}]], "Input"],
+
+Cell["\<\
+Let's check to see that the answers have been assigned to the functions \
+correctly.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"ysol", "[", "t", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"velsol", "[", "t", "]"}]], "Input"],
+
+Cell["Finally, we repeat our plot from t = 0 to t = 5.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"ysol", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388943394451195*^9}],
+
+Cell["We also plot v.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"velsol", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<v\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388943401130473*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", 
+   RowBox[{"ysol", ",", "velsol"}], "]"}], ";"}]], "Input"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Using NDSolve for Numerical Solutions", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Second Order Equations", "Subsubsection",
+ CellChangeTimes->{{3.3889438863051977`*^9, 3.388943889937125*^9}}],
+
+Cell["\<\
+          Many differential equations of interest are difficult or impossible \
+to integrate analytically.  In such cases we can make good use of NDSolve, \
+which performs the integration numerically for us.  A very useful feature of \
+NDSolve is that instead of returning a long list of values, as most numerical \
+programs do, it returns an object called an interpolating function for the \
+solution -- an object which is easily evaluated at any point or plotted for \
+any range in the original integration range.  Unfortunately a full discussion \
+of NDSolve and the interpolating function that it returns would take more \
+time than is appropriate in this beginning tutorial.  For that reason, we \
+will look at just two examples of solving an equation numerically and \
+plotting the results, without giving a really adequate discussion of what is \
+going on.  The first equation we solve will be the last one we solved above \
+analytically.  The first argument of NDSolve is the equation plus initial \
+conditions.  The second argument is the variable to be solved for.  The third \
+argument is a list containing the name of the independent variable, and the \
+range of the independent variable.  The interpolating function which is \
+returned by NDSolve is assigned to the variable numsol.  \
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4182063355593576`*^9, 3.418206347901709*^9}, {
+  3.418206657537559*^9, 3.418206659149856*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+numsol = NDSolve[{y''[t] + 16*y[t] == 
+\t\tCos[2 t], y[0] == 1, y'[0] == 0},y,{t,0,10}]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now let's use this solution.  First we evaluate it at t = 1.  Then \
+we plot it in the range [0,10].  We do this by using numsol, which is a \
+replacement rule, with y[t].  Thus the expression y[t] /. numsol says to \
+evaluate y[t] by replacing y[t] with the interpolating function found from \
+NDSolve.  We also use Flatten to get rid of the extra curly brackets.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["y[1] /. Flatten[numsol]", "Input",
+ AspectRatioFixed->True],
+
+Cell["Plot[y[t] /. Flatten[numsol],{t,0,10}]", "Input",
+ CellChangeTimes->{3.38894349823948*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The graph above is the same as the graph we got earlier from our \
+analytical solution.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tRather than working with the interpolating function, we can instead use it \
+to create a function which can then be used in subsequent evaluations and \
+plots.  We repeat the above problem, this time assigning the answer to a \
+function ynumans[t].   \
+\>", "Text"],
+
+Cell["\<\
+numsol2 = NDSolve[{y''[t] + 16*y[t] == 
+\t\tCos[2 t], y[0] == 1, y'[0] == 0},y[t],{t,0,10}]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ynumans", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", 
+   RowBox[{"Flatten", "[", "numsol2", "]"}]}]}]], "Input"],
+
+Cell["\<\
+We may treat ynumans[t] as an ordinary function in evaluations or plots.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"ynumans", "[", "1", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"ynumans", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.3889435247654953`*^9}],
+
+Cell["\<\
+\tAs a second example of using NDSolve, we consider a nonlinear equation for \
+which numerical integration is the only effective option. The equation \
+defined below is a form of Duffing's equation, and it describes a nonlinear, \
+damped, unforced oscillator.\
+\>", "Text",
+ CellChangeTimes->{{3.388943542180356*^9, 3.388943553652379*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], "y"}], 
+     SuperscriptBox["dt", "2"]], " ", "+", " ", 
+    RowBox[{"0.2", 
+     FractionBox["dy", "dt"]}], " ", "+", " ", "y", " ", "+", " ", 
+    SuperscriptBox["y", "3"]}], "=", " ", "0"}], " ", ",", " ", 
+  RowBox[{
+   RowBox[{"with", " ", "y", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"1", "  ", "and", " ", 
+     RowBox[{"y", "'"}], 
+     RowBox[{"(", "0", ")"}]}], "=", " ", "0."}]}]}]], "Text",
+ TextAlignment->Center,
+ FontFamily->"Times"],
+
+Cell["We solve this using NDSolve.", "Text"],
+
+Cell["\<\
+numsol3 = NDSolve[{y''[t] + 0.2 y'[t]+ y[t] + (y[t])^3  == 
+\t\t0, y[0] == 1, y'[0] == 0},y[t],{t,0,10}]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+We now convert the interpolating function output to a function duffans[t].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"duffans", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", 
+   RowBox[{"Flatten", "[", "numsol3", "]"}]}]}]], "Input"],
+
+Cell["Plot[duffans[t],{t,0,10},AxesLabel->{\"t\",\"y\"}]", "Input",
+ CellChangeTimes->{3.388943576704913*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          In a matter of seconds, Mathematica has given us a useful view of \
+the solution of this equation, which many years ago would have required hours \
+of hand-drudgery.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388943619971107*^9, 3.388943624124599*^9}, {
+  3.4182067443994427`*^9, 3.418206745365734*^9}},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Systems of First Order Equations", "Subsubsection",
+ CellChangeTimes->{{3.388943929993202*^9, 3.388943934756666*^9}}],
+
+Cell["\<\
+\tWe can also deal with systems of equations using NDSolve.  To illustrate \
+this, we convert Duffing's equation to a system of two first order equations, \
+and then solve it with NDSolve.  The original equation is\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], "y"}], 
+     SuperscriptBox["dt", "2"]], " ", "+", " ", 
+    RowBox[{"0.2", " ", 
+     FractionBox["dy", "dt"]}], "+", " ", "y", " ", "+", " ", 
+    SuperscriptBox["y", "3"]}], "=", "0"}], ",", " ", 
+  RowBox[{
+   RowBox[{"with", " ", "y", 
+    RowBox[{"(", "0", ")"}]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"1", " ", "and", " ", 
+     RowBox[{"y", "'"}], 
+     RowBox[{"(", "0", ")"}]}], "=", " ", "0."}]}]}]], "Text",
+ TextAlignment->Center,
+ FontFamily->"Times"],
+
+Cell["\<\
+We convert this to a system by letting v = dy/dt.  The result is\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["dy", "dt"], " ", "=", " ", "v"}], "  ", ",", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   FractionBox["dv", "dt"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "0.2"}], "v"}], "-", " ", "y", " ", "-", " ", 
+    SuperscriptBox["y", "3"]}]}], "  ", ",", " ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"with", " ", "y", 
+    RowBox[{"(", "0", ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"1", " ", "and", " ", "v", 
+     RowBox[{"(", "0", ")"}]}], "=", " ", "0."}]}]}]], "Text",
+ TextAlignment->Center,
+ FontFamily->"Times"],
+
+Cell["To solve this system numerically using NDSolve, we type", "Text"],
+
+Cell[BoxData[
+ RowBox[{"duffsol", "=", 
+  RowBox[{"NDSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "==", 
+       RowBox[{"v", "[", "t", "]"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"v", "'"}], "[", "t", "]"}], "==", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "0.2"}], 
+         RowBox[{"v", "[", "t", "]"}]}], "-", 
+        RowBox[{"y", "[", "t", "]"}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"y", "[", "t", "]"}], ")"}], "^", "3"}]}]}], " ", ",", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "==", "1"}], ",", 
+      RowBox[{
+       RowBox[{"v", "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"y", "[", "t", "]"}], ",", 
+      RowBox[{"v", "[", "t", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", "10"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell["\<\
+As always, we get an interpolating function output from NDSolve.  We have \
+assigned the replacement rules containing the interpolating functions to the \
+variable duffsol.  We now convert these to functions which can be evaluated \
+and plotted in the ordinary way. We name these functions yduff[t] and \
+velduff[t].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"yduff", "[", "t_", "]"}], ",", 
+    RowBox[{"velduff", "[", "t_", "]"}]}], "}"}], "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], ",", 
+     RowBox[{"v", "[", "t", "]"}]}], "}"}], "/.", 
+   RowBox[{"Flatten", "[", "duffsol", "]"}]}]}]], "Input"],
+
+Cell["We check the intial conditions.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"yduff", "[", "0", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"velduff", "[", "0", "]"}]], "Input"],
+
+Cell["Finally we plot yduff and compare it with our earlier plot.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"yduff", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.3889436556567*^9}],
+
+Cell["We also plot the velocity velduff.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"velduff", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.38894366351173*^9}],
+
+Cell[TextData[{
+ "\tA kind of plot that is often more useful with these nonlinear systems is \
+a phase plot, in which we plot the locus of the state points (as time varies) \
+in the space of y and v.  We use the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " command ParametricPlot to generate this.  "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"yduff", "[", "t", "]"}], ",", 
+     RowBox[{"velduff", "[", "t", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<y\>\"", ",", "\"\<v\>\""}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.388943680739264*^9}],
+
+Cell["\<\
+We see the state point spiralling in to the origin as the damping slowly \
+dissipates the energy of the motion.\
+\>", "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Summing Series", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The Mathematica command Sum makes it easy to compute partial sums \
+of series.  The first argument of Sum is the term of the series, and the \
+second argument is a list giving the index of the sum, and the first and last \
+values of the index.  We start with the geometric series \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "1 + ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"r", " "}], "2"], TraditionalForm]]],
+ "+ ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["r", "3"], TraditionalForm]]],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["r", "4"], TraditionalForm]]],
+ " + .... + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["r", "n"], TraditionalForm]]],
+ " + ....    . "
+}], "Text",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ " (Note that we are using the more traditional superscript notation ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["r", "3"], TraditionalForm]]],
+ "instead of the notation ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ "^3 used in some places earlier in this notebook.  The present form may be \
+constructed by selecting the superscript template from the BasicMathInput \
+Palette.)  For any ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " less than one in absolute value, this series converges to 1/(1-",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ ").  Let's try it for ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " = 1/2, for which we expect to get the sum of 2.  We use the Sum command to \
+define the nth partial sum, which we call geom[n].  We use the N function to \
+force a decimal answer.          "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.38894400522655*^9, 3.388944005814176*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"geom", "[", "n_", "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "/", "2"}], ")"}], "k"], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell["geom[5]", "Input",
+ AspectRatioFixed->True],
+
+Cell["geom[10]", "Input",
+ AspectRatioFixed->True],
+
+Cell["geom[20]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This works, but our definition has been rather inefficient, in that \
+we would have to start over if we wanted to sum the geometric series for any \
+other value of r.  Let's take a more general approach, and define a new \
+function geom2[r,n] as the nth partial sum for any r.  We will then check it \
+for r = 0.25, 0.5 and 0.75, for which the limiting sums are 1.33333, 2.00000, \
+and 4.00000, respectively.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"geom2", "[", 
+   RowBox[{"r_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     SuperscriptBox["r", "k"], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "]"}]}]], "Input"],
+
+Cell["geom2[.25,10]", "Input",
+ CellChangeTimes->{{3.418205298335005*^9, 3.418205299206572*^9}},
+ AspectRatioFixed->True],
+
+Cell["geom2[0.5,10]", "Input",
+ CellChangeTimes->{{3.418205304942993*^9, 3.418205305821364*^9}},
+ AspectRatioFixed->True],
+
+Cell["geom2[0.5,20]", "Input",
+ CellChangeTimes->{{3.418205304942993*^9, 3.4182053269413977`*^9}},
+ AspectRatioFixed->True],
+
+Cell["geom2[0.75,20]", "Input",
+ AspectRatioFixed->True],
+
+Cell["geom2[0.75,30]", "Input",
+ AspectRatioFixed->True],
+
+Cell["geom2[0.75,40]", "Input",
+ AspectRatioFixed->True],
+
+Cell["geom2[0.75,50]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that geom2 works.  We also see that we need more terms to \
+get a given accuracy for larger values of r.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "       As our next example, let's compute partial sums for the Taylor \
+series of the exponential function.  We will estimate ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", "0.5"], TraditionalForm]]],
+ " with partial sums of various lengths.  We start by using the built-in \
+exponential function to get a value to compare with the sums."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", "0.5"]], "Input"],
+
+Cell[TextData[{
+ "          Now we define a partial sum for ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", "x"], TraditionalForm]]],
+ " with the sum going from index 0 to n.  Note that Mathematica knows what \
+the symbol k! means."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"partialsum", "[", 
+   RowBox[{"x_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "k"], "/", 
+     RowBox[{"k", "!"}]}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell["partialsum[0.5,2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["partialsum[0.5,5]", "Input",
+ AspectRatioFixed->True],
+
+Cell["partialsum[0.5,6]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that for this value of x, 7 terms are sufficient for \
+five-place accuracy.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We do one more example -- this time a Fourier series.  We look at \
+the Fourier sine series for the constant function f[x] = 1 on the interval \
+[0,1].  We first use Mathematica to calculate the Fourier coefficients.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["f[x_] := 1", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+coeff = 2*Integrate[f[x]*Sin[n*\[Pi]*x],{x,0,1}]  \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "By telling ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " that n is an integer, we can simplify the coefficient."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "[", "n_", "]"}], "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"coeff", ",", 
+    RowBox[{"n", "\[Element]", "Integers"}]}], "]"}]}]], "Input"],
+
+Cell[TextData[{
+ "The Simplify command contained as an Option the assumption \
+n\[Element]Integers, which tells ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " that n is an integer.  The \[Element] appearing in the assumption is the \
+set inclusion symbol, and it is available on the Basic TypeSetting Palette \
+and the Basic Math Input Palette.  To get either of these, go to the Palette \
+Menu, and then select Other."
+}], "Text",
+ CellChangeTimes->{{3.450803793394717*^9, 3.4508038710656567`*^9}}],
+
+Cell["          Now we define the nth partial sum for any x.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+foursum[x_,n_] := Sum[c[k]*Sin[k*\[Pi]*x],{k,1,n}]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We plot the partial sum as a function of x for several values of n: \
+ 10, 20 and 40.    \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Plot[foursum[x,10],{x,0,1},PlotRange->{0,1.5}]", "Input",
+ CellChangeTimes->{3.388944153078405*^9},
+ AspectRatioFixed->True],
+
+Cell["Plot[foursum[x,20],{x,0,1},PlotRange->{0,1.5}]", "Input",
+ CellChangeTimes->{3.388944157662696*^9},
+ AspectRatioFixed->True],
+
+Cell["Plot[foursum[x,40],{x,0,1},PlotRange->{0,1.5}]", "Input",
+ CellChangeTimes->{3.388944167846919*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We can see that it is trying to converge, but there is still a lot \
+of oscillation, especially at the endpoints where we see the well-known Gibbs \
+phenomenon, a characteristic of Fourier series of discontinuous functions.  \
+(The periodically extended function represented by this series is \
+discontinuous.)  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tMathematica also knows how to find the exact sum of some simple infinite \
+series.  Here is an example.  Note that the upper limit of the index is \
+Infinity.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"n", "^", "2"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "Infinity"}], "}"}]}], "]"}]], "Input"],
+
+Cell["This is a well-known result.  ", "Text"],
+
+Cell["\<\
+Here is an alternative way of writing this for Mathematica, with more \
+traditional mathematical notation.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  UnderoverscriptBox["\[Sum]", 
+   RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+  FractionBox["1", 
+   SuperscriptBox["n", "2"]]}]], "Input"],
+
+Cell["Clear[geom,geom2,partialsum,coeff,f,c,foursum]", "Input",
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Lists and Matrices", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          A concept which we have used throughout this tutorial, without much \
+comment, is that of a list.  A list is a collection of objects.  To specify a \
+list, we use curly brackets as delimiters, and we separate items in the list \
+by commas.  Here is a simple example:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["ourlist = {1,3,5,7,9}", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica has a large number of built-in commands to deal with \
+lists.  We won't need most of them here, so we look only at a few commands to \
+extract particular elements of a list.  To extract the kth element, we type \
+ourlist[[k]].  Note the double square brackets.  Here are some examples.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["ourlist[[1]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["ourlist[[2]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["ourlist[[3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["We also can ask specifically for the first or last element.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"First", "[", "ourlist", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Last", "[", "ourlist", "]"}]], "Input"],
+
+Cell["\<\
+          A matrix in Mathematica is a list of rows, each row also being a \
+list.  The best way to illustrate this is by an example.  The assignment \
+below defines a 3x4 matrix named ourmat.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.472399167359148*^9, 3.4723991697891006`*^9}},
+ AspectRatioFixed->True],
+
+Cell["ourmat = {{1,2,3,4},{1,3,5,7},{2,4,6,8}}", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This doesn't look much like a matrix, but we can ask Mathematica to \
+make it look like a matrix with the command MatrixForm:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["MatrixForm[ourmat]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica has a very powerful set of built-in matrix commands.  \
+We will define a 3x3 matrix A, and illustrate the use of some of these \
+commands.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["A = {{2.0,3.2,1.8},{-4.2,2.3,0},{-1.1,2.3,1.4}};", "Input",
+ AspectRatioFixed->True],
+
+Cell["MatrixForm[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's calculate the determinant, the transpose and the inverse of A.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Det[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["TA = Transpose[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["MatrixForm[TA]", "Input",
+ AspectRatioFixed->True],
+
+Cell["IA = Inverse[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's check the inverse by multiplying A by IA and verifying that \
+we get the identity matrix.  In Mathematica, matrix multiplication is denoted \
+by a dot.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["MatrixForm[IA.A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Close enough!   We can use the inverse to solve a set of \
+simultaneous linear equations.  Suppose we have the following set of \
+equations:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+                                                     2 x + 3.2 y + 1.8 z =  4\
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+                                                 -4.2 x + 2.3 y            = \
+-1 \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+                                                 -1.1 x + 2.3 y + 1.4 z = 3\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The coefficient matrix of these equations is the matrix we have \
+defined as A.  To get the solution, we must multiply the vector on the \
+right-hand side by the inverse of A.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["solution = IA.{4,-1,3}", "Input",
+ AspectRatioFixed->True],
+
+Cell["          Let's check the solution:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["A.solution", "Input",
+ AspectRatioFixed->True],
+
+Cell["which checks.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica also has built-in commands for eigenvalue analysis.  \
+The command Eigenvalues[A] gives the eigenvalues of A, the command \
+Eigenvectors[A] gives the eigenvectors, and the command Eigensystem[A] gives \
+both the eigenvalues and eigenvectors.  We choose a new A and then try these \
+commands.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["A = {{1.0,-2.0,3.0},{-2.0,4.0,1.0},{3.0,1.0,5.0}};", "Input",
+ AspectRatioFixed->True],
+
+Cell["MatrixForm[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvals = Eigenvalues[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvecs = Eigenvectors[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigsys = Eigensystem[A]", "Input",
+ AspectRatioFixed->True],
+
+Cell["          The eigenvectors are parts of the list eigvecs:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[1]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[2]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Because the matrix A is symmetric and the eigenvalues are distinct, \
+the eigenvectors should be pairwise orthogonal.  Let's check that.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[1]].eigvecs[[2]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[1]].eigvecs[[3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["eigvecs[[2]].eigvecs[[3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          There are many other powerful built-in matrix commands, but what we \
+have covered is sufficient for a good start.  We clear our variables and go \
+on.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+Clear[ourlist,ourmat,A,TA,IA,solution,eigvals,
+\t\teigvecs,eigsys]\
+\>", "Input",
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Fitting Curves to Data", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Mathematica has a built-in command to do a polynomial least squares \
+fit of a data list.  The command is Fit, and its first argument is the data \
+list to be fitted, the second argument is a list of powers to be used in the \
+fit, and the third argument is the name of the independent variable.  We \
+first define a data list and plot it.  Then we try fitting polynomials of \
+several different degrees.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+datapoints = {{0.0,0.0},{0.5,0.6},{1.0,1.3},{1.5,2.2},
+\t\t\t{2.0,2.9},{2.5,3.7},{3.0,4.4},{3.5,5.3},
+\t\t\t{4.0,6.3},{4.5,7.2},{5.0,7.8},{5.5,8.8},
+\t\t\t{6.0,10.2},{6.5,12.3},{7.0,14.5},
+\t\t\t{7.5,16.0},{8.0,18.1},{8.5,20.1},
+\t\t\t{9.0,22.3},{9.5,26.7},{10.0,31.2}};\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+datgraph = ListPlot[datapoints,PlotRange->
+\t\t\t{{0,10.1},{-10,40}}]\
+\>", "Input",
+ CellChangeTimes->{3.3889446700669613`*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+We try to fit this with a straight line -- i.e., a polynomial of degree 1.\
+\>", "Text"],
+
+Cell["f1[x_] = Fit[datapoints,{1,x},x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["graph1 = Plot[f1[x],{x,0,10.1}]", "Input",
+ CellChangeTimes->{3.388944682163537*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+Now we compare the calculated straight line and the data on the same graph.\
+\>", "Text"],
+
+Cell["Show[datgraph,graph1]", "Input",
+ CellChangeTimes->{{3.388944694718055*^9, 3.38894469690123*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that a straight line is not a very good fit.  Let's try a \
+quadratic.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["f2[x_] = Fit[datapoints,{1,x,x^2},x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["graph2 = Plot[f2[x],{x,0,10.1}]", "Input",
+ CellChangeTimes->{3.388944706196011*^9},
+ AspectRatioFixed->True],
+
+Cell["Show[datgraph,graph2]", "Input",
+ CellChangeTimes->{3.3889447153166647`*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Now the fit is much better.  Let's try for further improvement with \
+a cubic.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["f3[x_] = Fit[datapoints,{1,x,x^2,x^3},x]", "Input",
+ AspectRatioFixed->True],
+
+Cell["graph3 = Plot[f3[x],{x,0,10.1}]", "Input",
+ CellChangeTimes->{3.388944724868998*^9},
+ AspectRatioFixed->True],
+
+Cell["Show[datgraph,graph3]", "Input",
+ CellChangeTimes->{3.3889447284525957`*^9},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We could probably do even better with a higher order polynomial, \
+but this is sufficient to illustrate how easy it is to use Fit for \
+regression.  We clear our variables before moving on.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear[datapoints,datgraph,graph1,graph2,graph3,f1,f2,f3]", "Input",
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Programming in Mathematica", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          Mathematica is a full-fledged programming language and it \
+supports several different styles of programming.  If you are interested in \
+learning more about these different styles of programming in Mathematica, you \
+might want to look at some of the material in ",
+ StyleBox["Mastering Mathematica",
+  FontWeight->"Bold"],
+ ", second edition, John W. Gray, Academic Press, 1997.  To give you a flavor \
+of the book, here are some of the chapter titles:  Functional Programming, \
+Rule Based Programming, Procedural Programming, and Object-Oriented \
+Programming.  In this tutorial, we will construct one simple example of \
+procedural programming, which is essentially the kind of programming one does \
+in FORTRAN, C, Pascal, or Basic.  In this example, we will write a short \
+program to define a function which returns n! for non-negative integer \
+arguments n.  We will refine our program several times as we discover defects \
+in it.  The heart of the algorithm is a Do loop which performs the repeated \
+multiplications.  We introduce in the program a variable temp which holds the \
+intermediate results.  Notice that each statement in the program is ended \
+with a semi-colon.  The first two statements in the program calculate n! and \
+leave the value stored in the variable temp.  The final statement -- which is \
+just temp -- assigns the value stored in temp to the function f.  Let's try \
+all of this.    "
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+fact1[n_] := (temp = 1;
+\t\t\t Do[temp = temp*k, {k,1,n}];
+\t\t\t temp)  \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          In this definition, the index for the Do loop is k.  The list in \
+curly brackets at the end of the Do statement has the name of the index \
+(usually called the iterator), the initial value 1, and the final value n.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["fact1[4]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact1[6]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact1[1]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact1[0]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact1[-1]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          The program seems to work for the most part.  It is a little \
+surprising that it gave us the correct value 1 for 0!  It turns out that we \
+were just lucky.  If the final value of the loop index is less than the \
+initial value, then the loop is not executed.  Because we started by setting \
+temp = 1, it will retain that value whenever n<1.  That also explains the \
+result for n = -1.  Supplying a negative argument to fact is a user error, \
+and we should return an error message rather than a value.  We modify our \
+program to do this, by using an If statement to check the sign of n, and a \
+Print statement to print the error message.   \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+fact2[n_] := (If[(n<0),Print[\"negative input error\"],
+\t\t\t (temp = 1;
+\t\t\t Do[temp = temp*k, {k,1,n}];
+\t\t\t temp)])  \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Because of the detail, the structure of the If statement may not be \
+quite clear.  Here is the logical pattern:  If[(logical expression), (do this \
+part if expression true), (do this part if expression false)].  In this case, \
+the test is whether n is negative.  If this is true, then the error message \
+is printed.  If this is false, the block of code in the last set of \
+parentheses is executed -- a block which is identical to our original fact1 \
+function.  Let's try our new program.     \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["fact2[4]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact2[0]", "Input",
+ AspectRatioFixed->True],
+
+Cell["fact2[-1]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          This is better, in that it gives us an error message rather than an \
+inappropriate numerical answer for negative n.  However, our program still \
+has some undesirable features.  Execute the following:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["fact2[5]", "Input",
+ AspectRatioFixed->True],
+
+Cell["temp", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We see that the variable temp, which we used inside our program, \
+has acquired a global meaning and value -- that is, it exists with a value \
+outside the original program.  While that is not necessarily harmful, it is \
+not good programming practice.  In a long sequence of calculations, we might \
+unwittingly use the name temp in several different places, and this could \
+cause trouble.  We can avoid this by using the command Module for our \
+program, which allows us to declare any variables we wish to be local to the \
+program.  In our final rewrite of fact, we will include this feature.  We \
+will first Clear temp so that we can test our program properly.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.3889449423659077`*^9, 3.388944943706037*^9}},
+ AspectRatioFixed->True],
+
+Cell["Clear[temp]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+fact3[n_] := Module[{temp},
+\t\t\t(If[(n<0),Print[\"negative input error\"],
+\t\t\t (temp = 1;
+\t\t\t Do[temp = temp*k, {k,1,n}];
+\t\t\t temp)])]  \
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          We have enclosed all of the code with Module.  The list in curly \
+brackets immediately after Module contains the names of all variables that \
+are to be local.  Let's try this.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["fact3[4]", "Input",
+ AspectRatioFixed->True],
+
+Cell["temp", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+Now we see that values assigned to temp are not recognized outside of the \
+Module.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tEven with all of this, our program is not error-proof.  Consider the \
+following:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["fact3[4.2]", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+We see that fact returns a value when an inappropriate decimal argument is \
+used.  Can we do anything to protect the user in this situation?  Yes, we can \
+use the logical test IntegerQ to determine whether the argument is an integer \
+or not.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["IntegerQ[4]", "Input",
+ CellChangeTimes->{3.472399801913846*^9},
+ AspectRatioFixed->True],
+
+Cell["IntegerQ[3.2]", "Input",
+ CellChangeTimes->{{3.472399807425684*^9, 3.4723998082403708`*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Using this in combination with another If statement, we could \
+return an error message when the argument is not an integer.  You might want \
+to try that as a programming exercise.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tIt is worth noting that Mathematica supports recursion.  In some cases this \
+allows very simple code to be written, although sometimes at the cost of \
+inefficient execution.  Here is a recursive definition of n! in its most \
+basic form.  We could add to this definition the tests and warnings we \
+included in fact3.\
+\>", "Text",
+ CellChangeTimes->{{3.418162748152569*^9, 3.41816286849337*^9}, {
+  3.418162955935018*^9, 3.4181629707253227`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"fact4", "[", "0", "]"}], "=", "1"}], ";"}]], "Input",
+ CellChangeTimes->{{3.418162902140744*^9, 3.4181629101259727`*^9}, {
+  3.418162992638451*^9, 3.4181629929661713`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fact4", "[", "n_", "]"}], ":=", 
+  RowBox[{"n", "*", 
+   RowBox[{"fact4", "[", 
+    RowBox[{"n", "-", "1"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.418162875326078*^9, 3.418162882683365*^9}, {
+  3.418162917559649*^9, 3.418162925763082*^9}}],
+
+Cell[BoxData[
+ RowBox[{"fact4", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.418162929455976*^9, 3.418162932922995*^9}, {
+  3.418163002150343*^9, 3.418163002469974*^9}}],
+
+Cell[BoxData[
+ RowBox[{"fact4", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.418163004849201*^9, 3.418163007786643*^9}}],
+
+Cell["\<\
+It might appear as though we have given two different definitions for \
+fact4[0] -- the specific one which yields value 1, or the generic one which \
+would seem to yield a value of 0 times fact4[-1], which is undefined.  This \
+is not the case, however, because Mathematica gives precedence to the \
+function value defined for a specific argument.  Here is another example of \
+that.\
+\>", "Text",
+ CellChangeTimes->{{3.4181630719370127`*^9, 3.418163231661511*^9}, {
+  3.450804569275181*^9, 3.450804572168519*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["x", "2"]}]], "Input",
+ CellChangeTimes->{{3.418163235893702*^9, 3.418163247343669*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "3", "]"}], "=", "5"}], ";"}]], "Input",
+ CellChangeTimes->{{3.418163251515132*^9, 3.418163260381896*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.418163263928019*^9, 3.4181632724058657`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", "2", "]"}]], "Input",
+ CellChangeTimes->{{3.41816327415247*^9, 3.418163274955229*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.418163276909625*^9, 3.418163277659232*^9}}],
+
+Cell[BoxData[
+ RowBox[{"f", "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.418163280116702*^9, 3.418163280811192*^9}}],
+
+Cell["\<\
+This is often useful when one wants to use a different computational \
+procedure for finding the function value for one particular argument.\
+\>", "Text",
+ CellChangeTimes->{{3.418163306847766*^9, 3.418163343981336*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Graph Animation", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          A powerful feature in Mathematica is the ability to animate a \
+sequence of graphs.  We can use this feature to give us a dynamic view of a \
+mathematical process.  In this section, we will use animation to view the \
+convergence of the Taylor series about x = 0 for the function ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", "x"], TraditionalForm]]],
+ " on the interval [-3,3].  Recall that this Taylor series has the following \
+form:"
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.38894503001906*^9, 3.388945043095004*^9}},
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    SuperscriptBox["e", "x"],
+    FontSlant->"Italic"], " ", "=", "  ", 
+   RowBox[{"1", " ", "+", " ", 
+    StyleBox["x",
+     FontSlant->"Italic"], " ", "+", " ", 
+    FractionBox[
+     StyleBox[
+      SuperscriptBox["x", 
+       StyleBox["2",
+        FontSlant->"Plain"]],
+      FontSlant->"Italic"], 
+     RowBox[{"2", "!"}]], " ", "+", " ", 
+    FractionBox[
+     StyleBox[
+      SuperscriptBox["x", 
+       StyleBox["3",
+        FontSlant->"Plain"]],
+      FontSlant->"Italic"], 
+     RowBox[{"3", "!"}]], " ", "+", " ", 
+    FractionBox[
+     StyleBox[
+      SuperscriptBox["x", 
+       StyleBox["4",
+        FontSlant->"Plain"]],
+      FontSlant->"Italic"], 
+     RowBox[{"4", "!"}]], " ", "+", " ", 
+    RowBox[{".", " ", ".", " ", "."}]}]}], TextForm]], "Text",
+ TextAlignment->Center],
+
+Cell["\<\
+We begin by defining a function giving the partial sums.  In constructing the \
+sum algorithm, we make use of the fact that \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "(term k)/(term k-1) = ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ "/",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ "   ."
+}], "Text",
+ TextAlignment->Center],
+
+Cell["\<\
+In the code, the accumulating sum is stored in the local variable temp, and \
+the most recently calculated term is stored in the local variable term.\
+\>", "Text"],
+
+Cell["\<\
+partsum[x_,n_] := Module[{temp,term},
+\t\t\t\t\tIf[(n == 0),(temp = 1),
+\t\t\t\t\t(term = 1; temp = 1;
+\t\t\t\t\tDo[(term = (x/k)*term;
+\t\t\t\t\t\ttemp = temp + term),
+\t\t\t\t\t\t{k,1,n}])];
+\t\t\t\t\t\ttemp]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+          Let's check our coding by comparing the result from it with the \
+value from the built-in exponential, for x = 0.5.   We use 30 terms in our \
+sum which should be more than enough.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["partsum[0.5,30]", "Input",
+ AspectRatioFixed->True],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", "0.5"]], "Input"],
+
+Cell[BoxData["1.6487212707001282`"], "Input",
+ CellChangeTimes->{3.472399983444139*^9}],
+
+Cell["\<\
+          Looks OK.  Now we construct a sequence of graphs of partial sums.  \
+In this grand finale of our graph constructions in this tutorial, we pull out \
+all of the stops and use plotting options for color and labels.  We plot the \
+exact function in red, and the partial sums in blue.  We label the axes, and \
+we also generate a label for the plot which contains the n-value of the \
+partial sum.  We use a Do loop to construct the sequence of graphs.  We \
+construct the first 11 of the partial sums.  The Print statement in the Do \
+loop is necessary to display each graph as it is constructed.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388945149905204*^9, 3.388945170745144*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+Do[Print[Plot[{partsum[x,k],Exp[x]},{x,-3,3},
+\tPlotRange->{0,10},
+\tAxesLabel->{\"x\",\" \"},
+\tPlotLabel->Row[{\"n =\",PaddedForm[k,2]}],
+\tPlotStyle->{RGBColor[0,0,1],RGBColor[1,0,0]}]],
+\t{k,0,10}]
+\t\
+\>", "Input",
+ CellChangeTimes->{{3.388945105265298*^9, 3.388945138920751*^9}, {
+  3.388945286460216*^9, 3.388945291684904*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          After the 11 graphs have been constructed, use the mouse and \
+cursor to select all of the cells containing graphs.  Then go to the ",
+ StyleBox["Graphics",
+  FontWeight->"Bold"],
+ " menu, choose ",
+ StyleBox["Rendering",
+  FontWeight->"Bold"],
+ " and then ",
+ StyleBox["Animate Selected Graphics.  ",
+  FontWeight->"Bold"],
+ "You will see a movie of the convergence of the series.  Note the monotonic \
+convergence for x > 0, and the oscillatory convergence for x < 0.  You can  \
+export this movie by going to the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu, and choosing ",
+ StyleBox["Save Selection As",
+  FontWeight->"Bold"],
+ ".  One of the options you will be offered is to save it as a Quicktime \
+movie. "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388945380900823*^9, 3.388945524045557*^9}, {
+  3.3890004819802427`*^9, 3.389000526613249*^9}},
+ AspectRatioFixed->True],
+
+Cell["\<\
+\tIn Mathematica 7 there are several other ways to create such  movies.  The \
+relevant commands are Animate or Manipulate.  We concentrate on Manipulate \
+because it has all of the functionality of Animate and then some.  We will \
+continue with our Taylor series example.  We start by defining a function, \
+which we call graph[n], which produces a graph of the nth partial sum.  \
+\>", "Text",
+ CellChangeTimes->{{3.388945533824232*^9, 3.388945590867152*^9}, {
+   3.388945722944067*^9, 3.3889457479924707`*^9}, {3.389000011755234*^9, 
+   3.389000171908929*^9}, {3.389000535821262*^9, 3.389000538845911*^9}, 
+   3.472400103559658*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"graph", "[", "n_", "]"}], ":=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"partsum", "[", 
+       RowBox[{"x", ",", "n"}], "]"}], ",", 
+      RowBox[{"Exp", "[", "x", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", "\n", "\t", 
+    RowBox[{"PlotRange", "->", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "10"}], "}"}]}], ",", "\n", "\t", 
+    RowBox[{"AxesLabel", "->", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\< \>\""}], "}"}]}], ",", "\n", "\t", 
+    RowBox[{"PlotLabel", "->", 
+     RowBox[{"Row", "[", 
+      RowBox[{"{", 
+       RowBox[{"\"\<n =\>\"", ",", 
+        RowBox[{"PaddedForm", "[", 
+         RowBox[{"n", ",", "2"}], "]"}]}], "}"}], "]"}]}], ",", "\n", "\t", 
+    RowBox[{"PlotStyle", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.388945762553323*^9, 3.388945795499652*^9}, {
+  3.3889458533424683`*^9, 3.388945865997855*^9}}],
+
+Cell["We test this.", "Text",
+ CellChangeTimes->{{3.38894581069975*^9, 3.388945815448922*^9}}],
+
+Cell[BoxData[
+ RowBox[{"graph", "[", "2", "]"}]], "Input",
+ CellChangeTimes->{{3.388945819826562*^9, 3.388945822539814*^9}, {
+  3.388945876798218*^9, 3.388945877501872*^9}}],
+
+Cell["\<\
+Now we use Manipulate to create a dynamic view of the graph sequence.  The \
+command below leads to the creation of the graphs for n = 1 through 10.  The \
+final 1 in the list {n,1,10,1} tells Manipulate to create increment n by 1 in \
+going through the sequence.  \
+\>", "Text",
+ CellChangeTimes->{{3.3889458991619368`*^9, 3.388945927363748*^9}, {
+  3.3890002691075993`*^9, 3.3890003709514523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"graph", "[", "n", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "10", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.388853456428763*^9, 3.388853475663269*^9}, {
+  3.388945939755639*^9, 3.388945946128656*^9}, {3.388946810422996*^9, 
+  3.388946810791807*^9}}],
+
+Cell["\<\
+After you execute the command, use the slider to see how the graph varies \
+with the partial sum number n.  Then click on the small square with the plus \
+sign at the right end of the slider bar.  You will get a set of controls for \
+a movie.  Click on the second symbol from the left (the black triangle) to \
+start the movie.  You can use the \"chevron\" symbols to slow it down or \
+speed it up.  You can use the - and + boxes to single step through the \
+sequence.   \
+\>", "Text",
+ CellChangeTimes->{{3.388946834751357*^9, 3.388946981805654*^9}, {
+  3.388947028899707*^9, 3.388947096648785*^9}, {3.3890004472206373`*^9, 
+  3.389000454277367*^9}}],
+
+Cell["\<\
+\tLet's look at one last example of graph animation using Manipulate.  We \
+look at a simple sine function, for which we can vary frequency and phase.  \
+This example is taken, with modifications, from the Mathematica help page on \
+Manipulate.  We tell Manipulate that the parameter \[Omega] is called the \
+frequency, that we would like to vary it from 1 to 4, and that its default \
+value is 2.  We also tell Manipuate that the parameter \[Phi] is called the \
+phase, that we wish to vary it from 0 to 10, and that its default value is 0. \
+ Now execute the Manipulate command.    \
+\>", "Text",
+ CellChangeTimes->{{3.3890005617114067`*^9, 3.389000617878289*^9}, {
+  3.389000743779168*^9, 3.3890008234615097`*^9}, {3.3890009108245*^9, 
+  3.3890010198351*^9}, {3.472400317140431*^9, 3.472400320995245*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{
+       RowBox[{"\[Omega]", " ", "x"}], "+", "\[Phi]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "6"}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.1"}], ",", "1.1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]", ",", "2", ",", "\"\<Frequency\>\""}], "}"}], ",", 
+     "1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", "0", ",", "\"\<Phase\>\""}], "}"}], ",", "0", 
+     ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.389000828549774*^9, 3.389000906414229*^9}, {
+  3.389001088616572*^9, 3.3890011186052856`*^9}},
+ CellID->26946],
+
+Cell["\<\
+Experiment with the sliders to vary the frequency and the phase.  Then click \
+on the little squares with the plus sign to get the movie controls.  You can \
+animate the graph with frequency varying or phase varying or both varying.  \
+\>", "Text",
+ CellChangeTimes->{{3.389001143172402*^9, 3.389001178637953*^9}, {
+  3.389001232499342*^9, 3.389001286053523*^9}}],
+
+Cell["Clear[partsum]", "Input",
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Writing Your Own Notebook", "Section",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          In most of your Mathematica work in the future you will be \
+writing your own notebooks.  We consider here a few of the basics that you \
+need to know.  The first question is, how do you get a blank notebook to \
+start with?  There are two ways.  If you start Mathematica by double clicking \
+on the Mathematica icon rather than a notebook icon, you will be presented \
+with a new blank notebook after Mathematica loads.  Alternatively, at any \
+time while you are in Mathematica, you may request a new notebook by \
+selecting the ",
+ StyleBox["New",
+  FontWeight->"Bold"],
+ " option and then the ",
+ StyleBox["Notebook ",
+  FontWeight->"Bold"],
+ "option in the ",
+ StyleBox["File",
+  FontWeight->"Bold"],
+ " menu.  When you use this second option, you should realize that \
+Mathematica still retains in memory any functions or variables you may have \
+defined earlier in that session.  If you want a completely clean start, you \
+should quit Mathematica and then use the first method above to restart."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450806561033063*^9, 3.4508065721427383`*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          The second basic question is, how do you tell Mathematica whether \
+you are typing text, such as this paragraph, or input, such as all the blue \
+lines in this tutorial?  This selection is made with the ",
+ StyleBox["Style ",
+  FontWeight->"Bold"],
+ "option in the ",
+ StyleBox["Format",
+  FontWeight->"Bold"],
+ " menu, and the selection applies to the particular cell in which the cursor \
+is located.  Select ",
+ StyleBox["Style ",
+  FontWeight->"Bold"],
+ "from the ",
+ StyleBox["Format ",
+  FontWeight->"Bold"],
+ "menu and you will get a submenu offering a number of choices.  As a minimum \
+workable subset, you need know only two.  Selecting the ",
+ StyleBox["Text",
+  FontWeight->"Bold"],
+ " style will cause the cell you are in to be a text cell.  You can tell text \
+cells in a notebook because the right square bracket has a double horizontal \
+line on the top.  The other cell style you need to know is the ",
+ StyleBox["Input",
+  FontWeight->"Bold"],
+ " style.  When this is selected, the cell you are in becomes an input cell.  \
+",
+ StyleBox["The default is input.",
+  FontVariations->{"Underline"->True}],
+ "  Thus if you just begin typing, without selecting a cell style, your cell \
+will automatically be an input cell."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.472400438389081*^9, 3.47240044037202*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tThe special characters you often need for mathematical text are generally \
+available on one of the palettes.  You can access the palettes from the ",
+ StyleBox["Palette",
+  FontWeight->"Bold"],
+ " menu.  The two most commonly used are the ",
+ StyleBox["BasicMath Assistant",
+  FontWeight->"Bold"],
+ " and the ",
+ StyleBox["Writing Assistant",
+  FontWeight->"Bold"],
+ ".  These palettes allow you easily to insert Greek letters, superscripted \
+or subscripted quantities, fractions, matrices, and many other \
+constructions."
+}], "Text",
+ CellChangeTimes->{{3.418162271606702*^9, 3.418162444301434*^9}, {
+  3.4724006122169228`*^9, 3.472400637607297*^9}}],
+
+Cell[TextData[{
+ "          When you are typing text, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " automatically goes to the next line at the end of each line, just as a \
+word processor does.  ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " does the same for input -- that is, it goes to the end of the line before \
+returning.  Sometimes for clarity in your code, you will want to break your \
+input into several lines.  You may end an input line at any time by hitting \
+",
+ StyleBox["Return",
+  FontWeight->"Bold"],
+ ".   Mathematica then will put you on the next line without processing the \
+input.  When you are ready to have the input processed, you press ",
+ StyleBox["Enter.",
+  FontWeight->"Bold"],
+ "  This will return you to the next line, close the cell, and send the \
+command to the Mathematica kernel for processing.  If you want to leave a \
+cell (either text or input) without inserting a return or processing input, \
+just use the ",
+ StyleBox["Down Arrow",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          If you want to re-execute an input cell that has been executed \
+previously, just use the mouse to put the cursor anywhere in the cell, click \
+the mouse to fix the cursor location and then press ",
+ StyleBox["Enter",
+  FontWeight->"Bold"],
+ ".  "
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "          The standard operations of ",
+ StyleBox["Copy",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["Cut",
+  FontWeight->"Bold"],
+ ", and ",
+ StyleBox["Paste",
+  FontWeight->"Bold"],
+ " (selections under the ",
+ StyleBox["Edit",
+  FontWeight->"Bold"],
+ " menu) work in Mathematica just as in any other application.  "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.388947240301387*^9, 3.388947242261343*^9}},
+ AspectRatioFixed->True],
+
+Cell[TextData[{
+ "\tYou may have noticed throughout this notebook the commands Clear and \
+Remove.  They both take variable names as arguments.  The command Clear \
+clears any values that have been assigned, but the variables remain known to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  Thus Clear[x,y] will clear values of x and y, but ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will remember that x and y have been used as variable names.  The command \
+Remove removes the variables completely from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "'s memory.  Sometimes this is useful because of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "'s spell checking.  If you use a new variable with a name very similar to \
+the name of an old variable, ",
+ StyleBox["Mathematica,",
+  FontSlant->"Italic"],
+ " thinking that you might have made a typo, prints a warning.  Sometimes \
+this is helpful, and sometimes it is annoying.  In a long sequence of \
+calculations, you can use Remove to eliminate a variable from ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "'s memory.  Then you are free to use that name or a similar name later \
+without getting the annoying warning."
+}], "Text"],
+
+Cell[TextData[{
+ "          The instructions for saving or printing a notebook have already \
+been given in the introduction to this tutorial.  Here is one additional \
+comment:  If you get into an infinite loop or an interminable calculation \
+that doesn't respond to the ",
+ StyleBox["Abort Calculation",
+  FontWeight->"Bold"],
+ " command in the ",
+ StyleBox["Kernel ",
+  FontWeight->"Bold"],
+ "menu, you sometimes can still save your notebook, provided the system is \
+not hung up completely.  Just follow the save procedure outlined in the \
+introduction.  After that, you will probably have to ",
+ StyleBox["Quit",
+  FontWeight->"Bold"],
+ " Mathematica (an option under the ",
+ StyleBox["Mathematica",
+  FontWeight->"Bold"],
+ " menu) to get out of your ongoing calculation.  "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.450806727178503*^9, 3.4508067289143333`*^9}},
+ AspectRatioFixed->True]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{640, 750},
+WindowMargins->{{Automatic, 467}, {Automatic, 109}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 252, 5, 76, "Title",
+ Evaluatable->False],
+Cell[822, 29, 416, 10, 71, "Subtitle",
+ Evaluatable->False],
+Cell[1241, 41, 93, 4, 56, "Text"],
+Cell[CellGroupData[{
+Cell[1359, 49, 77, 2, 67, "Section",
+ Evaluatable->False],
+Cell[1439, 53, 1112, 28, 146, "Text",
+ Evaluatable->False],
+Cell[2554, 83, 45, 1, 27, "Input"],
+Cell[2602, 86, 652, 25, 71, "Text"],
+Cell[3257, 113, 1117, 18, 146, "Text",
+ Evaluatable->False],
+Cell[4377, 133, 1532, 37, 116, "Text",
+ Evaluatable->False],
+Cell[5912, 172, 500, 8, 71, "Text"],
+Cell[6415, 182, 277, 5, 41, "Text"],
+Cell[6695, 189, 123, 2, 27, "Input"],
+Cell[6821, 193, 761, 18, 86, "Text"],
+Cell[7585, 213, 463, 9, 41, "Text"],
+Cell[8051, 224, 679, 14, 56, "Text",
+ Evaluatable->False],
+Cell[8733, 240, 469, 10, 56, "Text"],
+Cell[9205, 252, 764, 18, 71, "Text"],
+Cell[9972, 272, 415, 9, 56, "Text"],
+Cell[10390, 283, 555, 11, 71, "Text"],
+Cell[10948, 296, 1370, 28, 176, "Text",
+ Evaluatable->False],
+Cell[12321, 326, 723, 21, 86, "Text",
+ Evaluatable->False],
+Cell[13047, 349, 637, 11, 101, "Text",
+ Evaluatable->False],
+Cell[13687, 362, 437, 8, 71, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14161, 375, 139, 3, 67, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[14325, 382, 104, 1, 34, "Subsection"],
+Cell[14432, 385, 235, 6, 26, "Text",
+ Evaluatable->False],
+Cell[14670, 393, 109, 2, 27, "Input"],
+Cell[14782, 397, 111, 2, 27, "Input"],
+Cell[14896, 401, 109, 2, 27, "Input"],
+Cell[15008, 405, 111, 2, 27, "Input"],
+Cell[15122, 409, 109, 2, 27, "Input"],
+Cell[15234, 413, 710, 12, 101, "Text",
+ Evaluatable->False],
+Cell[15947, 427, 113, 2, 27, "Input"],
+Cell[16063, 431, 112, 2, 27, "Input"],
+Cell[16178, 435, 119, 2, 27, "Input"],
+Cell[16300, 439, 818, 13, 116, "Text",
+ Evaluatable->False],
+Cell[17121, 454, 114, 2, 27, "Input"],
+Cell[17238, 458, 117, 2, 27, "Input"],
+Cell[17358, 462, 152, 3, 27, "Input"],
+Cell[17513, 467, 117, 2, 27, "Input"],
+Cell[17633, 471, 122, 2, 27, "Input"],
+Cell[17758, 475, 117, 2, 27, "Input"],
+Cell[17878, 479, 151, 3, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18066, 487, 103, 1, 34, "Subsection"],
+Cell[18172, 490, 439, 12, 47, "Text",
+ Evaluatable->False],
+Cell[18614, 504, 117, 2, 27, "Input"],
+Cell[18734, 508, 130, 2, 27, "Input"],
+Cell[18867, 512, 113, 2, 27, "Input"],
+Cell[18983, 516, 111, 2, 27, "Input"],
+Cell[19097, 520, 112, 2, 27, "Input"],
+Cell[19212, 524, 103, 2, 33, "Input"],
+Cell[19318, 528, 131, 3, 39, "Input"],
+Cell[19452, 533, 112, 2, 27, "Input"],
+Cell[19567, 537, 113, 2, 27, "Input"],
+Cell[19683, 541, 118, 2, 27, "Input"],
+Cell[19804, 545, 115, 2, 27, "Input"],
+Cell[19922, 549, 118, 2, 27, "Input"],
+Cell[20043, 553, 116, 2, 27, "Input"],
+Cell[20162, 557, 119, 2, 27, "Input"],
+Cell[20284, 561, 129, 2, 27, "Input"],
+Cell[20416, 565, 511, 13, 56, "Text"],
+Cell[20930, 580, 293, 5, 41, "Text"],
+Cell[21226, 587, 149, 3, 27, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21424, 596, 72, 2, 37, "Section",
+ Evaluatable->False],
+Cell[21499, 600, 218, 5, 41, "Text",
+ Evaluatable->False],
+Cell[21720, 607, 51, 1, 24, "Input"],
+Cell[21774, 610, 59, 1, 24, "Input"],
+Cell[21836, 613, 53, 1, 24, "Input"],
+Cell[21892, 616, 930, 15, 101, "Text",
+ Evaluatable->False],
+Cell[22825, 633, 47, 1, 24, "Input"],
+Cell[22875, 636, 47, 1, 24, "Input"],
+Cell[22925, 639, 57, 1, 24, "Input"],
+Cell[22985, 642, 390, 8, 41, "Text",
+ Evaluatable->False],
+Cell[23378, 652, 52, 1, 24, "Input"],
+Cell[23433, 655, 67, 1, 24, "Input"],
+Cell[23503, 658, 157, 5, 26, "Text",
+ Evaluatable->False],
+Cell[23663, 665, 132, 4, 30, "Input"],
+Cell[23798, 671, 132, 4, 30, "Input"],
+Cell[23933, 677, 429, 10, 41, "Text",
+ Evaluatable->False],
+Cell[24365, 689, 113, 3, 30, "Input"],
+Cell[24481, 694, 153, 3, 26, "Text"],
+Cell[24637, 699, 175, 6, 46, "Input"],
+Cell[24815, 707, 223, 4, 41, "Text"],
+Cell[25041, 713, 91, 2, 26, "Text"],
+Cell[25135, 717, 394, 14, 50, "Input"],
+Cell[25532, 733, 140, 5, 26, "Text"],
+Cell[25675, 740, 189, 5, 31, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25901, 750, 112, 2, 37, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[26038, 756, 108, 1, 42, "Subsection"],
+Cell[26149, 759, 331, 7, 41, "Text",
+ Evaluatable->False],
+Cell[26483, 768, 47, 1, 24, "Input"],
+Cell[26533, 771, 49, 1, 24, "Input"],
+Cell[26585, 774, 240, 6, 41, "Text",
+ Evaluatable->False],
+Cell[26828, 782, 51, 1, 24, "Input"],
+Cell[26882, 785, 49, 1, 24, "Input"],
+Cell[26934, 788, 257, 6, 41, "Text",
+ Evaluatable->False],
+Cell[27194, 796, 47, 1, 24, "Input"],
+Cell[27244, 799, 47, 1, 24, "Input"],
+Cell[27294, 802, 340, 7, 41, "Text",
+ Evaluatable->False],
+Cell[27637, 811, 48, 1, 24, "Input"],
+Cell[27688, 814, 185, 5, 26, "Text",
+ Evaluatable->False],
+Cell[27876, 821, 50, 1, 24, "Input"],
+Cell[27929, 824, 45, 1, 24, "Input"],
+Cell[27977, 827, 266, 6, 41, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28280, 838, 111, 1, 42, "Subsection"],
+Cell[28394, 841, 63, 1, 24, "Input"],
+Cell[28460, 844, 55, 1, 24, "Input"],
+Cell[28518, 847, 47, 1, 24, "Input"],
+Cell[28568, 850, 53, 1, 24, "Input"],
+Cell[28624, 853, 419, 8, 56, "Text",
+ Evaluatable->False],
+Cell[29046, 863, 49, 1, 24, "Input"],
+Cell[29098, 866, 49, 1, 24, "Input"],
+Cell[29150, 869, 43, 1, 24, "Input"],
+Cell[29196, 872, 43, 1, 24, "Input"],
+Cell[29242, 875, 195, 5, 26, "Text",
+ Evaluatable->False],
+Cell[29440, 882, 56, 1, 24, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29533, 888, 137, 1, 42, "Subsection"],
+Cell[29673, 891, 252, 8, 26, "Text",
+ Evaluatable->False],
+Cell[29928, 901, 75, 1, 24, "Input"],
+Cell[30006, 904, 267, 6, 41, "Text",
+ Evaluatable->False],
+Cell[30276, 912, 48, 1, 24, "Input"],
+Cell[30327, 915, 48, 1, 24, "Input"],
+Cell[30378, 918, 43, 1, 24, "Input"],
+Cell[30424, 921, 496, 9, 56, "Text",
+ Evaluatable->False],
+Cell[30923, 932, 52, 1, 24, "Input"],
+Cell[30978, 935, 217, 5, 26, "Text",
+ Evaluatable->False],
+Cell[31198, 942, 43, 1, 24, "Input"],
+Cell[31244, 945, 65, 1, 24, "Input"],
+Cell[31312, 948, 43, 1, 24, "Input"],
+Cell[31358, 951, 43, 1, 24, "Input"],
+Cell[31404, 954, 43, 1, 24, "Input"],
+Cell[31450, 957, 812, 20, 71, "Text",
+ Evaluatable->False],
+Cell[32265, 979, 144, 4, 26, "Text",
+ Evaluatable->False],
+Cell[32412, 985, 50, 1, 24, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32499, 991, 107, 1, 42, "Subsection"],
+Cell[32609, 994, 385, 8, 41, "Text",
+ Evaluatable->False],
+Cell[32997, 1004, 54, 1, 24, "Input"],
+Cell[33054, 1007, 1018, 20, 101, "Text",
+ Evaluatable->False],
+Cell[34075, 1029, 46, 1, 24, "Input"],
+Cell[34124, 1032, 200, 5, 26, "Text",
+ Evaluatable->False],
+Cell[34327, 1039, 47, 1, 24, "Input"],
+Cell[34377, 1042, 46, 1, 24, "Input"],
+Cell[34426, 1045, 47, 1, 24, "Input"],
+Cell[34476, 1048, 46, 1, 24, "Input"],
+Cell[34525, 1051, 46, 1, 24, "Input"],
+Cell[34574, 1054, 336, 8, 41, "Text",
+ Evaluatable->False],
+Cell[34913, 1064, 53, 1, 24, "Input"],
+Cell[34969, 1067, 46, 1, 24, "Input"],
+Cell[35018, 1070, 48, 1, 24, "Input"],
+Cell[35069, 1073, 46, 1, 24, "Input"],
+Cell[35118, 1076, 544, 18, 56, "Text",
+ Evaluatable->False],
+Cell[35665, 1096, 47, 1, 24, "Input"],
+Cell[35715, 1099, 53, 1, 24, "Input"],
+Cell[35771, 1102, 46, 1, 24, "Input"],
+Cell[35820, 1105, 440, 8, 56, "Text",
+ Evaluatable->False],
+Cell[36263, 1115, 102, 3, 24, "Input"],
+Cell[36368, 1120, 27, 0, 24, "Input"],
+Cell[36398, 1122, 54, 1, 24, "Input"],
+Cell[36455, 1125, 46, 0, 26, "Text"],
+Cell[36504, 1127, 50, 1, 24, "Input"],
+Cell[36557, 1130, 321, 7, 41, "Text",
+ Evaluatable->False],
+Cell[36881, 1139, 135, 2, 24, "Input"],
+Cell[37019, 1143, 65, 1, 24, "Input"],
+Cell[37087, 1146, 67, 1, 24, "Input"],
+Cell[37157, 1149, 884, 16, 86, "Text",
+ Evaluatable->False],
+Cell[38044, 1167, 110, 2, 24, "Input"],
+Cell[38157, 1171, 108, 2, 24, "Input"],
+Cell[38268, 1175, 568, 19, 44, "Text",
+ Evaluatable->False],
+Cell[38839, 1196, 75, 1, 24, "Input"],
+Cell[38917, 1199, 53, 1, 24, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39007, 1205, 106, 1, 42, "Subsection"],
+Cell[39116, 1208, 176, 5, 26, "Text",
+ Evaluatable->False],
+Cell[39295, 1215, 48, 1, 24, "Input"],
+Cell[39346, 1218, 438, 11, 56, "Text",
+ Evaluatable->False],
+Cell[39787, 1231, 50, 1, 24, "Input"],
+Cell[39840, 1234, 51, 1, 24, "Input"],
+Cell[39894, 1237, 308, 7, 41, "Text"],
+Cell[40205, 1246, 354, 10, 24, "Input"],
+Cell[40562, 1258, 163, 5, 26, "Text",
+ Evaluatable->False],
+Cell[40728, 1265, 48, 1, 24, "Input"],
+Cell[40779, 1268, 50, 1, 24, "Input"],
+Cell[40832, 1271, 49, 1, 24, "Input"],
+Cell[40884, 1274, 54, 1, 24, "Input"],
+Cell[40941, 1277, 57, 1, 24, "Input"],
+Cell[41001, 1280, 55, 1, 24, "Input"],
+Cell[41059, 1283, 65, 1, 24, "Input"],
+Cell[41127, 1286, 53, 1, 24, "Input"],
+Cell[41183, 1289, 177, 5, 26, "Text",
+ Evaluatable->False],
+Cell[41363, 1296, 297, 5, 41, "Text"],
+Cell[41663, 1303, 151, 3, 24, "Input"],
+Cell[41817, 1308, 186, 5, 26, "Text",
+ Evaluatable->False],
+Cell[42006, 1315, 58, 1, 24, "Input"],
+Cell[42067, 1318, 58, 1, 24, "Input"],
+Cell[42128, 1321, 170, 5, 26, "Text",
+ Evaluatable->False],
+Cell[42301, 1328, 71, 1, 24, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[42421, 1335, 73, 2, 37, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[42519, 1341, 108, 1, 42, "Subsection"],
+Cell[42630, 1344, 455, 8, 56, "Text",
+ Evaluatable->False],
+Cell[43088, 1354, 110, 2, 24, "Input"],
+Cell[43201, 1358, 832, 16, 86, "Text",
+ Evaluatable->False],
+Cell[44036, 1376, 126, 2, 24, "Input"],
+Cell[44165, 1380, 366, 7, 41, "Text",
+ Evaluatable->False],
+Cell[44534, 1389, 473, 15, 24, "Input"],
+Cell[45010, 1406, 236, 4, 41, "Text"],
+Cell[45249, 1412, 162, 5, 26, "Text",
+ Evaluatable->False],
+Cell[45414, 1419, 76, 1, 24, "Input"],
+Cell[45493, 1422, 109, 2, 24, "Input"],
+Cell[45605, 1426, 622, 11, 71, "Text",
+ Evaluatable->False],
+Cell[46230, 1439, 263, 5, 41, "Text"],
+Cell[46496, 1446, 361, 11, 24, "Input"],
+Cell[46860, 1459, 330, 7, 41, "Text"],
+Cell[47193, 1468, 135, 3, 24, "Input"],
+Cell[47331, 1473, 369, 11, 24, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47737, 1489, 104, 1, 42, "Subsection"],
+Cell[47844, 1492, 1073, 54, 41, "Text"],
+Cell[48920, 1548, 133, 4, 24, "Input"],
+Cell[49056, 1554, 326, 11, 24, "Input"],
+Cell[49385, 1567, 494, 16, 41, "Text"],
+Cell[49882, 1585, 201, 5, 24, "Input"],
+Cell[50086, 1592, 365, 11, 24, "Input"],
+Cell[50454, 1605, 217, 4, 26, "Text"],
+Cell[50674, 1611, 813, 25, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51524, 1641, 105, 1, 42, "Subsection"],
+Cell[51632, 1644, 363, 7, 41, "Text",
+ Evaluatable->False],
+Cell[51998, 1653, 58, 1, 24, "Input"],
+Cell[52059, 1656, 361, 10, 115, "Input"],
+Cell[52423, 1668, 323, 7, 41, "Text",
+ Evaluatable->False],
+Cell[52749, 1677, 110, 2, 24, "Input"],
+Cell[52862, 1681, 223, 6, 26, "Text",
+ Evaluatable->False],
+Cell[53088, 1689, 161, 3, 24, "Input"],
+Cell[53252, 1694, 168, 5, 26, "Text",
+ Evaluatable->False],
+Cell[53423, 1701, 49, 1, 24, "Input"],
+Cell[53475, 1704, 135, 2, 24, "Input"],
+Cell[53613, 1708, 290, 6, 41, "Text",
+ Evaluatable->False],
+Cell[53906, 1716, 103, 2, 24, "Input"],
+Cell[54012, 1720, 284, 6, 41, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54333, 1731, 123, 1, 42, "Subsection"],
+Cell[54459, 1734, 428, 14, 44, "Text",
+ Evaluatable->False],
+Cell[54890, 1750, 54, 1, 24, "Input"],
+Cell[54947, 1753, 66, 1, 24, "Input"],
+Cell[55016, 1756, 111, 2, 24, "Input"],
+Cell[55130, 1760, 430, 8, 56, "Text",
+ Evaluatable->False],
+Cell[55563, 1770, 190, 3, 24, "Input"],
+Cell[55756, 1775, 433, 7, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56226, 1787, 101, 1, 42, "Subsection"],
+Cell[56330, 1790, 175, 5, 26, "Text",
+ Evaluatable->False],
+Cell[56508, 1797, 116, 2, 24, "Input"],
+Cell[56627, 1801, 174, 5, 26, "Text",
+ Evaluatable->False],
+Cell[56804, 1808, 171, 3, 41, "Text"],
+Cell[56978, 1813, 144, 2, 24, "Input"],
+Cell[57125, 1817, 294, 5, 41, "Text"],
+Cell[57422, 1824, 170, 5, 26, "Text",
+ Evaluatable->False],
+Cell[57595, 1831, 84, 1, 24, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[57728, 1838, 77, 2, 37, "Section",
+ Evaluatable->False],
+Cell[57808, 1842, 302, 7, 41, "Text",
+ Evaluatable->False],
+Cell[58113, 1851, 74, 1, 24, "Input"],
+Cell[58190, 1854, 136, 2, 24, "Input"],
+Cell[58329, 1858, 210, 5, 26, "Text",
+ Evaluatable->False],
+Cell[58542, 1865, 53, 1, 24, "Input"],
+Cell[58598, 1868, 52, 1, 24, "Input"],
+Cell[58653, 1871, 52, 1, 24, "Input"],
+Cell[58708, 1874, 693, 15, 71, "Text",
+ Evaluatable->False],
+Cell[59404, 1891, 64, 1, 24, "Input"],
+Cell[59471, 1894, 760, 14, 71, "Text",
+ Evaluatable->False],
+Cell[60234, 1910, 46, 1, 24, "Input"],
+Cell[60283, 1913, 743, 12, 86, "Text",
+ Evaluatable->False],
+Cell[61029, 1927, 65, 1, 24, "Input"],
+Cell[61097, 1930, 294, 6, 41, "Text",
+ Evaluatable->False],
+Cell[61394, 1938, 74, 1, 24, "Input"],
+Cell[61471, 1941, 74, 1, 24, "Input"],
+Cell[61548, 1944, 73, 1, 24, "Input"],
+Cell[61624, 1947, 186, 5, 26, "Text",
+ Evaluatable->False],
+Cell[61813, 1954, 75, 1, 24, "Input"],
+Cell[61891, 1957, 109, 2, 26, "Text",
+ Evaluatable->False],
+Cell[62003, 1961, 134, 2, 24, "Input"],
+Cell[62140, 1965, 304, 7, 41, "Text",
+ Evaluatable->False],
+Cell[62447, 1974, 141, 2, 24, "Input"],
+Cell[62591, 1978, 57, 1, 24, "Input"],
+Cell[62651, 1981, 228, 4, 41, "Text"],
+Cell[62882, 1987, 121, 2, 26, "Text",
+ Evaluatable->False],
+Cell[63006, 1991, 62, 1, 24, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63105, 1997, 36, 0, 37, "Section"],
+Cell[CellGroupData[{
+Cell[63166, 2001, 138, 1, 42, "Subsection"],
+Cell[63307, 2004, 547, 10, 71, "Text"],
+Cell[63857, 2016, 133, 4, 24, "Input"],
+Cell[63993, 2022, 122, 3, 26, "Text"],
+Cell[64118, 2027, 101, 3, 24, "Input"],
+Cell[64222, 2032, 321, 5, 41, "Text"],
+Cell[64546, 2039, 152, 5, 24, "Input"],
+Cell[64701, 2046, 373, 8, 56, "Text"],
+Cell[65077, 2056, 27, 0, 24, "Input"],
+Cell[65107, 2058, 27, 0, 24, "Input"],
+Cell[65137, 2060, 30, 0, 24, "Input"],
+Cell[65170, 2062, 320, 5, 56, "Text"],
+Cell[65493, 2069, 49, 1, 24, "Input"],
+Cell[65545, 2072, 49, 1, 24, "Input"],
+Cell[65597, 2075, 30, 0, 24, "Input"],
+Cell[65630, 2077, 207, 4, 41, "Text"],
+Cell[65840, 2083, 95, 3, 24, "Input"],
+Cell[65938, 2088, 214, 4, 41, "Text"],
+Cell[66155, 2094, 81, 2, 24, "Input"],
+Cell[66239, 2098, 30, 0, 24, "Input"],
+Cell[66272, 2100, 95, 3, 24, "Input"],
+Cell[66370, 2105, 287, 5, 26, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66694, 2115, 156, 3, 42, "Subsection"],
+Cell[66853, 2120, 877, 24, 74, "Text"],
+Cell[67733, 2146, 273, 9, 24, "Input"],
+Cell[68009, 2157, 404, 6, 56, "Text"],
+Cell[68416, 2165, 29, 0, 24, "Input"],
+Cell[68448, 2167, 305, 11, 29, "Text"],
+Cell[68756, 2180, 192, 6, 24, "Input"],
+Cell[68951, 2188, 303, 8, 43, "Text"],
+Cell[69257, 2198, 564, 18, 24, "Input"],
+Cell[69824, 2218, 462, 7, 56, "Text"],
+Cell[70289, 2227, 87, 2, 24, "Input"],
+Cell[70379, 2231, 65, 0, 26, "Text"],
+Cell[70447, 2233, 136, 4, 24, "Input"],
+Cell[70586, 2239, 66, 0, 26, "Text"],
+Cell[70655, 2241, 57, 1, 24, "Input"],
+Cell[70715, 2244, 57, 1, 24, "Input"],
+Cell[70775, 2247, 85, 2, 24, "Input"],
+Cell[70863, 2251, 520, 15, 24, "Input"],
+Cell[71386, 2268, 304, 5, 41, "Text"],
+Cell[71693, 2275, 716, 22, 24, "Input"],
+Cell[72412, 2299, 518, 15, 24, "Input"],
+Cell[72933, 2316, 119, 3, 24, "Input"],
+Cell[73055, 2321, 122, 3, 26, "Text"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[73226, 2330, 80, 2, 37, "Section",
+ Evaluatable->False],
+Cell[73309, 2334, 475, 9, 56, "Text",
+ Evaluatable->False],
+Cell[73787, 2345, 59, 1, 24, "Input"],
+Cell[73849, 2348, 51, 1, 24, "Input"],
+Cell[73903, 2351, 55, 1, 24, "Input"],
+Cell[73961, 2354, 48, 1, 24, "Input"],
+Cell[74012, 2357, 52, 1, 24, "Input"],
+Cell[74067, 2360, 56, 1, 24, "Input"],
+Cell[74126, 2363, 53, 1, 24, "Input"],
+Cell[74182, 2366, 264, 6, 41, "Text",
+ Evaluatable->False],
+Cell[74449, 2374, 200, 4, 41, "Text"],
+Cell[74652, 2380, 157, 5, 24, "Input"],
+Cell[74812, 2387, 87, 2, 26, "Text"],
+Cell[74902, 2391, 157, 5, 24, "Input"],
+Cell[75062, 2398, 239, 7, 41, "Text"],
+Cell[75304, 2407, 108, 3, 27, "Input"],
+Cell[75415, 2412, 72, 2, 24, "Input"],
+Cell[75490, 2416, 73, 2, 24, "Input"],
+Cell[75566, 2420, 74, 2, 24, "Input"],
+Cell[75643, 2424, 172, 3, 26, "Text"],
+Cell[75818, 2429, 104, 3, 24, "Input"],
+Cell[75925, 2434, 128, 4, 27, "Input"],
+Cell[76056, 2440, 252, 6, 41, "Text",
+ Evaluatable->False],
+Cell[76311, 2448, 54, 1, 24, "Input"],
+Cell[76368, 2451, 69, 1, 24, "Input"],
+Cell[76440, 2454, 53, 1, 24, "Input"],
+Cell[76496, 2457, 53, 1, 24, "Input"],
+Cell[76552, 2460, 58, 1, 24, "Input"],
+Cell[76613, 2463, 58, 0, 26, "Text"],
+Cell[76674, 2465, 152, 5, 27, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76863, 2475, 76, 2, 37, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[76964, 2481, 108, 1, 42, "Subsection"],
+Cell[77075, 2484, 401, 8, 56, "Text",
+ Evaluatable->False],
+Cell[77479, 2494, 156, 5, 27, "Input"],
+Cell[77638, 2501, 59, 1, 24, "Input"],
+Cell[77700, 2504, 190, 4, 41, "Text"],
+Cell[77893, 2510, 69, 1, 24, "Input"],
+Cell[77965, 2513, 61, 1, 24, "Input"],
+Cell[78029, 2516, 61, 1, 24, "Input"],
+Cell[78093, 2519, 94, 2, 26, "Text"],
+Cell[78190, 2523, 55, 1, 24, "Input"],
+Cell[78248, 2526, 56, 1, 24, "Input"],
+Cell[78307, 2529, 117, 2, 26, "Text",
+ Evaluatable->False],
+Cell[78427, 2533, 48, 1, 24, "Input"],
+Cell[78478, 2536, 213, 5, 26, "Text",
+ Evaluatable->False],
+Cell[78694, 2543, 74, 1, 24, "Input"],
+Cell[78771, 2546, 71, 1, 24, "Input"],
+Cell[78845, 2549, 119, 1, 26, "Text"],
+Cell[78967, 2552, 427, 9, 41, "Text"],
+Cell[79397, 2563, 160, 5, 41, "Input"],
+Cell[79560, 2570, 160, 5, 41, "Input"],
+Cell[79723, 2577, 106, 3, 41, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79866, 2585, 108, 1, 42, "Subsection"],
+Cell[79977, 2588, 194, 2, 26, "Text"],
+Cell[80174, 2592, 144, 2, 24, "Input"],
+Cell[80321, 2596, 135, 3, 26, "Text"],
+Cell[80459, 2601, 263, 6, 24, "Input"],
+Cell[80725, 2609, 126, 1, 26, "Text"],
+Cell[80854, 2612, 142, 4, 43, "Input"],
+Cell[80999, 2618, 522, 15, 59, "Text"],
+Cell[81524, 2635, 100, 3, 24, "Input"],
+Cell[81627, 2640, 263, 9, 46, "Input"],
+Cell[81893, 2651, 376, 12, 46, "Input"],
+Cell[82272, 2665, 577, 15, 56, "Text"],
+Cell[82852, 2682, 188, 5, 24, "Input"],
+Cell[83043, 2689, 54, 0, 26, "Text"],
+Cell[83100, 2691, 54, 1, 24, "Input"],
+Cell[83157, 2694, 54, 1, 24, "Input"],
+Cell[83214, 2697, 54, 1, 24, "Input"],
+Cell[83271, 2700, 82, 2, 24, "Input"],
+Cell[83356, 2704, 188, 7, 26, "Text",
+ Evaluatable->False],
+Cell[83547, 2713, 66, 1, 24, "Input"],
+Cell[83616, 2716, 179, 5, 44, "Input"],
+Cell[83798, 2723, 386, 8, 56, "Text",
+ Evaluatable->False],
+Cell[84187, 2733, 78, 1, 24, "Input"],
+Cell[84268, 2736, 86, 2, 26, "Text"],
+Cell[84357, 2740, 235, 8, 49, "Input"],
+Cell[84595, 2750, 186, 5, 24, "Input"],
+Cell[84784, 2757, 183, 5, 26, "Text"],
+Cell[84970, 2764, 147, 4, 41, "Input"],
+Cell[85120, 2770, 123, 3, 26, "Text"],
+Cell[85246, 2775, 57, 0, 26, "Text"],
+Cell[85306, 2777, 111, 3, 24, "Input"],
+Cell[85420, 2782, 130, 1, 26, "Text"],
+Cell[85553, 2785, 199, 4, 26, "Text"],
+Cell[85755, 2791, 262, 6, 24, "Input"],
+Cell[86020, 2799, 146, 3, 26, "Text"],
+Cell[86169, 2804, 88, 1, 24, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[86306, 2811, 87, 2, 37, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[86418, 2817, 59, 0, 42, "Subsection"],
+Cell[CellGroupData[{
+Cell[86502, 2821, 111, 1, 38, "Subsubsection"],
+Cell[86616, 2824, 770, 13, 86, "Text",
+ Evaluatable->False],
+Cell[87389, 2839, 70, 1, 24, "Input"],
+Cell[87462, 2842, 434, 8, 41, "Text",
+ Evaluatable->False],
+Cell[87899, 2852, 75, 1, 24, "Input"],
+Cell[87977, 2855, 166, 3, 26, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88180, 2863, 115, 1, 38, "Subsubsection"],
+Cell[88298, 2866, 180, 3, 26, "Text",
+ Evaluatable->False],
+Cell[88481, 2871, 79, 1, 24, "Input"],
+Cell[88563, 2874, 372, 7, 56, "Text",
+ Evaluatable->False],
+Cell[88938, 2883, 79, 1, 24, "Input"],
+Cell[89020, 2886, 104, 2, 26, "Text",
+ Evaluatable->False],
+Cell[89127, 2890, 79, 1, 24, "Input"],
+Cell[89209, 2893, 115, 3, 26, "Text"],
+Cell[89327, 2898, 79, 1, 24, "Input"],
+Cell[89409, 2901, 225, 5, 41, "Text"],
+Cell[89637, 2908, 466, 9, 56, "Text",
+ Evaluatable->False],
+Cell[90106, 2919, 110, 4, 37, "Input"],
+Cell[90219, 2925, 141, 4, 26, "Text",
+ Evaluatable->False],
+Cell[90363, 2931, 121, 4, 37, "Input"],
+Cell[90487, 2937, 105, 3, 26, "Text"],
+Cell[90595, 2942, 61, 1, 24, "Input"],
+Cell[90659, 2945, 28, 0, 26, "Text"],
+Cell[90690, 2947, 497, 9, 56, "Text",
+ Evaluatable->False],
+Cell[91190, 2958, 134, 4, 37, "Input"],
+Cell[91327, 2964, 192, 5, 26, "Text",
+ Evaluatable->False],
+Cell[91522, 2971, 88, 1, 24, "Input"],
+Cell[91613, 2974, 211, 5, 26, "Text",
+ Evaluatable->False],
+Cell[91827, 2981, 60, 1, 24, "Input"],
+Cell[91890, 2984, 52, 1, 24, "Input"],
+Cell[91945, 2987, 93, 2, 26, "Text",
+ Evaluatable->False],
+Cell[92041, 2991, 80, 1, 24, "Input"],
+Cell[92124, 2994, 74, 0, 26, "Text"],
+Cell[92201, 2996, 53, 1, 24, "Input"],
+Cell[92257, 2999, 135, 4, 26, "Text",
+ Evaluatable->False],
+Cell[92395, 3005, 48, 1, 24, "Input"],
+Cell[92446, 3008, 61, 1, 24, "Input"],
+Cell[92510, 3011, 153, 5, 26, "Text",
+ Evaluatable->False],
+Cell[92666, 3018, 107, 2, 24, "Input"],
+Cell[92776, 3022, 79, 2, 24, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92892, 3029, 123, 1, 38, "Subsubsection"],
+Cell[93018, 3032, 168, 3, 41, "Text"],
+Cell[93189, 3037, 560, 20, 51, "Text"],
+Cell[93752, 3059, 126, 3, 26, "Text"],
+Cell[93881, 3064, 616, 20, 103, "Text"],
+Cell[94500, 3086, 51, 0, 26, "Text"],
+Cell[94554, 3088, 779, 25, 24, "Input"],
+Cell[95336, 3115, 99, 2, 26, "Text"],
+Cell[95438, 3119, 61, 1, 24, "Input"],
+Cell[95502, 3122, 284, 5, 41, "Text"],
+Cell[95789, 3129, 899, 28, 40, "Input"],
+Cell[96691, 3159, 103, 3, 26, "Text"],
+Cell[96797, 3164, 345, 11, 24, "Input"],
+Cell[97145, 3177, 108, 3, 26, "Text"],
+Cell[97256, 3182, 57, 1, 24, "Input"],
+Cell[97316, 3185, 59, 1, 24, "Input"],
+Cell[97378, 3188, 64, 0, 26, "Text"],
+Cell[97445, 3190, 324, 9, 24, "Input"],
+Cell[97772, 3201, 31, 0, 26, "Text"],
+Cell[97806, 3203, 326, 9, 24, "Input"],
+Cell[98135, 3214, 109, 3, 24, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98293, 3223, 59, 0, 42, "Subsection"],
+Cell[CellGroupData[{
+Cell[98377, 3227, 115, 1, 38, "Subsubsection"],
+Cell[98495, 3230, 1484, 22, 161, "Text",
+ Evaluatable->False],
+Cell[99982, 3254, 137, 4, 37, "Input"],
+Cell[100122, 3260, 444, 8, 56, "Text",
+ Evaluatable->False],
+Cell[100569, 3270, 65, 1, 24, "Input"],
+Cell[100637, 3273, 121, 2, 24, "Input"],
+Cell[100761, 3277, 169, 5, 26, "Text",
+ Evaluatable->False],
+Cell[100933, 3284, 277, 5, 41, "Text"],
+Cell[101213, 3291, 141, 4, 37, "Input"],
+Cell[101357, 3297, 178, 5, 24, "Input"],
+Cell[101538, 3304, 96, 2, 26, "Text"],
+Cell[101637, 3308, 60, 1, 24, "Input"],
+Cell[101700, 3311, 329, 9, 24, "Input"],
+Cell[102032, 3322, 349, 6, 41, "Text"],
+Cell[102384, 3330, 590, 19, 51, "Text"],
+Cell[102977, 3351, 44, 0, 26, "Text"],
+Cell[103024, 3353, 154, 4, 37, "Input"],
+Cell[103181, 3359, 98, 2, 26, "Text"],
+Cell[103282, 3363, 178, 5, 24, "Input"],
+Cell[103463, 3370, 134, 2, 24, "Input"],
+Cell[103600, 3374, 362, 8, 41, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103999, 3387, 123, 1, 38, "Subsubsection"],
+Cell[104125, 3390, 238, 4, 41, "Text"],
+Cell[104366, 3396, 579, 19, 51, "Text"],
+Cell[104948, 3417, 88, 2, 26, "Text"],
+Cell[105039, 3421, 580, 18, 103, "Text"],
+Cell[105622, 3441, 71, 0, 26, "Text"],
+Cell[105696, 3443, 954, 30, 40, "Input"],
+Cell[106653, 3475, 340, 6, 56, "Text"],
+Cell[106996, 3483, 344, 11, 24, "Input"],
+Cell[107343, 3496, 47, 0, 26, "Text"],
+Cell[107393, 3498, 58, 1, 24, "Input"],
+Cell[107454, 3501, 60, 1, 24, "Input"],
+Cell[107517, 3504, 75, 0, 26, "Text"],
+Cell[107595, 3506, 323, 9, 24, "Input"],
+Cell[107921, 3517, 50, 0, 26, "Text"],
+Cell[107974, 3519, 326, 9, 24, "Input"],
+Cell[108303, 3530, 322, 7, 41, "Text"],
+Cell[108628, 3539, 683, 21, 40, "Input"],
+Cell[109314, 3562, 135, 3, 26, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[109510, 3572, 79, 2, 37, "Section",
+ Evaluatable->False],
+Cell[109592, 3576, 360, 7, 41, "Text",
+ Evaluatable->False],
+Cell[109955, 3585, 520, 25, 29, "Text",
+ Evaluatable->False],
+Cell[110478, 3612, 935, 25, 74, "Text",
+ Evaluatable->False],
+Cell[111416, 3639, 311, 10, 30, "Input"],
+Cell[111730, 3651, 49, 1, 24, "Input"],
+Cell[111782, 3654, 50, 1, 24, "Input"],
+Cell[111835, 3657, 50, 1, 24, "Input"],
+Cell[111888, 3660, 488, 9, 56, "Text",
+ Evaluatable->False],
+Cell[112379, 3671, 287, 9, 30, "Input"],
+Cell[112669, 3682, 121, 2, 24, "Input"],
+Cell[112793, 3686, 121, 2, 24, "Input"],
+Cell[112917, 3690, 123, 2, 24, "Input"],
+Cell[113043, 3694, 56, 1, 24, "Input"],
+Cell[113102, 3697, 56, 1, 24, "Input"],
+Cell[113161, 3700, 56, 1, 24, "Input"],
+Cell[113220, 3703, 56, 1, 24, "Input"],
+Cell[113279, 3706, 191, 5, 26, "Text",
+ Evaluatable->False],
+Cell[113473, 3713, 433, 10, 45, "Text",
+ Evaluatable->False],
+Cell[113909, 3725, 66, 1, 27, "Input"],
+Cell[113978, 3728, 294, 9, 26, "Text",
+ Evaluatable->False],
+Cell[114275, 3739, 306, 10, 30, "Input"],
+Cell[114584, 3751, 59, 1, 24, "Input"],
+Cell[114646, 3754, 59, 1, 24, "Input"],
+Cell[114708, 3757, 59, 1, 24, "Input"],
+Cell[114770, 3760, 162, 5, 26, "Text",
+ Evaluatable->False],
+Cell[114935, 3767, 298, 6, 41, "Text",
+ Evaluatable->False],
+Cell[115236, 3775, 52, 1, 24, "Input"],
+Cell[115291, 3778, 100, 3, 24, "Input"],
+Cell[115394, 3783, 151, 5, 26, "Text"],
+Cell[115548, 3790, 182, 5, 24, "Input"],
+Cell[115733, 3797, 507, 10, 56, "Text"],
+Cell[116243, 3809, 116, 2, 26, "Text",
+ Evaluatable->False],
+Cell[116362, 3813, 100, 3, 24, "Input"],
+Cell[116465, 3818, 169, 5, 26, "Text",
+ Evaluatable->False],
+Cell[116637, 3825, 130, 2, 24, "Input"],
+Cell[116770, 3829, 130, 2, 24, "Input"],
+Cell[116903, 3833, 130, 2, 24, "Input"],
+Cell[117036, 3837, 392, 8, 56, "Text",
+ Evaluatable->False],
+Cell[117431, 3847, 184, 4, 41, "Text"],
+Cell[117618, 3853, 194, 6, 24, "Input"],
+Cell[117815, 3861, 46, 0, 26, "Text"],
+Cell[117864, 3863, 130, 3, 26, "Text"],
+Cell[117997, 3868, 162, 5, 51, "Input"],
+Cell[118162, 3875, 88, 1, 24, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[118287, 3881, 83, 2, 37, "Section",
+ Evaluatable->False],
+Cell[118373, 3885, 346, 7, 41, "Text",
+ Evaluatable->False],
+Cell[118722, 3894, 63, 1, 24, "Input"],
+Cell[118788, 3897, 377, 7, 56, "Text",
+ Evaluatable->False],
+Cell[119168, 3906, 54, 1, 24, "Input"],
+Cell[119225, 3909, 54, 1, 24, "Input"],
+Cell[119282, 3912, 54, 1, 24, "Input"],
+Cell[119339, 3915, 75, 0, 26, "Text"],
+Cell[119417, 3917, 64, 1, 24, "Input"],
+Cell[119484, 3920, 63, 1, 24, "Input"],
+Cell[119550, 3923, 330, 7, 41, "Text",
+ Evaluatable->False],
+Cell[119883, 3932, 82, 1, 24, "Input"],
+Cell[119968, 3935, 205, 5, 26, "Text",
+ Evaluatable->False],
+Cell[120176, 3942, 60, 1, 24, "Input"],
+Cell[120239, 3945, 230, 6, 41, "Text",
+ Evaluatable->False],
+Cell[120472, 3953, 90, 1, 24, "Input"],
+Cell[120565, 3956, 55, 1, 24, "Input"],
+Cell[120623, 3959, 148, 4, 26, "Text",
+ Evaluatable->False],
+Cell[120774, 3965, 48, 1, 24, "Input"],
+Cell[120825, 3968, 59, 1, 24, "Input"],
+Cell[120887, 3971, 56, 1, 24, "Input"],
+Cell[120946, 3974, 57, 1, 24, "Input"],
+Cell[121006, 3977, 237, 6, 41, "Text",
+ Evaluatable->False],
+Cell[121246, 3985, 58, 1, 24, "Input"],
+Cell[121307, 3988, 220, 6, 26, "Text",
+ Evaluatable->False],
+Cell[121530, 3996, 149, 5, 26, "Text",
+ Evaluatable->False],
+Cell[121682, 4003, 152, 5, 26, "Text",
+ Evaluatable->False],
+Cell[121837, 4010, 145, 4, 26, "Text",
+ Evaluatable->False],
+Cell[121985, 4016, 255, 6, 41, "Text",
+ Evaluatable->False],
+Cell[122243, 4024, 64, 1, 24, "Input"],
+Cell[122310, 4027, 97, 2, 26, "Text",
+ Evaluatable->False],
+Cell[122410, 4031, 52, 1, 24, "Input"],
+Cell[122465, 4034, 75, 2, 26, "Text",
+ Evaluatable->False],
+Cell[122543, 4038, 383, 8, 56, "Text",
+ Evaluatable->False],
+Cell[122929, 4048, 92, 1, 24, "Input"],
+Cell[123024, 4051, 55, 1, 24, "Input"],
+Cell[123082, 4054, 66, 1, 24, "Input"],
+Cell[123151, 4057, 67, 1, 24, "Input"],
+Cell[123221, 4060, 65, 1, 24, "Input"],
+Cell[123289, 4063, 119, 2, 26, "Text",
+ Evaluatable->False],
+Cell[123411, 4067, 54, 1, 24, "Input"],
+Cell[123468, 4070, 54, 1, 24, "Input"],
+Cell[123525, 4073, 54, 1, 24, "Input"],
+Cell[123582, 4076, 216, 5, 26, "Text",
+ Evaluatable->False],
+Cell[123801, 4083, 67, 1, 24, "Input"],
+Cell[123871, 4086, 67, 1, 24, "Input"],
+Cell[123941, 4089, 67, 1, 24, "Input"],
+Cell[124011, 4092, 231, 6, 41, "Text",
+ Evaluatable->False],
+Cell[124245, 4100, 116, 4, 37, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[124398, 4109, 87, 2, 37, "Section",
+ Evaluatable->False],
+Cell[124488, 4113, 484, 9, 56, "Text",
+ Evaluatable->False],
+Cell[124975, 4124, 320, 8, 89, "Input"],
+Cell[125298, 4134, 163, 5, 37, "Input"],
+Cell[125464, 4141, 98, 2, 26, "Text"],
+Cell[125565, 4145, 74, 1, 24, "Input"],
+Cell[125642, 4148, 115, 2, 24, "Input"],
+Cell[125760, 4152, 99, 2, 26, "Text"],
+Cell[125862, 4156, 128, 2, 24, "Input"],
+Cell[125993, 4160, 157, 5, 26, "Text",
+ Evaluatable->False],
+Cell[126153, 4167, 78, 1, 24, "Input"],
+Cell[126234, 4170, 115, 2, 24, "Input"],
+Cell[126352, 4174, 107, 2, 24, "Input"],
+Cell[126462, 4178, 158, 5, 26, "Text",
+ Evaluatable->False],
+Cell[126623, 4185, 82, 1, 24, "Input"],
+Cell[126708, 4188, 115, 2, 24, "Input"],
+Cell[126826, 4192, 107, 2, 24, "Input"],
+Cell[126936, 4196, 269, 6, 41, "Text",
+ Evaluatable->False],
+Cell[127208, 4204, 98, 1, 24, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[127343, 4210, 91, 2, 37, "Section",
+ Evaluatable->False],
+Cell[127437, 4214, 1508, 24, 161, "Text",
+ Evaluatable->False],
+Cell[128948, 4240, 123, 5, 50, "Input"],
+Cell[129074, 4247, 295, 6, 41, "Text",
+ Evaluatable->False],
+Cell[129372, 4255, 50, 1, 24, "Input"],
+Cell[129425, 4258, 50, 1, 24, "Input"],
+Cell[129478, 4261, 50, 1, 24, "Input"],
+Cell[129531, 4264, 50, 1, 24, "Input"],
+Cell[129584, 4267, 51, 1, 24, "Input"],
+Cell[129638, 4270, 726, 12, 86, "Text",
+ Evaluatable->False],
+Cell[130367, 4284, 175, 6, 63, "Input"],
+Cell[130545, 4292, 578, 10, 71, "Text",
+ Evaluatable->False],
+Cell[131126, 4304, 50, 1, 24, "Input"],
+Cell[131179, 4307, 50, 1, 24, "Input"],
+Cell[131232, 4310, 51, 1, 24, "Input"],
+Cell[131286, 4313, 281, 6, 41, "Text",
+ Evaluatable->False],
+Cell[131570, 4321, 50, 1, 24, "Input"],
+Cell[131623, 4324, 46, 1, 24, "Input"],
+Cell[131672, 4327, 815, 13, 86, "Text",
+ Evaluatable->False],
+Cell[132490, 4342, 53, 1, 24, "Input"],
+Cell[132546, 4345, 197, 7, 76, "Input"],
+Cell[132746, 4354, 257, 6, 41, "Text",
+ Evaluatable->False],
+Cell[133006, 4362, 50, 1, 24, "Input"],
+Cell[133059, 4365, 46, 1, 24, "Input"],
+Cell[133108, 4368, 155, 5, 26, "Text",
+ Evaluatable->False],
+Cell[133266, 4375, 153, 5, 26, "Text",
+ Evaluatable->False],
+Cell[133422, 4382, 52, 1, 24, "Input"],
+Cell[133477, 4385, 316, 7, 41, "Text",
+ Evaluatable->False],
+Cell[133796, 4394, 95, 2, 24, "Input"],
+Cell[133894, 4398, 123, 2, 24, "Input"],
+Cell[134020, 4402, 261, 6, 41, "Text",
+ Evaluatable->False],
+Cell[134284, 4410, 461, 8, 56, "Text"],
+Cell[134748, 4420, 219, 5, 24, "Input"],
+Cell[134970, 4427, 279, 7, 24, "Input"],
+Cell[135252, 4436, 173, 3, 24, "Input"],
+Cell[135428, 4441, 124, 2, 24, "Input"],
+Cell[135555, 4445, 524, 9, 56, "Text"],
+Cell[136082, 4456, 169, 4, 27, "Input"],
+Cell[136254, 4462, 162, 4, 24, "Input"],
+Cell[136419, 4468, 122, 2, 24, "Input"],
+Cell[136544, 4472, 119, 2, 24, "Input"],
+Cell[136666, 4476, 120, 2, 24, "Input"],
+Cell[136789, 4480, 120, 2, 24, "Input"],
+Cell[136912, 4484, 230, 4, 26, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[137179, 4493, 80, 2, 37, "Section",
+ Evaluatable->False],
+Cell[137262, 4497, 594, 13, 56, "Text",
+ Evaluatable->False],
+Cell[137859, 4512, 843, 31, 50, "Text"],
+Cell[138705, 4545, 194, 5, 26, "Text",
+ Evaluatable->False],
+Cell[138902, 4552, 170, 9, 26, "Text"],
+Cell[139075, 4563, 173, 3, 26, "Text"],
+Cell[139251, 4568, 260, 9, 102, "Input"],
+Cell[139514, 4579, 260, 6, 41, "Text",
+ Evaluatable->False],
+Cell[139777, 4587, 57, 1, 24, "Input"],
+Cell[139837, 4590, 66, 1, 27, "Input"],
+Cell[139906, 4593, 87, 1, 24, "Input"],
+Cell[139996, 4596, 739, 12, 71, "Text",
+ Evaluatable->False],
+Cell[140738, 4610, 369, 11, 102, "Input"],
+Cell[141110, 4623, 925, 25, 71, "Text",
+ Evaluatable->False],
+Cell[142038, 4650, 646, 10, 56, "Text"],
+Cell[142687, 4662, 1222, 34, 85, "Input"],
+Cell[143912, 4698, 94, 1, 26, "Text"],
+Cell[144009, 4701, 173, 3, 24, "Input"],
+Cell[144185, 4706, 410, 7, 41, "Text"],
+Cell[144598, 4715, 353, 8, 24, "Input"],
+Cell[144954, 4725, 661, 11, 71, "Text"],
+Cell[145618, 4738, 818, 12, 71, "Text"],
+Cell[146439, 4752, 874, 26, 40, "Input",
+ CellID->26946],
+Cell[147316, 4780, 373, 6, 41, "Text"],
+Cell[147692, 4788, 56, 1, 24, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[147785, 4794, 90, 2, 37, "Section",
+ Evaluatable->False],
+Cell[147878, 4798, 1157, 24, 116, "Text",
+ Evaluatable->False],
+Cell[149038, 4824, 1387, 34, 116, "Text",
+ Evaluatable->False],
+Cell[150428, 4860, 674, 16, 56, "Text"],
+Cell[151105, 4878, 1080, 27, 101, "Text",
+ Evaluatable->False],
+Cell[152188, 4907, 333, 9, 41, "Text",
+ Evaluatable->False],
+Cell[152524, 4918, 457, 17, 26, "Text",
+ Evaluatable->False],
+Cell[152984, 4937, 1226, 27, 116, "Text"],
+Cell[154213, 4966, 907, 22, 86, "Text",
+ Evaluatable->False]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

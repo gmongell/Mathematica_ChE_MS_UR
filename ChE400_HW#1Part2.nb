@@ -1,0 +1,288 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9360,        279]
+NotebookOptionsPosition[      8318,        239]
+NotebookOutlinePosition[      8663,        254]
+CellTagsIndexPosition[      8620,        251]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", ".2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", ".3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", ".4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", "300"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1.47", "*", "60"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"a", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "*", "v", "*", 
+      RowBox[{"Cos", "[", "x", "]"}]}], "+", 
+     RowBox[{"b", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "v", "*", 
+      SqrtBox[
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sin", "[", "x", "]"}], ")"}], "^", "2"}]}]]}], "-", 
+     RowBox[{"c", "*", "v", "*", 
+      RowBox[{"Sin", "[", "x", "]"}]}]}]}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4929442440865135`*^9, 3.492944413018203*^9}, {
+   3.4929445067191396`*^9, 3.492944524909322*^9}, 3.4929508433069725`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "::", "\<\"ifun\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Inverse functions are being \
+used by \\\\\\\"\\\", \
+\\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(Solve\\), \\\"MT\\\"]\\)\
+\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\", so some solutions may not be found; \
+use Reduce for complete solution information.\\\\\\\"\\\", \\\"MT\\\"]\\) \\!\
+\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
+ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.4929443847579203`*^9, 3.492944413638209*^9}, 
+   3.4929445261093335`*^9, 3.492950843847973*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", "\[Rule]", 
+     RowBox[{"-", "2.507299931671974`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", "\[Rule]", "0.14062170247200292`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.492944384837921*^9, 3.492944413638209*^9}, 
+   3.4929445261193333`*^9, 3.4929508438499727`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{".140622", "/", "\[Pi]"}], "*", "180"}]], "Input",
+ CellChangeTimes->{{3.492944540219475*^9, 3.492944540999482*^9}, {
+  3.4929447374514465`*^9, 3.4929447381114535`*^9}, {3.4929508476339726`*^9, 
+  3.4929508513299723`*^9}}],
+
+Cell[BoxData["8.057047106688662`"], "Output",
+ CellChangeTimes->{3.4929445414994874`*^9, 3.492944739251465*^9, 
+  3.492950851736973*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"0", "\[Equal]", 
+    RowBox[{
+     RowBox[{"a", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "*", "v", "*", 
+      RowBox[{"Cos", "[", "x", "]"}]}], "+", 
+     RowBox[{"b", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "v", "*", 
+      SqrtBox[
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Sin", "[", "x", "]"}], ")"}], "^", "2"}]}]]}], "-", 
+     RowBox[{"c", "*", "v", "*", 
+      RowBox[{"Sin", "[", "x", "]"}]}]}]}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4929448962219725`*^9, 3.4929449088319726`*^9}, {
+  3.4929509591349726`*^9, 3.4929509620779724`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "::", "\<\"ifun\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Inverse functions are being \
+used by \\\\\\\"\\\", \
+\\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(Solve\\), \\\"MT\\\"]\\)\
+\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\", so some solutions may not be found; \
+use Reduce for complete solution information.\\\\\\\"\\\", \\\"MT\\\"]\\) \\!\
+\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
+ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.4929449139419727`*^9, 3.492950962663973*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", "\[Rule]", "0.7238392541543308`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", "\[Rule]", "2.9666236079241046`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4929449139419727`*^9, 3.4929509626679726`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{".723839", "*", 
+  RowBox[{"180", "/", "\[Pi]"}]}]], "Input",
+ CellChangeTimes->{{3.4929449173019724`*^9, 3.4929449232619724`*^9}, {
+  3.4929509696109724`*^9, 3.4929509718829727`*^9}}],
+
+Cell[BoxData["41.47291974697`"], "Output",
+ CellChangeTimes->{3.4929449243419724`*^9, 3.4929509728019724`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2.9666236079241046`", "*", 
+  RowBox[{"180", "/", "\[Pi]"}]}]], "Input",
+ CellChangeTimes->{{3.4929509854179726`*^9, 3.4929509880589724`*^9}}],
+
+Cell[BoxData["169.9750121379243`"], "Output",
+ CellChangeTimes->{3.492950988708973*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"0", "\[Equal]", 
+    RowBox[{
+     RowBox[{"a", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "*", "v", "*", 
+      RowBox[{"Cos", "[", "x", "]"}]}], "+", 
+     RowBox[{"b", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"45", " ", "Degree"}], "]"}], "*", "v", "*", 
+      RowBox[{"Cos", "[", "x", "]"}]}], "-", 
+     RowBox[{"c", "*", "v", "*", 
+      SqrtBox[
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"Cos", "[", "x", "]"}], ")"}], "^", "2"}]}]]}]}]}], ",", 
+   "x", ","}], "]"}]], "Input",
+ CellChangeTimes->{{3.4929450045619726`*^9, 3.4929450473419724`*^9}, 
+   3.4929509261279726`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Reduce", "::", "\<\"bdomv\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Warning: \\\\\\\"\\\", \
+\\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(Null\\), \\\"MT\\\"]\\)\
+\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\" is not a valid domain specification. \
+Mathematica is assuming it is a variable to eliminate.\\\\\\\"\\\", \
+\\\"MT\\\"]\\) \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Reduce/bdomv\\\", ButtonNote -> \
+\\\"Reduce::bdomv\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.4929450260919724`*^9, 3.492945048361973*^9}, 
+   3.4929509263679724`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Reduce", "::", "\<\"ratnz\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Reduce was unable to solve \
+the system with inexact coefficients. The answer was obtained by solving a \
+corresponding exact system and numericizing the result.\\\\\\\"\\\", \\\"MT\\\
+\"]\\) \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Reduce/ratnz\\\", ButtonNote -> \
+\\\"Reduce::ratnz\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.4929450260919724`*^9, 3.492945048361973*^9}, 
+   3.4929509264219723`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"C", "[", "1", "]"}], "\[Element]", "Integers"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"x", "\[Equal]", 
+     RowBox[{
+      RowBox[{"-", "0.7238392541543309`"}], "+", 
+      RowBox[{"6.283185307179586`", " ", 
+       RowBox[{"C", "[", "1", "]"}]}]}]}], "||", 
+    RowBox[{"x", "\[Equal]", 
+     RowBox[{"0.7238392541543309`", "\[InvisibleSpace]", "+", 
+      RowBox[{"6.283185307179586`", " ", 
+       RowBox[{"C", "[", "1", "]"}]}]}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.492945026281973*^9, 3.492945048401973*^9}, 
+   3.4929509264229727`*^9}]
+}, Open  ]]
+},
+WindowSize->{496, 637},
+WindowMargins->{{22, Automatic}, {Automatic, 14}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1067, 29, 187, "Input"],
+Cell[1637, 53, 740, 13, 73, "Message"],
+Cell[2380, 68, 361, 10, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2778, 83, 256, 5, 31, "Input"],
+Cell[3037, 90, 136, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3210, 97, 738, 20, 107, "Input"],
+Cell[3951, 119, 688, 12, 73, "Message"],
+Cell[4642, 133, 287, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4966, 145, 207, 4, 31, "Input"],
+Cell[5176, 151, 110, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5323, 157, 166, 3, 31, "Input"],
+Cell[5492, 162, 87, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5616, 168, 728, 21, 107, "Input"],
+Cell[6347, 191, 705, 13, 56, "Message"],
+Cell[7055, 206, 634, 12, 73, "Message"],
+Cell[7692, 220, 610, 16, 50, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

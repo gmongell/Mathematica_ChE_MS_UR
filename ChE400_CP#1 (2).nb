@@ -1,0 +1,184 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7129,        175]
+NotebookOptionsPosition[      6833,        161]
+NotebookOutlinePosition[      7178,        176]
+CellTagsIndexPosition[      7135,        173]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "  ", 
+   RowBox[{"Guy", " ", 
+    RowBox[{"F", ".", " ", "Mongelli"}], "                               ", 
+    "ChE", " ", "400", "\[IndentingNewLine]", "   ", 
+    RowBox[{"Prof", ".", " ", "Clark"}], "                                   ", 
+    RowBox[{
+     RowBox[{"9", "/", "14"}], "/", "2010"}]}], "     ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Assignment", " ", "#2", "\[IndentingNewLine]", "Chellenge", " ", 
+    "Problem", " ", "#1"}], "     ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.4935978568785486`*^9, 3.4935978599248533`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"After", " ", "considering", " ", 
+   RowBox[{"Cauchy", "'"}], "s", "  ", "Theorem"}], ",", " ", 
+  RowBox[{
+  "I", " ", "have", " ", "found", " ", "it", " ", "interesting", " ", 
+   "becaue", " ", "it", " ", "holds", " ", "true", " ", "for", " ", "many", 
+   " ", "the", " ", "functions", "  ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"I", " ", 
+      RowBox[{"haven", "'"}], "t", " ", "tested", " ", "them", " ", "all", 
+      " ", "and", " ", "am", " ", "not", " ", "sufficiently", " ", "rigorous",
+       " ", "to", " ", "prove", " ", "them", " ", "all"}], ",", " ", 
+     RowBox[{
+     "nor", " ", "do", " ", "I", " ", "speak", " ", "any", " ", "French"}]}], 
+    ")"}], " ", 
+   RowBox[{"we", "'"}], "ve", " ", "discussed", " ", "in", " ", "class"}], 
+  ",", " ", 
+  RowBox[{
+  "even", " ", "though", " ", "there", " ", "are", " ", "some", " ", 
+   "strange", " ", "cases", " ", "that", " ", "stand", " ", 
+   RowBox[{"out", ".", "  ", "My"}], " ", "finding", " ", "in", " ", "the", 
+   " ", "literature", " ", "indicate", " ", "that", " ", "this", " ", "work", 
+   " ", 
+   RowBox[{"(", 
+    RowBox[{
+    "a", " ", "text", " ", "that", " ", "he", " ", "wrote", " ", "for", " ", 
+     "his", " ", "students", " ", "at", " ", "\[CapitalEAcute]cole", " ", 
+     "Polytechnique"}], ")"}], "was", " ", "important", " ", "because", " ", 
+   "it", " ", "rigorously", " ", "proved", " ", 
+   RowBox[{"Taylor", "'"}], "s", " ", "work", " ", "with", " ", 
+   "approximating", " ", "functions", " ", "as", " ", 
+   RowBox[{"series", ".", "  ", "Also"}]}], ",", " ", 
+  RowBox[{
+  "it", " ", "discusses", " ", "the", " ", "convergence", " ", "of", " ", 
+   RowBox[{"Fourier", "'"}], "s", " ", "series", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"http", ":"}], "//", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"en", ".", "wikipedia", ".", "org"}], "/", "wiki"}], "/", 
+        "Augustin"}], "-", "Louis_Cauchy"}]}], ")"}], ".", "  ", "He"}], " ", 
+   "found", " ", "that", " ", "if", " ", "s", " ", "series", " ", "of", " ", 
+   "functions", "  ", "that", " ", "are", " ", "continuous", " ", "on", " ", 
+   "a", " ", "certain", " ", "interval"}], ",", " ", 
+  RowBox[{
+   RowBox[{
+   "the", " ", "sum", " ", "is", " ", "also", " ", "continuous", " ", "on", 
+    " ", "that", " ", "interval", " ", "if", " ", "the", " ", "seires", " ", 
+    RowBox[{"converges", ".", "  ", "One"}], " ", "of", " ", "them", " ", 
+    "is", " ", "the", " ", "Fourier", " ", "series", " ", "of", " ", "the", 
+    " ", "Square", " ", 
+    RowBox[{"Wave", ".", "  ", "The"}], " ", "Square", " ", "wave", " ", 
+    "exists", " ", 
+    RowBox[{"on", " ", "[", 
+     RowBox[{"L", ",", "L"}], "]"}], " ", "and", " ", "is", " ", "extended", 
+    " ", "when", " ", "the", " ", "infinite", " ", "series", " ", "is", " ", 
+    "written", " ", 
+    RowBox[{"as", " ", ":", "\[IndentingNewLine]", 
+     RowBox[{"fourier", " ", "of", " ", "f"}]}]}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"j", "=", "1"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox["4", 
+      RowBox[{"\[Pi]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", "j"}], "+", "1"}], ")"}]}]], 
+     RowBox[{"Sin", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", "j"}], "+", "1"}], ")"}], 
+       RowBox[{"\[Pi]x", "/", "L"}]}], "]"}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Each", " ", "of", " ", "the", " ", "sine", " ", "functions", " ", 
+  "in", " ", "this", " ", "series", " ", "is", " ", "continuous", " ", "on", 
+  " ", "the", " ", "interval", " ", "from"}], "\[IndentingNewLine]", 
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "L"}], " ", "to", " ", 
+    RowBox[{"L", " ", ".", "  ", "The"}], " ", "series", " ", "converges", 
+    " ", "to", " ", "f", 
+    RowBox[{"(", "x", ")"}], " ", "on", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "L"}], ",", "L"}], ")"}], " ", "as", " ", "discussed", " ",
+     "in", " ", 
+    RowBox[{"lecture", ".", "  ", "The"}], " ", "strange", " ", "phenomena", 
+    " ", "exists", " ", "at", " ", "x", " ", "equal", " ", "to", " ", 
+    "zero"}], ",", " ", 
+   RowBox[{
+   "because", " ", "the", " ", "terms", " ", "of", " ", "the", " ", 
+    "infinite", " ", "sine", " ", "series", " ", "all", " ", "become", " ", 
+    "zero"}], ",", " ", 
+   RowBox[{
+   "which", " ", "is", " ", "meant", " ", "to", " ", "equal", " ", "1", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "Since", " ", "the", " ", "delta", " ", "function", " ", "at", " ", 
+        "x"}], "=", 
+       RowBox[{"0", " ", "is", " ", "1"}]}], ")"}], ".", "  ", "There"}], " ",
+     "is", " ", "a", " ", "discontinuity", " ", 
+    RowBox[{"present", ".", "  ", "This"}], " ", 
+    RowBox[{"isn", "'"}], "t", " ", "troublesome", " ", "because", " ", "the",
+     " ", "definitions", " ", "of", " ", "convergence", " ", "and", " ", 
+    RowBox[{"continuous", ".", "  ", "There"}], " ", "is", " ", "a", " ", 
+    "discontinuity"}], ",", " ", "however", ",", " ", 
+   RowBox[{
+   "the", " ", "series", " ", "converges", " ", "based", " ", "on", " ", 
+    "the", " ", "limit", " ", 
+    RowBox[{"definition", ".", "\[IndentingNewLine]"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.4935978753863993`*^9, 3.493597877161577*^9}, {
+  3.493599173113159*^9, 3.493599184680316*^9}, {3.4935992811489615`*^9, 
+  3.4935993342722735`*^9}, {3.493599368497696*^9, 3.493599527766621*^9}, {
+  3.493599807466588*^9, 3.493599825196361*^9}, {3.493599903752216*^9, 
+  3.493600205989436*^9}, {3.4936005046312976`*^9, 3.4936006785856915`*^9}}]
+},
+WindowSize->{607, 637},
+WindowMargins->{{54, Automatic}, {Automatic, 23}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 636, 14, 112, "Input"],
+Cell[1184, 36, 5645, 123, 563, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
